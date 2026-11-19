@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import GraficoRadar, { type ValorRadar } from "@/components/GraficoRadar";
+import { AREAS } from "@/lib/diagnostico";
 import { supabaseConfigurado } from "@/lib/supabase/config";
 import {
   crearClienteServidor,
@@ -64,10 +66,10 @@ function Tarjeta({
   );
 }
 
-function EstadoVacio({ texto }: { texto: string }) {
+function EstadoVacio({ children }: { children: React.ReactNode }) {
   return (
     <p className="rounded-xl border-2 border-dashed border-sol bg-sol/10 px-4 py-3 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
-      {texto}
+      {children}
     </p>
   );
 }
@@ -203,7 +205,16 @@ export default async function PaginaProgreso() {
       <div className="mt-8 grid gap-6 md:grid-cols-2">
         <Tarjeta titulo="Historial de diagnósticos">
           {diagnosticos.length === 0 ? (
-            <EstadoVacio texto="Aún no tienes diagnósticos — llegan en la próxima fase. Cuando completes tu primer diagnóstico, aparecerá aquí con su fecha, área y nivel." />
+            <EstadoVacio>
+              Aún no tienes diagnósticos. Hacé el{" "}
+              <Link
+                href="/diagnostico"
+                className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+              >
+                examen diagnóstico
+              </Link>{" "}
+              y cada área que completes aparecerá aquí con su fecha y nivel.
+            </EstadoVacio>
           ) : (
             <ul className="flex flex-col gap-3">
               {diagnosticos.map((d) => (
@@ -228,26 +239,59 @@ export default async function PaginaProgreso() {
 
         <Tarjeta titulo="Evolución por área">
           {porArea.size === 0 && dimensiones.length === 0 ? (
-            <EstadoVacio texto="Aún no hay evolución que mostrar — llegan en la próxima fase. Cuando tengas diagnósticos, verás aquí tu último nivel en cada área." />
+            <EstadoVacio>
+              Aún no hay evolución que mostrar. Hacé el{" "}
+              <Link
+                href="/diagnostico"
+                className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+              >
+                examen diagnóstico
+              </Link>{" "}
+              o el{" "}
+              <Link
+                href="/actitudes"
+                className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+              >
+                cuestionario de actitudes
+              </Link>{" "}
+              y acá vas a ver tu último nivel en cada área.
+            </EstadoVacio>
           ) : (
             <div className="flex flex-col gap-4">
               {porArea.size > 0 && (
-                <ul className="flex flex-col gap-3">
-                  {[...porArea.values()].map((d) => (
-                    <li
-                      key={d.area}
-                      className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-rio/20 px-4 py-3"
-                    >
-                      <span className="font-bold text-noche dark:text-white">
-                        {d.area}
-                      </span>
-                      <span className="text-sm text-neutral-600 dark:text-white/75">
-                        Nivel {d.nivel}
-                        {d.puntaje !== null ? ` · ${d.puntaje} puntos` : ""}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <>
+                  <GraficoRadar
+                    valores={
+                      AREAS.map((area) => {
+                        const d = porArea.get(area);
+                        return d
+                          ? {
+                              area,
+                              valor: d.puntaje ?? 0,
+                              etiqueta: d.nivel,
+                            }
+                          : { area, valor: 0, pendiente: true };
+                      }) as ValorRadar[]
+                    }
+                    titulo="Tu último nivel en cada área"
+                  />
+                  <ul className="flex flex-col gap-3">
+                    {[...porArea.values()].map((d) => (
+                      <li
+                        key={d.area}
+                        className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-rio/20 px-4 py-3"
+                      >
+                        <span className="font-bold text-noche dark:text-white">
+                          {d.area}
+                        </span>
+                        <span className="text-sm text-neutral-600 dark:text-white/75">
+                          Nivel {d.nivel}
+                          {d.puntaje !== null ? ` · ${d.puntaje} puntos` : ""}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </>
               )}
               {dimensiones.length > 0 && (
                 <div>
@@ -277,7 +321,11 @@ export default async function PaginaProgreso() {
 
         <Tarjeta titulo="Insignias">
           {insignias.length === 0 ? (
-            <EstadoVacio texto="Aún no tienes insignias — llegan en la próxima fase. Cuando juegues y completes retos en los juegos, tus insignias aparecerán aquí." />
+            <EstadoVacio>
+              Aún no tienes insignias — llegan con los juegos en la próxima
+              fase. Cuando juegues y completes retos, tus insignias
+              aparecerán aquí.
+            </EstadoVacio>
           ) : (
             <ul className="flex flex-wrap gap-2">
               {insignias.map((ins) => (
@@ -310,7 +358,10 @@ export default async function PaginaProgreso() {
         </Tarjeta>
 
         <Tarjeta titulo="Metas personales">
-          <EstadoVacio texto="Aún no tienes metas personales. Cuando la próxima fase habilite las metas, podrás fijarlas aquí y seguir tu avance." />
+          <EstadoVacio>
+            Aún no tienes metas personales. Cuando la próxima fase habilite
+            las metas, podrás fijarlas aquí y seguir tu avance.
+          </EstadoVacio>
           <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-white/75">
             Mientras tanto, tu progreso se construye con cada diagnóstico y
             cada juego que completes.

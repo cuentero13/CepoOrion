@@ -14,8 +14,8 @@ que falte se marca `[COMPLETAR]` y lo dudoso `[VERIFICAR]`.
 | Archivo | Uso | Estado |
 |---|---|---|
 | `horarios.json` | Tabla de horarios por nivel, turno y materia | Esqueleto con `[COMPLETAR]` |
-| `preguntas.json` | Banco de preguntas del examen diagnóstico | Esquema + 1 pregunta de ejemplo |
-| `actitudes.json` | (fase d) Cuestionario de actitudes y hábitos | Pendiente |
+| `preguntas.json` | Banco de preguntas del examen diagnóstico | 10 preguntas por área (fase d) |
+| `actitudes.json` | Cuestionario de actitudes y hábitos | Fase (d) |
 | `juegos.json` | (fase e) Preguntas de los juegos | Pendiente |
 
 ## `horarios.json`
@@ -67,6 +67,30 @@ Cada pregunta tiene obligatoriamente estos campos:
 
 **Ejemplo real incluido en el archivo:** `MAT-1-001` (multiplicación básica,
 fuente: Currículo Base del Ministerio de Educación de Bolivia, Matemática).
+
+El examen usa 6 preguntas por área y dificultad adaptativa: empieza en
+nivel 2, sube con cada acierto y baja con cada error (ver
+`lib/diagnostico.ts`). Por eso cada área necesita preguntas en los tres
+niveles.
+
+## `actitudes.json`
+
+Cuestionario de actitudes y hábitos de estudio (escala Likert 1–5).
+Herramienta **orientativa**, no un diagnóstico psicológico.
+
+| Campo | Descripción |
+|---|---|
+| `nota` | Nota general del cuestionario |
+| `instrumentos_referencia` | Instrumentos reconocidos en los que se basa (MSLQ, IHE) |
+| `aviso` | Aviso claro de que es orientativo, no psicológico |
+| `escala` | Valores 1–5 con su etiqueta (Nunca…Siempre) |
+| `dimensiones` | 6 dimensiones × 4 ítems (`id`, `nombre`, `descripcion`, `items`) |
+| `interpretacion.bandas` | 3 bandas positivas según el promedio (1–2,99 / 3–3,99 / 4–5) |
+| `sugerencias` | 3 sugerencias prácticas por dimensión, contextualizadas a Ixiamas |
+
+Cada ítem tiene `id`, `texto` e `invertida` (si es `true`, se puntúa al
+revés: 6 − valor). Dimensiones: Hábitos de estudio, Motivación,
+Autorregulación, Manejo del tiempo, Trabajo en equipo, Proyecto de vida.
 
 ## Fuentes obligatorias
 

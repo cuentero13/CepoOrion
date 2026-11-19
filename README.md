@@ -50,7 +50,7 @@ ni estadísticas. Lo que falta va como `[COMPLETAR]` y lo dudoso como
 | (a) Base y diseño | Scaffold, paleta, hero de Orión, PWA, esqueleto | ✅ Terminada |
 | (b) Secciones informativas | Nosotros, Horarios, Contacto | ✅ Terminada |
 | (c) Autenticación y buzón | Login, Mi progreso, Buzón privado, Privacidad, Admin | ✅ Terminada (falta crear el proyecto Supabase — ver `docs/supabase-setup.md`) |
-| (d) Exámenes | Diagnóstico adaptativo + actitudes y hábitos | Pendiente |
+| (d) Exámenes | Diagnóstico adaptativo + actitudes y hábitos | ✅ Terminada (falta crear el proyecto Supabase para guardar resultados — ver `docs/supabase-setup.md`) |
 | (e) Juegos | 6 juegos con puntos, insignias y niveles | Pendiente |
 | (f) Pulido | Animaciones, Lighthouse ≥ 90, pruebas en móvil | Pendiente |
 
