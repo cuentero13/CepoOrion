@@ -22,7 +22,7 @@ que falte se marca `[COMPLETAR]` y lo dudoso `[VERIFICAR]`.
 | `juegos/detective.json` | Identificar desinformación | 12 casos (DET-001–012), 8 falsos / 4 verdaderos |
 | `juegos/primeros-auxilios.json` | Decisiones ante emergencias | 12 preguntas (PAU-001–012), fuente Cruz Roja / OPS; nunca remedios caseros |
 | `juegos/mapa.json` | Geografía de Bolivia | 14 preguntas (MAP-001–014), fuente INE |
-| `juegos/constelaciones.json` | Astronomía básica, Orión protagonista | 12 preguntas (CON-001–012), fuente UAI; CON-010 con `[VERIFICAR]` (mes exacto de mejor visibilidad desde Ixiamas) |
+| `juegos/constelaciones.json` | Astronomía básica, Orión protagonista | 12 preguntas (CON-001–012), fuente UAI; mejor visibilidad de Orión en enero, verificada 19-nov-2026 (Wikipedia + Meteored) |
 
 ## `horarios.json`
 
