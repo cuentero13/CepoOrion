@@ -96,12 +96,34 @@ sección «Despliegue» abajo.
 - Flujo real registro → login → /progreso sin verificar contra un
   proyecto real (no existe todavía).
 
-## Despliegue
+## Despliegue — actualizado 19-nov-2026
 
-Repo verificado 19-nov-2026: el repo es **`cuentero13/CepoOrion`**
-(público, vacío, creado 17:47 UTC; Mike dijo "Creada repoorion"). No
-existe ningún `cepo-orion` ni `repoorion`. El push se hace a ese nombre
-exacto. (Ver sección actualizada al final del reporte del coordinador.)
+**Repo verificado:** el repo es **`cuentero13/CepoOrion`** (público,
+vacío, creado 17:47 UTC; Mike dijo "Creada repoorion"). No existe ningún
+`cepo-orion` ni `repoorion`.
+
+**Push HECHO 19-nov-2026:**
+
+- Repo: https://github.com/cuentero13/CepoOrion
+- Rama `main`: commit `96c9cc8f5311204309530341b8b5fef84afeb1b0`
+  ("Fases (a), (b) y (c)..."), 66 archivos, 420.596 bytes, texto plano
+  (verificado: `package.json` en el remoto es JSON real con las
+  dependencias Supabase).
+- Rama `dev` creada desde `main` (mismo commit).
+- Commit local `3c1a38f` (fase c) = mismo contenido.
+
+**Vercel: BLOQUEADO (verificado 19-nov-2026).** La conexión Vercel está
+activa (usuario `mcuentero@gmail.com`), pero `list_projects` devuelve
+**403**: «Not authorized: Trying to access resource under scope
+"cuentero13"» (teamId `team_pOAiJtpzKagsKwjhwCYhhzX7`). La herramienta
+`authorize_team_access` que sugiere el error **no existe** en el
+catálogo MCP de Vercel (verificado en `list-tools`). **Lo que debe hacer
+Mike:** en el panel de Vercel, autorizar la integración de Muse para el
+equipo `cuentero13` (o re-autenticar la integración con ese alcance).
+Cuando el equipo quede autorizado, el despliegue es inmediato:
+importar `cuentero13/CepoOrion` en Vercel → Deploy (sin variables de
+entorno obligatorias para esta fase; Supabase se agrega cuando el
+proyecto exista).
 
 ## Pendientes de datos reales (dirección)
 
