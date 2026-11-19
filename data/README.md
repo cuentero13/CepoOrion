@@ -16,7 +16,13 @@ que falte se marca `[COMPLETAR]` y lo dudoso `[VERIFICAR]`.
 | `horarios.json` | Tabla de horarios por nivel, turno y materia | Esqueleto con `[COMPLETAR]` |
 | `preguntas.json` | Banco de preguntas del examen diagnóstico | 10 preguntas por área (fase d) |
 | `actitudes.json` | Cuestionario de actitudes y hábitos | Fase (d) |
-| `juegos.json` | (fase e) Preguntas de los juegos | Pendiente |
+| `juegos/` | (fase e) Bancos de datos de los 6 juegos, un archivo por juego | Fase (e) — contenido real verificado, 19-nov-2026 |
+| `juegos/madidi.json` | Trivia fauna/flora de Madidi | 12 preguntas (MAD-001–012), fuente SERNAP |
+| `juegos/presupuesto.json` | Simulador de educación financiera en bolivianos | 10 escenarios (PRE-001–010), fuente BCB; montos de ejemplo, no precios oficiales |
+| `juegos/detective.json` | Identificar desinformación | 12 casos (DET-001–012), 8 falsos / 4 verdaderos |
+| `juegos/primeros-auxilios.json` | Decisiones ante emergencias | 12 preguntas (PAU-001–012), fuente Cruz Roja / OPS; nunca remedios caseros |
+| `juegos/mapa.json` | Geografía de Bolivia | 14 preguntas (MAP-001–014), fuente INE |
+| `juegos/constelaciones.json` | Astronomía básica, Orión protagonista | 12 preguntas (CON-001–012), fuente UAI; CON-010 con `[VERIFICAR]` (mes exacto de mejor visibilidad desde Ixiamas) |
 
 ## `horarios.json`
 
@@ -91,6 +97,118 @@ Herramienta **orientativa**, no un diagnóstico psicológico.
 Cada ítem tiene `id`, `texto` e `invertida` (si es `true`, se puntúa al
 revés: 6 − valor). Dimensiones: Hábitos de estudio, Motivación,
 Autorregulación, Manejo del tiempo, Trabajo en equipo, Proyecto de vida.
+
+## `juegos/*.json` (fase e)
+
+Un archivo por juego en `data/juegos/`. **No cambiar los nombres de
+los campos**: la interfaz los lee tal cual (ver `lib/juegos.ts` para
+el esquema completo en TypeScript).
+
+| Archivo | Contenido |
+|---|---|
+| `madidi.json` | Aventura Madidi — preguntas con 4 opciones |
+| `primeros-auxilios.json` | Primeros auxilios — situación + pregunta con 4 opciones |
+| `mapa.json` | Mapa de Bolivia — preguntas con 4 opciones |
+| `constelaciones.json` | Constelaciones — preguntas con 4 opciones |
+| `detective.json` | Detective de noticias — casos verdadero/falso |
+| `presupuesto.json` | Mi primer presupuesto — escenarios con ingreso, meta y categorías |
+
+### Preguntas (`madidi`, `mapa`, `constelaciones`)
+
+```json
+{
+  "juego": "madidi",
+  "titulo": "Aventura Madidi",
+  "descripcion": "…",
+  "fuente_general": "SERNAP — Parque Nacional Madidi.",
+  "preguntas": [
+    {
+      "id": "MAD-001",
+      "pregunta": "…",
+      "opciones": ["…", "…", "…", "…"],
+      "respuesta_correcta": 0,
+      "justificacion": "Por qué esa es la respuesta correcta.",
+      "fuente": "Fuente verificable de esta pregunta."
+    }
+  ]
+}
+```
+
+`respuesta_correcta` es el índice (0–3) de la opción correcta.
+`justificacion` y `fuente` se muestran después de responder.
+
+### Primeros auxilios (`primeros-auxilios.json`)
+
+Igual que arriba, pero cada ítem lleva además `situacion` (lo que
+está pasando, antes de la pregunta):
+
+```json
+{ "id": "PA-001", "situacion": "…", "pregunta": "…", "opciones": ["…","…","…","…"], "respuesta_correcta": 0, "justificacion": "…", "fuente": "…" }
+```
+
+### Detective (`detective.json`)
+
+```json
+{
+  "juego": "detective",
+  "titulo": "Detective de noticias",
+  "descripcion": "…",
+  "fuente_general": "…",
+  "casos": [
+    {
+      "id": "DET-001",
+      "titular": "…",
+      "texto": "…",
+      "es_verdadera": true,
+      "pistas": ["Pista 1…", "Pista 2…"],
+      "explicacion": "Por qué es verdadera o falsa.",
+      "fuente": "Fuente verificable del caso."
+    }
+  ]
+}
+```
+
+### Presupuesto (`presupuesto.json`)
+
+```json
+{
+  "juego": "presupuesto",
+  "titulo": "Mi primer presupuesto",
+  "descripcion": "…",
+  "fuente_general": "…",
+  "escenarios": [
+    {
+      "id": "PRE-001",
+      "titulo": "…",
+      "descripcion": "…",
+      "ingreso_mensual_bs": 500,
+      "meta_ahorro_bs": 100,
+      "categorias": [
+        { "nombre": "Comida", "sugerencia_bs": 200, "consejo": "…" }
+      ],
+      "pregunta": "¿Qué decisión tomás este mes?",
+      "opciones": [
+        { "texto": "…", "ahorro_bs": 100, "justificacion": "…" }
+      ],
+      "respuesta_correcta": 0,
+      "fuente": "…"
+    }
+  ]
+}
+```
+
+`ahorro_bs` es cuánto se ahorra con esa decisión; la insignia
+«Presupuesto en orden» se gana cuando el ahorro elegido llega a la
+`meta_ahorro_bs` en al menos un escenario.
+
+### Cómo añadir ítems sin programar
+
+1. Abrir el JSON del juego con un editor de texto.
+2. Copiar un ítem existente y cambiarle el `id` (único) y el contenido.
+3. Guardar: el sitio muestra el ítem nuevo sin tocar código.
+4. Las insignias de rendimiento piden al menos el 80% de aciertos
+   (8 de 10). Los juegos actuales tienen entre 10 y 14 ítems, así que
+   con 12 ítems hacen falta 10 aciertos y con 14 hacen falta 12.
 
 ## Fuentes obligatorias
 

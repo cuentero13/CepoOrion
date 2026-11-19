@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import GraficoRadar, { type ValorRadar } from "@/components/GraficoRadar";
+import SeccionJuegosProgreso from "@/components/SeccionJuegosProgreso";
 import { AREAS } from "@/lib/diagnostico";
+import { INSIGNIAS } from "@/lib/juegos";
 import { supabaseConfigurado } from "@/lib/supabase/config";
 import {
   crearClienteServidor,
@@ -94,6 +96,9 @@ export default async function PaginaProgreso() {
             diagnósticos, tu evolución, tus insignias y tus metas.
           </p>
         </div>
+        <div className="mt-6">
+          <SeccionJuegosProgreso />
+        </div>
       </section>
     );
   }
@@ -114,6 +119,9 @@ export default async function PaginaProgreso() {
         >
           Entrar →
         </Link>
+        <div className="mt-8 text-left">
+          <SeccionJuegosProgreso />
+        </div>
       </section>
     );
   }
@@ -322,9 +330,14 @@ export default async function PaginaProgreso() {
         <Tarjeta titulo="Insignias">
           {insignias.length === 0 ? (
             <EstadoVacio>
-              Aún no tienes insignias — llegan con los juegos en la próxima
-              fase. Cuando juegues y completes retos, tus insignias
-              aparecerán aquí.
+              Aún no tienes insignias. Jugá a los{" "}
+              <Link
+                href="/juegos"
+                className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+              >
+                juegos
+              </Link>{" "}
+              y cuando completes retos, tus insignias aparecerán aquí.
             </EstadoVacio>
           ) : (
             <ul className="flex flex-wrap gap-2">
@@ -333,7 +346,7 @@ export default async function PaginaProgreso() {
                   key={ins}
                   className="rounded-full bg-sol/20 px-4 py-2 text-sm font-bold text-noche dark:text-sol"
                 >
-                  {ins}
+                  {INSIGNIAS.find((i) => i.id === ins)?.nombre ?? ins}
                 </li>
               ))}
             </ul>
@@ -356,6 +369,8 @@ export default async function PaginaProgreso() {
             </ul>
           )}
         </Tarjeta>
+
+        <SeccionJuegosProgreso juegosServidor={juegos} />
 
         <Tarjeta titulo="Metas personales">
           <EstadoVacio>
