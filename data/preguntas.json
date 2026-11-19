@@ -1,0 +1,20 @@
+{
+  "nota": "Banco de preguntas del examen diagnóstico. Mínimo 10 preguntas por área en la fase (d). Cada pregunta lleva fuente y justificación obligatorias. La pregunta incluida es un EJEMPLO de formato con contenido real.",
+  "preguntas": [
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
+      "id": "MAT-1-001",
+      "justificacion": "7 × 8 = 56. La multiplicación es una suma repetida: 7 sumado 8 veces da 56.",
+      "nivel": 1,
+      "opciones": [
+        "54",
+        "56",
+        "64",
+        "48"
+      ],
+      "pregunta": "¿Cuál es el resultado de 7 × 8?",
+      "respuesta_correcta": 1
+    }
+  ]
+}

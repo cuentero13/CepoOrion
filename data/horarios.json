@@ -1,0 +1,173 @@
+{
+  "ejemplo": {
+    "aviso": "EJEMPLO — Esta tabla muestra únicamente el formato que tendrá el horario. Las materias, horas y turnos son inventados para ilustrar el diseño y NO son el horario real de CEPO.",
+    "niveles": [
+      {
+        "dias": [
+          {
+            "bloques": [
+              {
+                "hora": "08:00–08:45",
+                "materia": "Matemática"
+              },
+              {
+                "hora": "08:45–09:30",
+                "materia": "Lenguaje y Comunicación"
+              },
+              {
+                "hora": "09:30–09:45",
+                "materia": "Recreo"
+              },
+              {
+                "hora": "09:45–10:30",
+                "materia": "Ciencias Naturales"
+              },
+              {
+                "hora": "10:30–11:15",
+                "materia": "Ciencias Sociales"
+              }
+            ],
+            "dia": "Lunes"
+          },
+          {
+            "bloques": [
+              {
+                "hora": "08:00–08:45",
+                "materia": "Inglés"
+              },
+              {
+                "hora": "08:45–09:30",
+                "materia": "Matemática"
+              },
+              {
+                "hora": "09:30–09:45",
+                "materia": "Recreo"
+              },
+              {
+                "hora": "09:45–10:30",
+                "materia": "Educación Física y Deportes"
+              },
+              {
+                "hora": "10:30–11:15",
+                "materia": "Lenguaje y Comunicación"
+              }
+            ],
+            "dia": "Martes"
+          },
+          {
+            "bloques": [
+              {
+                "hora": "08:00–08:45",
+                "materia": "Ciencias Naturales"
+              },
+              {
+                "hora": "08:45–09:30",
+                "materia": "Ciencias Sociales"
+              },
+              {
+                "hora": "09:30–09:45",
+                "materia": "Recreo"
+              },
+              {
+                "hora": "09:45–10:30",
+                "materia": "Matemática"
+              },
+              {
+                "hora": "10:30–11:15",
+                "materia": "Artes Plásticas y Visuales"
+              }
+            ],
+            "dia": "Miércoles"
+          },
+          {
+            "bloques": [
+              {
+                "hora": "08:00–08:45",
+                "materia": "Lenguaje y Comunicación"
+              },
+              {
+                "hora": "08:45–09:30",
+                "materia": "Inglés"
+              },
+              {
+                "hora": "09:30–09:45",
+                "materia": "Recreo"
+              },
+              {
+                "hora": "09:45–10:30",
+                "materia": "Ciencias Naturales"
+              },
+              {
+                "hora": "10:30–11:15",
+                "materia": "Valores, Espiritualidad y Religiones"
+              }
+            ],
+            "dia": "Jueves"
+          },
+          {
+            "bloques": [
+              {
+                "hora": "08:00–08:45",
+                "materia": "Matemática"
+              },
+              {
+                "hora": "08:45–09:30",
+                "materia": "Ciencias Sociales"
+              },
+              {
+                "hora": "09:30–09:45",
+                "materia": "Recreo"
+              },
+              {
+                "hora": "09:45–10:30",
+                "materia": "Educación Musical"
+              },
+              {
+                "hora": "10:30–11:15",
+                "materia": "Técnica Tecnológica"
+              }
+            ],
+            "dia": "Viernes"
+          }
+        ],
+        "nivel": "1ro de Secundaria",
+        "turno": "Mañana"
+      }
+    ]
+  },
+  "niveles": [
+    {
+      "dias": [
+        {
+          "bloques": [
+            {
+              "docente": "[COMPLETAR]",
+              "hora": "[COMPLETAR: hora de inicio–fin]",
+              "materia": "[COMPLETAR]"
+            }
+          ],
+          "dia": "Lunes"
+        },
+        {
+          "bloques": [],
+          "dia": "Martes"
+        },
+        {
+          "bloques": [],
+          "dia": "Miércoles"
+        },
+        {
+          "bloques": [],
+          "dia": "Jueves"
+        },
+        {
+          "bloques": [],
+          "dia": "Viernes"
+        }
+      ],
+      "nivel": "1ro de Secundaria",
+      "turno": "[COMPLETAR: mañana/tarde]"
+    }
+  ],
+  "nota": "Tabla de horarios por nivel, turno y materia. Editar sin programar: reemplazar los marcadores [COMPLETAR] de \"niveles\" con los datos reales. La sección \"ejemplo\" muestra solo el formato y NO es el horario real de CEPO. Ver data/README.md para el formato."
+}

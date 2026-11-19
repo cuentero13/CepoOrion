@@ -1,0 +1,43 @@
+{
+  "institucion": {
+    "anio_lectivo": "[COMPLETAR: año lectivo vigente]",
+    "contacto": {
+      "correo": "[COMPLETAR: correo oficial]",
+      "facebook": "[COMPLETAR: página de Facebook, si existe]",
+      "horario_atencion": "[COMPLETAR: horario de atención al público]",
+      "instagram": "[COMPLETAR: cuenta de Instagram, si existe]",
+      "telefono": "+591 73956239",
+      "whatsapp": "[VERIFICAR: confirmar si +591 73956239 es WhatsApp]",
+      "whatsapp_url": "https://wa.me/59173956239"
+    },
+    "director": "Irgen Rosas",
+    "historia": "[COMPLETAR: historia del colegio]",
+    "horarios": "[COMPLETAR: tabla de horarios por nivel, turno y materia — ver data/horarios.json]",
+    "lema": "Bajo Orión, aprendemos de la selva",
+    "lema_estado": "[COMPLETAR: lema oficial — propuesta pendiente de aprobación de la dirección]",
+    "mision": "[COMPLETAR: misión institucional]",
+    "niveles": [
+      "Bachillerato"
+    ],
+    "niveles_nota": "Actualmente solo bachillerato. Se espera crecer a más niveles.",
+    "nombre": "Centro Educativo Privado Orion",
+    "plantel_docente": "[COMPLETAR: nombres y materias del plantel docente — solo datos reales proporcionados por la dirección]",
+    "sigla": "CEPO",
+    "turnos": "[COMPLETAR: turnos (mañana/tarde) y horarios por nivel]",
+    "ubicacion": {
+      "departamento": "La Paz",
+      "direccion_exacta": "[COMPLETAR: dirección exacta del colegio]",
+      "mapa_centro": {
+        "latitud": -13.23979,
+        "longitud": -68.26586,
+        "nota": "Centro de Ixiamas (coordenadas verificadas por geocodificación). La ubicación exacta del colegio sigue [COMPLETAR]."
+      },
+      "mapa_url": "[COMPLETAR: enlace de Google Maps / OpenStreetMap a la ubicación exacta del colegio]",
+      "municipio": "Ixiamas",
+      "pais": "Bolivia",
+      "provincia": "Abel Iturralde"
+    },
+    "valores": "[COMPLETAR: valores institucionales]",
+    "vision": "[COMPLETAR: visión institucional]"
+  }
+}

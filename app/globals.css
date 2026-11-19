@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-selva: #1b5e20;
+  --color-selva-claro: #2e7d32;
+  --color-rio: #00897b;
+  --color-rio-claro: #26a69a;
+  --color-sol: #ffb300;
+  --color-tierra: #e65100;
+  --color-achiote: #c62828;
+  --color-noche: #0d1b3e;
+  --color-noche-claro: #1a2f5e;
+
+  --font-display: "Baloo 2", "Poppins", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+}
+
+:root {
+  --font-size-base: 100%;
+}
+
+html {
+  font-size: var(--font-size-base);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #faf7ef;
+  color: #1a1a1a;
+}
+
+.dark body {
+  background-color: var(--color-noche);
+  color: #f1f5f9;
+}
+
+/* Tamaño de letra ajustable (clases aplicadas en <html>) */
+html.font-a {
+  --font-size-base: 87.5%;
+}
+html.font-m {
+  --font-size-base: 100%;
+}
+html.font-g {
+  --font-size-base: 112.5%;
+}
+
+/* Patrón geométrico inspirado en cestería amazónica (diseño propio) */
+.patron-cesteria {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 179, 0, 0.14) 0 2px,
+      transparent 2px 14px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0, 137, 123, 0.14) 0 2px,
+      transparent 2px 14px
+    );
+}
+
+.patron-cesteria-oscuro {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 179, 0, 0.1) 0 2px,
+      transparent 2px 14px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(38, 166, 154, 0.12) 0 2px,
+      transparent 2px 14px
+    );
+}
+
+/* Estrellas parpadeantes del hero */
+@keyframes titilar {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.estrella {
+  animation: titilar 2.8s ease-in-out infinite;
+}
+
+/* Hojas flotantes */
+@keyframes flotar {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(110px) rotate(120deg);
+    opacity: 0;
+  }
+}
+
+.hoja-flotante {
+  animation: flotar 9s linear infinite;
+}
+
+/* Brillo de Orión */
+@keyframes brillo-orion {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.orion-brillo {
+  animation: brillo-orion 3.2s ease-in-out infinite;
+}
+
+/* Enfoque visible para navegación por teclado */
+:focus-visible {
+  outline: 3px solid var(--color-sol);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respeta prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .estrella,
+  .hoja-flotante,
+  .orion-brillo {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
