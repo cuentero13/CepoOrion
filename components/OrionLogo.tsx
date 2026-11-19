@@ -30,16 +30,15 @@ const LINEAS: Array<[number, number, number, number]> = [
 export default function OrionLogo({
   className = "",
   mostrarNombre = true,
+  sobreOscuro = false,
 }: {
   className?: string;
   mostrarNombre?: boolean;
+  /** El logo va sobre fondo oscuro (pie de página, tarjeta noche): usa texto claro. */
+  sobreOscuro?: boolean;
 }) {
   return (
-    <span
-      className={`inline-flex items-center gap-2 ${className}`}
-      role="img"
-      aria-label="Logo de CEPO: constelación de Orión, Las Tres Marías"
-    >
+    <span className={`inline-flex items-center gap-2 ${className}`}>
       <svg
         viewBox="0 0 200 200"
         className="h-10 w-10 shrink-0"
@@ -63,10 +62,20 @@ export default function OrionLogo({
       </svg>
       {mostrarNombre && (
         <span className="leading-tight">
-          <span className="block font-display text-xl font-bold tracking-wide text-selva dark:text-sol">
+          <span
+            className={`block font-display text-xl font-bold tracking-wide ${
+              sobreOscuro ? "text-sol" : "text-selva dark:text-sol"
+            }`}
+          >
             CEPO
           </span>
-          <span className="block text-[0.65rem] font-semibold uppercase tracking-widest text-rio dark:text-rio-claro">
+          <span
+            className={`block text-[0.65rem] font-semibold uppercase tracking-widest ${
+              sobreOscuro
+                ? "text-rio-claro"
+                : "text-rio-oscuro dark:text-rio-claro"
+            }`}
+          >
             Centro Educativo Privado Orion
           </span>
         </span>

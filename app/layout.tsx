@@ -7,7 +7,9 @@ import "./globals.css";
 
 const baloo = Baloo_2({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  // Solo 700 y 800: todo uso de font-display en el sitio es font-bold o
+  // font-extrabold (verificado 19-nov-2026); 500/600 nunca se renderizan.
+  weight: ["700", "800"],
   variable: "--font-display",
   display: "swap",
 });
@@ -50,6 +52,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${baloo.variable} ${nunito.variable}`}>
+      {/*
+        Aplica el tema (claro/oscuro) y el tamaño de letra guardados ANTES
+        del primer pintado, para que no haya flash al cargar. Lee las
+        mismas claves que Nav.tsx ("cepo-tema", "cepo-letra").
+      */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){try{var t=localStorage.getItem("cepo-tema");if(t==="oscuro")document.documentElement.classList.add("dark");var l=localStorage.getItem("cepo-letra");if(l)document.documentElement.classList.add(l);}catch(e){}})();`,
+        }}
+      />
       <body className="flex min-h-screen flex-col font-body antialiased">
         <RegisterSW />
         <Nav />

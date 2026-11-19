@@ -118,7 +118,7 @@ export default function SeccionJuegosProgreso({
             Aún no jugaste. Empezá por{" "}
             <Link
               href="/juegos"
-              className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+              className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
             >
               los juegos
             </Link>{" "}
@@ -135,7 +135,7 @@ export default function SeccionJuegosProgreso({
               público.
             </p>
 
-            <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-rio">
+            <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-selva dark:text-rio-claro">
               Puntos por juego
             </h3>
             <ul className="mt-2 flex flex-col gap-2">
@@ -156,7 +156,7 @@ export default function SeccionJuegosProgreso({
               ))}
             </ul>
 
-            <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-rio">
+            <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-selva dark:text-rio-claro">
               Insignias ({insignias.length} de {INSIGNIAS.length})
             </h3>
             {insignias.length === 0 ? (

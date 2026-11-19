@@ -122,8 +122,11 @@ export default function JuegoPresupuesto({
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
-        {datos.titulo} — Escenario {indice + 1} de {total}
+      <h1 className="font-display text-2xl font-extrabold text-noche dark:text-white">
+        {datos.titulo}
+      </h1>
+      <p className="mt-1 text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
+        Escenario {indice + 1} de {total}
       </p>
       <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-white/75">
         {datos.descripcion}
@@ -151,7 +154,7 @@ export default function JuegoPresupuesto({
         </p>
         <dl className="mt-4 grid gap-3 sm:grid-cols-2">
           <div className="rounded-xl bg-rio/10 px-4 py-3">
-            <dt className="text-xs font-bold uppercase tracking-wide text-rio">
+            <dt className="text-xs font-bold uppercase tracking-wide text-selva dark:text-rio-claro">
               Ingreso mensual
             </dt>
             <dd className="font-display text-xl font-extrabold text-noche dark:text-white">
@@ -168,7 +171,7 @@ export default function JuegoPresupuesto({
           </div>
         </dl>
 
-        <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-rio">
+        <h3 className="mt-5 text-sm font-bold uppercase tracking-wide text-selva dark:text-rio-claro">
           Categorías sugeridas
         </h3>
         <ul className="mt-2 flex flex-col gap-2">

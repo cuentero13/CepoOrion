@@ -16,7 +16,7 @@ const CURSOS = [
 ];
 
 const campo =
-  "mt-1 w-full rounded-xl border-2 border-rio/40 bg-white px-3 py-2 text-noche placeholder:text-neutral-400 dark:border-rio-claro/50 dark:bg-noche dark:text-white";
+  "mt-1 w-full rounded-xl border-2 border-rio/40 bg-white px-3 py-2 text-noche placeholder:text-neutral-500 dark:placeholder:text-white/50 dark:border-rio-claro/50 dark:bg-noche dark:text-white";
 const etiqueta =
   "block text-sm font-bold text-noche dark:text-white";
 
@@ -133,7 +133,7 @@ export default function FormularioRegistro() {
       {error && (
         <p
           role="alert"
-          className="mb-4 rounded-xl border-2 border-achiote bg-achiote/10 px-4 py-3 text-sm font-bold text-achiote"
+          className="mb-4 rounded-xl border-2 border-achiote bg-achiote/10 px-4 py-3 text-sm font-bold text-achiote dark:text-achiote-claro"
         >
           {error}
         </p>

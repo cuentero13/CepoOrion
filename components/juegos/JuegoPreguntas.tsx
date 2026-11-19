@@ -133,8 +133,11 @@ export default function JuegoPreguntas({
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
-        {datos.titulo} — Pregunta {indice + 1} de {total}
+      <h1 className="font-display text-2xl font-extrabold text-noche dark:text-white">
+        {datos.titulo}
+      </h1>
+      <p className="mt-1 text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
+        Pregunta {indice + 1} de {total}
       </p>
       <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-white/75">
         {datos.descripcion}

@@ -133,7 +133,7 @@ export default function GraficoRadar({
               y={p.y}
               textAnchor="middle"
               dominantBaseline="middle"
-              fontSize="12"
+              fontSize="13"
               fontWeight="700"
               fill="currentColor"
             >

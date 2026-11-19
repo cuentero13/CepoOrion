@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import IconoJuego from "./IconoJuego";
+import Reveal from "@/components/Reveal";
 import {
   JUEGOS,
   leerProgresoLocal,
@@ -28,7 +29,7 @@ export default function ListaJuegos() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         Juegos de conocimiento útil
       </p>
       <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -48,7 +49,8 @@ export default function ListaJuegos() {
         Nivel {nivel} · {puntosTotales} puntos en total
       </p>
 
-      <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <Reveal>
+        <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {JUEGOS.map((juego) => {
           const local = progreso?.juegos[juego.id];
           return (
@@ -81,12 +83,13 @@ export default function ListaJuegos() {
           );
         })}
       </ul>
+      </Reveal>
 
       <p className="mt-8 text-center text-sm leading-relaxed text-neutral-600 dark:text-white/75">
         ¿Querés ver tus puntos, tu nivel y tus insignias?{" "}
         <Link
           href="/progreso"
-          className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+          className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
         >
           Mirá Mi progreso
         </Link>

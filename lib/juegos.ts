@@ -8,7 +8,11 @@
  * usuarios; cada estudiante solo ve lo suyo.
  */
 
-import { crearClienteNavegador } from "./supabase/client";
+// El cliente Supabase se importa de forma diferida dentro de
+// guardarPartida, para no cargar su chunk en el paquete inicial de
+// las páginas que usan este módulo (catálogo, puntos, insignias).
+// Además, sin proyecto configurado no se importa en absoluto.
+import { supabaseConfigurado } from "./supabase/config";
 
 // ---------------------------------------------------------------------------
 // Esquema de datos (contrato — no cambiar sin avisar al trabajador de datos)
@@ -476,6 +480,8 @@ export async function guardarPartida(args: {
 
   // 2) Supabase (solo si hay sesión; si no, queda en local).
   try {
+    if (!supabaseConfigurado) return resultado;
+    const { crearClienteNavegador } = await import("./supabase/client");
     const supabase = crearClienteNavegador();
     if (!supabase) return resultado;
     const {

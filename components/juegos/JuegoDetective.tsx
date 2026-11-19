@@ -104,8 +104,11 @@ export default function JuegoDetective({
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
-        {datos.titulo} — Caso {indice + 1} de {total}
+      <h1 className="font-display text-2xl font-extrabold text-noche dark:text-white">
+        {datos.titulo}
+      </h1>
+      <p className="mt-1 text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
+        Caso {indice + 1} de {total}
       </p>
       <p className="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-white/75">
         {datos.descripcion}
@@ -190,7 +193,7 @@ export default function JuegoDetective({
             {caso.explicacion}
           </p>
           <div className="mt-3">
-            <h3 className="text-sm font-bold uppercase tracking-wide text-rio">
+            <h3 className="text-sm font-bold uppercase tracking-wide text-selva dark:text-rio-claro">
               Pistas para la próxima
             </h3>
             <ul className="mt-1 list-disc space-y-1 pl-5 text-sm leading-relaxed text-neutral-700 dark:text-white/85">

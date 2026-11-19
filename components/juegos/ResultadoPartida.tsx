@@ -49,7 +49,7 @@ export default function ResultadoPartida({
   return (
     <div className="mx-auto max-w-2xl px-4 py-12 text-center">
       {perfecta && <Confeti />}
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         Resultado — {info.titulo}
       </p>
       <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -124,7 +124,7 @@ export default function ResultadoPartida({
         </Link>
         <Link
           href="/progreso"
-          className="rounded-full border-2 border-rio px-6 py-3 text-center font-display font-bold text-rio transition-transform hover:scale-105 dark:border-rio-claro dark:text-rio-claro"
+          className="rounded-full border-2 border-rio px-6 py-3 text-center font-display font-bold text-rio-oscuro transition-transform hover:scale-105 dark:border-rio-claro dark:text-rio-claro"
         >
           Ver Mi progreso
         </Link>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import Reveal from "@/components/Reveal";
 import { Jaguar, Paraba, Tapir, DelfinRio } from "@/components/fauna";
 import { institucion } from "@/lib/institucion";
 
@@ -55,6 +56,7 @@ export default function Inicio() {
       <Hero />
 
       {/* Accesos rápidos */}
+      <Reveal>
       <section aria-labelledby="accesos" className="mx-auto max-w-6xl px-4 py-12">
         <h2 id="accesos" className="text-center font-display text-3xl font-extrabold text-selva dark:text-sol">
           ¿Qué querés hacer hoy?
@@ -80,8 +82,10 @@ export default function Inicio() {
           ))}
         </div>
       </section>
+      </Reveal>
 
       {/* Franja de fauna de Madidi */}
+      <Reveal>
       <section aria-labelledby="fauna" className="patron-cesteria bg-rio/10 py-12 dark:bg-rio/20">
         <div className="mx-auto max-w-6xl px-4">
           <h2 id="fauna" className="text-center font-display text-3xl font-extrabold text-selva dark:text-sol">
@@ -107,26 +111,28 @@ export default function Inicio() {
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* Datos de la institución */}
+      <Reveal>
       <section aria-labelledby="cepo-datos" className="mx-auto max-w-6xl px-4 py-12">
         <h2 id="cepo-datos" className="text-center font-display text-3xl font-extrabold text-selva dark:text-sol">
           CEPO en Ixiamas
         </h2>
         <dl className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border-2 border-sol/60 bg-white p-4 dark:bg-noche-claro">
-            <dt className="font-bold text-tierra">Director</dt>
+            <dt className="font-bold text-tierra-oscuro dark:text-sol">Director</dt>
             <dd className="mt-1 text-lg font-display font-bold">{institucion.director}</dd>
           </div>
           <div className="rounded-2xl border-2 border-sol/60 bg-white p-4 dark:bg-noche-claro">
-            <dt className="font-bold text-tierra">Niveles</dt>
+            <dt className="font-bold text-tierra-oscuro dark:text-sol">Niveles</dt>
             <dd className="mt-1 text-lg font-display font-bold">
               {institucion.niveles.join(", ")}
             </dd>
             <dd className="text-sm text-neutral-600 dark:text-white/75">{institucion.niveles_nota}</dd>
           </div>
           <div className="rounded-2xl border-2 border-sol/60 bg-white p-4 dark:bg-noche-claro">
-            <dt className="font-bold text-tierra">Ubicación</dt>
+            <dt className="font-bold text-tierra-oscuro dark:text-sol">Ubicación</dt>
             <dd className="mt-1 text-lg font-display font-bold">
               {institucion.ubicacion.municipio}, {institucion.ubicacion.provincia}
             </dd>
@@ -135,7 +141,7 @@ export default function Inicio() {
             </dd>
           </div>
           <div className="rounded-2xl border-2 border-sol/60 bg-white p-4 dark:bg-noche-claro">
-            <dt className="font-bold text-tierra">Contacto</dt>
+            <dt className="font-bold text-tierra-oscuro dark:text-sol">Contacto</dt>
             <dd className="mt-1 text-lg font-display font-bold">{institucion.contacto.telefono}</dd>
             <dd className="text-sm text-neutral-600 dark:text-white/75">
               {institucion.contacto.whatsapp}
@@ -143,6 +149,7 @@ export default function Inicio() {
           </div>
         </dl>
       </section>
+      </Reveal>
     </>
   );
 }

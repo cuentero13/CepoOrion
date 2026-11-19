@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Turnstile from "@/components/Turnstile";
-import { crearClienteNavegador } from "@/lib/supabase/client";
 import {
   supabaseConfigurado,
   turnstileConfigurado,
@@ -37,11 +36,19 @@ export default function FormularioBuzon() {
   const [enviado, setEnviado] = useState(false);
 
   // Si hay sesión, prellenar el alias visible con el del perfil.
+  // El cliente Supabase se importa de forma diferida para no cargar
+  // su chunk en el paquete inicial de la página.
   useEffect(() => {
-    const cliente = crearClienteNavegador();
-    if (!cliente) return;
+    // Sin proyecto Supabase configurado no hay sesión que comprobar.
+    if (!supabaseConfigurado) return;
     let activo = true;
-    const cargarAlias = async () => {
+    const iniciar = async () => {
+      const { crearClienteNavegador } = await import(
+        "@/lib/supabase/client"
+      );
+      const cliente = crearClienteNavegador();
+      if (!cliente) return;
+      const cargarAlias = async () => {
       const {
         data: { user },
       } = await cliente.auth.getUser();
@@ -52,10 +59,12 @@ export default function FormularioBuzon() {
         .eq("id", user.id)
         .single();
       if (activo && data?.alias) setAlias(data.alias);
+      };
+      cargarAlias().catch(() => {
+        // Sin sesión o sin perfil: el alias queda vacío, no es un error.
+      });
     };
-    cargarAlias().catch(() => {
-      // Sin sesión o sin perfil: el alias queda vacío, no es un error.
-    });
+    iniciar();
     return () => {
       activo = false;
     };
@@ -159,7 +168,7 @@ export default function FormularioBuzon() {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         Buzón privado
       </p>
       <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -186,7 +195,7 @@ export default function FormularioBuzon() {
           escribir por{" "}
           <Link
             href="/contacto"
-            className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+            className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
           >
             los medios de contacto
           </Link>
@@ -199,7 +208,7 @@ export default function FormularioBuzon() {
         className="mt-8 space-y-6 rounded-3xl border-2 border-rio/20 bg-white p-5 shadow-md sm:p-6 dark:border-white/10 dark:bg-noche-claro"
       >
         <fieldset>
-          <legend className="font-display text-lg font-bold text-tierra dark:text-sol">
+          <legend className="font-display text-lg font-bold text-tierra-oscuro dark:text-sol">
             ¿Qué querés contarnos?
           </legend>
           <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:gap-4">
@@ -226,7 +235,7 @@ export default function FormularioBuzon() {
         <div>
           <label
             htmlFor="mensaje"
-            className="font-display text-lg font-bold text-tierra dark:text-sol"
+            className="font-display text-lg font-bold text-tierra-oscuro dark:text-sol"
           >
             Tu mensaje
           </label>
@@ -315,7 +324,7 @@ export default function FormularioBuzon() {
         {error && (
           <p
             role="alert"
-            className="rounded-2xl border-2 border-achiote/50 bg-achiote/10 p-3 text-sm font-bold text-achiote"
+            className="rounded-2xl border-2 border-achiote/50 bg-achiote/10 p-3 text-sm font-bold text-achiote dark:text-achiote-claro"
           >
             {error}
           </p>
@@ -333,7 +342,7 @@ export default function FormularioBuzon() {
           Al enviar aceptás la{" "}
           <Link
             href="/privacidad"
-            className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+            className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
           >
             Política de Privacidad
           </Link>

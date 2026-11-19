@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import OrionLogo from "./OrionLogo";
-import { crearClienteNavegador } from "@/lib/supabase/client";
+import { supabaseConfigurado } from "@/lib/supabase/config";
 import type { AuthChangeEvent, Session } from "@supabase/supabase-js";
 
 const ENLACES = [
@@ -29,46 +29,65 @@ export default function Nav() {
   const pathname = usePathname();
   const router = useRouter();
 
+  // El cliente Supabase se importa de forma diferida: sin él en el
+  // paquete inicial, las páginas no descargan el chunk de Supabase
+  // (~51 KiB sin usar) cuando no hay sesión ni proyecto configurado.
   useEffect(() => {
-    const supabase = crearClienteNavegador();
-    if (!supabase) {
-      setAlias(null);
-      return;
-    }
     let activo = true;
-    const cargarAlias = async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (!activo) return;
-      if (!user) {
+    let cancelar: (() => void) | null = null;
+    const iniciar = async () => {
+      // Sin proyecto Supabase configurado no hay sesión que comprobar:
+      // no se descarga el cliente en absoluto.
+      if (!supabaseConfigurado) {
         setAlias(null);
         return;
       }
-      const { data } = await supabase
-        .from("profiles")
-        .select("alias")
-        .eq("id", user.id)
-        .single();
-      if (activo) setAlias(data?.alias ?? null);
-    };
-    cargarAlias();
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((evento: AuthChangeEvent, sesion: Session | null) => {
-      if (!sesion?.user) {
+      const { crearClienteNavegador } = await import("@/lib/supabase/client");
+      const supabase = crearClienteNavegador();
+      if (!supabase) {
         setAlias(null);
-      } else {
-        cargarAlias();
+        return;
       }
-    });
+      const cargarAlias = async () => {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        if (!activo) return;
+        if (!user) {
+          setAlias(null);
+          return;
+        }
+        const { data } = await supabase
+          .from("profiles")
+          .select("alias")
+          .eq("id", user.id)
+          .single();
+        if (activo) setAlias(data?.alias ?? null);
+      };
+      await cargarAlias();
+      if (!activo) return;
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange(
+        (evento: AuthChangeEvent, sesion: Session | null) => {
+          if (!sesion?.user) {
+            setAlias(null);
+          } else {
+            cargarAlias();
+          }
+        },
+      );
+      cancelar = () => subscription.unsubscribe();
+    };
+    iniciar();
     return () => {
       activo = false;
-      subscription.unsubscribe();
+      cancelar?.();
     };
   }, []);
 
   const salir = async () => {
+    const { crearClienteNavegador } = await import("@/lib/supabase/client");
     const supabase = crearClienteNavegador();
     if (supabase) await supabase.auth.signOut();
     setAlias(null);
@@ -113,7 +132,7 @@ export default function Nav() {
         className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-2"
         aria-label="Navegación principal"
       >
-        <Link href="/" aria-label="CEPO — Inicio">
+        <Link href="/">
           <OrionLogo />
         </Link>
 
@@ -123,7 +142,7 @@ export default function Nav() {
               <Link
                 href={e.href}
                 aria-current={pathname === e.href ? "page" : undefined}
-                className={`rounded-full px-3 py-2 text-sm font-bold transition-colors hover:bg-rio/15 hover:text-rio dark:hover:bg-rio-claro/20 dark:hover:text-rio-claro ${
+                className={`rounded-full px-3 py-2 text-sm font-bold transition-colors hover:bg-rio/15 hover:text-rio-oscuro dark:hover:bg-rio-claro/20 dark:hover:text-rio-claro ${
                   pathname === e.href
                     ? "bg-selva text-white dark:bg-sol dark:text-noche"
                     : "text-noche dark:text-white"
@@ -145,7 +164,7 @@ export default function Nav() {
                 type="button"
                 onClick={salir}
                 aria-label={`Salir de la sesión de ${alias}`}
-                className="rounded-full border-2 border-achiote px-3 py-1 text-sm font-extrabold text-achiote transition-colors hover:bg-achiote hover:text-white"
+                className="rounded-full border-2 border-achiote px-4 py-2 text-sm font-extrabold text-achiote transition-colors hover:bg-achiote hover:text-white dark:text-achiote-claro"
               >
                 Salir
               </button>
@@ -154,7 +173,7 @@ export default function Nav() {
             <Link
               href="/login"
               aria-label="Entrar con tu cuenta"
-              className="rounded-full border-2 border-selva px-3 py-1 text-sm font-extrabold text-selva transition-colors hover:bg-selva hover:text-white dark:border-sol dark:text-sol dark:hover:bg-sol dark:hover:text-noche"
+              className="rounded-full border-2 border-selva px-4 py-2 text-sm font-extrabold text-selva transition-colors hover:bg-selva hover:text-white dark:border-sol dark:text-sol dark:hover:bg-sol dark:hover:text-noche"
             >
               Entrar
             </Link>
@@ -164,7 +183,7 @@ export default function Nav() {
             onClick={cicloLetra}
             aria-label={`Tamaño de letra actual: ${etiquetaLetra}. Toca para cambiarlo.`}
             title="Cambiar tamaño de letra"
-            className="rounded-full border-2 border-rio px-2 py-1 text-sm font-extrabold text-rio transition-colors hover:bg-rio hover:text-white dark:border-rio-claro dark:text-rio-claro dark:hover:bg-rio-claro dark:hover:text-noche"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-full border-2 border-rio px-3 py-2 text-sm font-extrabold text-rio-oscuro transition-colors hover:bg-rio-oscuro hover:text-white dark:border-rio-claro dark:text-rio-claro dark:hover:bg-rio-claro dark:hover:text-noche"
           >
             {etiquetaLetra}
           </button>
@@ -173,7 +192,7 @@ export default function Nav() {
             onClick={() => setOscuro((o) => !o)}
             aria-label={oscuro ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
             title={oscuro ? "Modo claro" : "Modo oscuro"}
-            className="rounded-full border-2 border-noche px-2 py-1 text-sm font-extrabold text-noche transition-colors hover:bg-noche hover:text-white dark:border-sol dark:text-sol dark:hover:bg-sol dark:hover:text-noche"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-full border-2 border-noche px-3 py-2 text-sm font-extrabold text-noche transition-colors hover:bg-noche hover:text-white dark:border-sol dark:text-sol dark:hover:bg-sol dark:hover:text-noche"
           >
             {oscuro ? "☀️" : "🌙"}
           </button>
@@ -183,7 +202,7 @@ export default function Nav() {
             aria-expanded={menuAbierto}
             aria-controls="menu-movil"
             aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
-            className="rounded-lg border-2 border-selva px-3 py-1 text-lg font-extrabold text-selva lg:hidden dark:border-sol dark:text-sol"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-lg border-2 border-selva px-3 py-2 text-lg font-extrabold text-selva lg:hidden dark:border-sol dark:text-sol"
           >
             {menuAbierto ? "✕" : "☰"}
           </button>
@@ -213,7 +232,7 @@ export default function Nav() {
               <button
                 type="button"
                 onClick={salir}
-                className="block w-full rounded-lg px-3 py-2 text-left font-bold text-achiote"
+                className="block w-full rounded-lg px-3 py-2 text-left font-bold text-achiote dark:text-achiote-claro"
               >
                 Salir ({alias})
               </button>

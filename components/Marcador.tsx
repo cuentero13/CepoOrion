@@ -12,7 +12,7 @@ export default function Marcador({
 }) {
   return (
     <p className="rounded-2xl border-2 border-dashed border-sol bg-sol/10 p-4 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
-      <strong className="block font-display text-base font-bold text-tierra dark:text-sol">
+      <strong className="block font-display text-base font-bold text-tierra-oscuro dark:text-sol">
         {titulo}
       </strong>
       <span className="mt-1 block">{texto}</span>

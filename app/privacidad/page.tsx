@@ -30,7 +30,7 @@ function Seccion({
 export default function Privacidad() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         {institucion.nombre} — Ixiamas, Bolivia
       </p>
       <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -70,7 +70,7 @@ export default function Privacidad() {
             <strong>Mensajes del buzón privado:</strong> lo que escribas en el{" "}
             <Link
               href="/buzon"
-              className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+              className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
             >
               Buzón privado
             </Link>
@@ -174,7 +174,7 @@ export default function Privacidad() {
             Escribiendo por el{" "}
             <Link
               href="/buzon"
-              className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+              className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
             >
               Buzón privado
             </Link>{" "}
@@ -186,7 +186,7 @@ export default function Privacidad() {
             por los medios de la página de{" "}
             <Link
               href="/contacto"
-              className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+              className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
             >
               Contacto
             </Link>
@@ -209,14 +209,14 @@ export default function Privacidad() {
           Teléfono:{" "}
           <a
             href={`tel:${institucion.contacto.telefono.replace(/\s/g, "")}`}
-            className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+            className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
           >
             {institucion.contacto.telefono}
           </a>
           . Para más formas de contactarnos, visitá la página de{" "}
           <Link
             href="/contacto"
-            className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+            className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
           >
             Contacto
           </Link>
@@ -226,7 +226,7 @@ export default function Privacidad() {
           ¿Tenés un comentario, una sugerencia o una consulta? Usá el{" "}
           <Link
             href="/buzon"
-            className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+            className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
           >
             Buzón privado
           </Link>
