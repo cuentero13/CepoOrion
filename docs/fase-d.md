@@ -102,9 +102,22 @@ flujos probados en local, push a GitHub según sección «Despliegue» abajo.
 ## Despliegue
 
 - **Repo:** https://github.com/cuentero13/CepoOrion — ramas `main` y `dev`.
-- **Push fase (d):** (completar con SHA y fecha al hacer el push).
-- **Vercel:** (completar: bloqueado por acceso al equipo `cuentero13`
-  salvo que se haya autorizado; ver `docs/fase-c.md`).
+- **Push fase (d) — HECHO 19-nov-2026:** `main`
+  `da01c09d18e47fe458a0df269eefaa16f801f984`, `dev`
+  `9d38952d9bc5a7deee66aeaff6afcd0bc865d9d1`; 75 archivos, 519.392
+  bytes, texto plano. Verificado en remoto: `data/preguntas.json` en
+  `main` tiene las 50 preguntas y `lib/diagnostico.ts` está presente.
+- **Vercel: BLOQUEADO (verificado 19-nov-2026).** `list_projects`
+  devuelve **403**: «Not authorized: Trying to access resource under
+  scope "cuentero13"» (teamId `team_pOAiJtpzKagsKwjhwCYhhzX7`). La
+  herramienta `authorize_team_access` que sugiere el error **no existe**
+  en el catálogo MCP de Vercel (verificado en `list-tools` completo, 0
+  menciones). **Lo que debe hacer Mike:** en el panel de Vercel,
+  autorizar la integración de Muse para el equipo `cuentero13` (o
+  re-autenticar la integración con ese alcance). Cuando el equipo quede
+  autorizado, el despliegue es inmediato: importar
+  `cuentero13/CepoOrion` en Vercel → Deploy (sin variables de entorno
+  obligatorias; Supabase se agrega cuando el proyecto exista).
 
 ## Pendientes de datos reales (dirección)
 
