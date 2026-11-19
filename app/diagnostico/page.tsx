@@ -1,14 +1,26 @@
 import type { Metadata } from "next";
-import EnConstruccion from "@/components/EnConstruccion";
+import ExamenDiagnostico from "./ExamenDiagnostico";
+import { supabaseConfigurado } from "@/lib/supabase/config";
+import type { Pregunta } from "@/lib/diagnostico";
+import bancoJson from "@/data/preguntas.json";
 
-export const metadata: Metadata = { title: "Examen diagnóstico académico | CEPO" };
+export const metadata: Metadata = {
+  title: "Examen diagnóstico académico | CEPO",
+};
 
-export default function Pagina() {
+export const dynamic = "force-dynamic";
+
+/**
+ * Página del examen diagnóstico. El banco de preguntas se lee del
+ * archivo editable data/preguntas.json (ver data/README.md) y se pasa
+ * al componente cliente, que hace el flujo adaptativo en el navegador.
+ */
+export default function PaginaDiagnostico() {
+  const preguntas = (bancoJson as { preguntas: Pregunta[] }).preguntas ?? [];
   return (
-    <EnConstruccion
-      titulo="Examen diagnóstico académico"
-      fase="d"
-      descripcion="Diagnóstico por área (Matemática, Lenguaje, Ciencias Naturales, Ciencias Sociales, Inglés) con preguntas adaptativas, nivel final (Inicial, Básico, Intermedio, Avanzado), gráfico radar por área y recomendaciones de estudio. Banco mínimo de 10 preguntas por área, cada una con su fuente."
+    <ExamenDiagnostico
+      banco={preguntas}
+      supabaseConfigurado={supabaseConfigurado}
     />
   );
 }

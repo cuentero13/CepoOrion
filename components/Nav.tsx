@@ -12,6 +12,7 @@ const ENLACES = [
   { href: "/nosotros", etiqueta: "Nosotros" },
   { href: "/horarios", etiqueta: "Horarios" },
   { href: "/diagnostico", etiqueta: "Diagnóstico" },
+  { href: "/actitudes", etiqueta: "Actitudes" },
   { href: "/juegos", etiqueta: "Juegos" },
   { href: "/progreso", etiqueta: "Mi progreso" },
   { href: "/buzon", etiqueta: "Buzón" },
