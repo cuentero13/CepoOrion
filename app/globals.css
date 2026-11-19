@@ -7,9 +7,15 @@
   --color-selva-claro: #2e7d32;
   --color-rio: #00897b;
   --color-rio-claro: #26a69a;
+  /* Variantes oscuras para texto sobre fondo claro (contraste AA ≥ 4.5:1) */
+  --color-rio-oscuro: #00695c;
   --color-sol: #ffb300;
   --color-tierra: #e65100;
+  /* Variante oscura para texto sobre fondo claro (contraste AA ≥ 4.5:1) */
+  --color-tierra-oscuro: #a63e00;
   --color-achiote: #c62828;
+  /* Variante clara para texto sobre fondo oscuro (contraste AA ≥ 4.5:1) */
+  --color-achiote-claro: #ef5350;
   --color-noche: #0d1b3e;
   --color-noche-claro: #1a2f5e;
 
@@ -30,6 +36,9 @@ body {
   font-family: var(--font-body);
   background-color: #faf7ef;
   color: #1a1a1a;
+  /* Evita desplazamiento horizontal accidental en móvil por
+     elementos decorativos; `clip` no rompe el header sticky. */
+  overflow-x: clip;
 }
 
 .dark body {
@@ -160,6 +169,23 @@ html.font-g {
   animation: caer-confeti 2.6s ease-in forwards;
 }
 
+/* Aparición suave al hacer scroll (componente Reveal).
+   Solo existe fuera de prefers-reduced-motion: con movimiento
+   reducido el contenido nunca se oculta, así que siempre es visible. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+  .reveal.reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Respeta prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -170,6 +196,10 @@ html.font-g {
   .orion-brillo,
   .confeti-pieza {
     animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
   *,
   *::before,

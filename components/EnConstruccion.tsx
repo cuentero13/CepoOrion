@@ -11,7 +11,7 @@ export default function EnConstruccion({
 }) {
   return (
     <section className="mx-auto max-w-3xl px-4 py-16 text-center">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         Fase {fase} — próximamente
       </p>
       <h1 className="mt-3 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">

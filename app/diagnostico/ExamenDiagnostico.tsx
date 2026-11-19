@@ -189,7 +189,7 @@ export default function ExamenDiagnostico({
     });
     return (
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <p className="text-sm font-bold uppercase tracking-widest text-rio">
+        <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
           Tu resultado general
         </p>
         <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -265,7 +265,7 @@ export default function ExamenDiagnostico({
     const rec = RECOMENDACIONES_AREA[r.area];
     return (
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <p className="text-sm font-bold uppercase tracking-widest text-rio">
+        <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
           Resultado — {r.area}
         </p>
         <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -320,7 +320,7 @@ export default function ExamenDiagnostico({
                       className={
                         resp.correcta
                           ? "font-bold text-selva dark:text-sol"
-                          : "font-bold text-achiote"
+                          : "font-bold text-achiote dark:text-achiote-claro"
                       }
                     >
                       {resp.correcta ? "Correcta. " : "No fue correcta. "}
@@ -367,7 +367,7 @@ export default function ExamenDiagnostico({
     const correcta = elegida !== null && elegida === pregunta.respuesta_correcta;
     return (
       <div className="mx-auto max-w-2xl px-4 py-12">
-        <p className="text-sm font-bold uppercase tracking-widest text-rio">
+        <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
           {areaActual} — Pregunta {respuestas.length + 1} de{" "}
           {PREGUNTAS_POR_AREA}
         </p>
@@ -456,7 +456,7 @@ export default function ExamenDiagnostico({
   // ---------- Inicio: elegir área ----------
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         Examen diagnóstico
       </p>
       <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -475,7 +475,7 @@ export default function ExamenDiagnostico({
         resultados se guardan y los ves en{" "}
         <Link
           href="/progreso"
-          className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+          className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
         >
           Mi progreso
         </Link>
@@ -520,7 +520,7 @@ export default function ExamenDiagnostico({
         ¿Querés conocer también tus hábitos de estudio? Hacé el{" "}
         <Link
           href="/actitudes"
-          className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+          className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
         >
           cuestionario de actitudes y hábitos
         </Link>

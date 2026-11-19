@@ -154,7 +154,7 @@ export default async function Admin() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         Panel de administración
       </p>
       <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -183,7 +183,7 @@ export default async function Admin() {
                 <span className="rounded-full bg-selva px-3 py-1 font-display font-bold text-white dark:bg-sol dark:text-noche">
                   {ETIQUETAS_TIPO[mensaje.tipo] ?? mensaje.tipo}
                 </span>
-                <span className="rounded-full bg-rio/15 px-3 py-1 font-bold text-rio dark:text-rio-claro">
+                <span className="rounded-full bg-rio/15 px-3 py-1 font-bold text-rio-oscuro dark:text-rio-claro">
                   {ETIQUETAS_ESTADO[mensaje.estado as EstadoBuzon] ?? mensaje.estado}
                 </span>
                 <span className="font-bold">

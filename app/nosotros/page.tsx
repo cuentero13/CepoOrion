@@ -3,6 +3,7 @@ import Link from "next/link";
 import { institucion, esMarcador } from "@/lib/institucion";
 import Marcador from "@/components/Marcador";
 import OrionLogo from "@/components/OrionLogo";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Nosotros | CEPO",
@@ -45,7 +46,7 @@ export default function Nosotros() {
       {/* Encabezado */}
       <section className="patron-cesteria bg-rio/10 py-12 dark:bg-rio/20">
         <div className="mx-auto max-w-6xl px-4">
-          <p className="text-sm font-bold uppercase tracking-widest text-rio">
+          <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
             Nosotros
           </p>
           <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -67,6 +68,7 @@ export default function Nosotros() {
 
       <div className="mx-auto max-w-6xl space-y-10 px-4 py-12">
         {/* Qué significa CEPO */}
+        <Reveal>
         <section aria-labelledby="que-significa">
           <h2
             id="que-significa"
@@ -78,17 +80,17 @@ export default function Nosotros() {
             <article className="rounded-3xl border-2 border-sol/60 bg-white p-5 shadow-md dark:bg-noche-claro">
               <dl className="space-y-2">
                 <div>
-                  <dt className="font-bold text-tierra">CEPO</dt>
+                  <dt className="font-bold text-tierra-oscuro dark:text-sol">CEPO</dt>
                   <dd className="font-display text-xl font-bold">
                     Centro Educativo Privado Orion
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-tierra">Director</dt>
+                  <dt className="font-bold text-tierra-oscuro dark:text-sol">Director</dt>
                   <dd>{institucion.director}</dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-tierra">Niveles</dt>
+                  <dt className="font-bold text-tierra-oscuro dark:text-sol">Niveles</dt>
                   <dd>
                     {institucion.niveles.join(", ")}.{" "}
                     {institucion.niveles_nota}
@@ -97,7 +99,7 @@ export default function Nosotros() {
               </dl>
             </article>
             <article className="flex flex-col items-start rounded-3xl bg-noche p-5 text-white shadow-md dark:bg-noche-claro">
-              <OrionLogo />
+              <OrionLogo sobreOscuro />
               <h3 className="mt-4 font-display text-xl font-bold text-sol">
                 Por qué Orión
               </h3>
@@ -110,8 +112,10 @@ export default function Nosotros() {
             </article>
           </div>
         </section>
+        </Reveal>
 
         {/* Historia */}
+        <Reveal>
         <section aria-labelledby="historia">
           <h2
             id="historia"
@@ -129,8 +133,10 @@ export default function Nosotros() {
             )}
           </div>
         </section>
+        </Reveal>
 
         {/* Misión, visión y valores */}
+        <Reveal>
         <section aria-labelledby="mision-vision">
           <h2
             id="mision-vision"
@@ -147,17 +153,19 @@ export default function Nosotros() {
             <TarjetaTexto
               titulo="Visión"
               texto={institucion.vision}
-              color="text-rio dark:text-rio-claro"
+              color="text-rio-oscuro dark:text-rio-claro"
             />
             <TarjetaTexto
               titulo="Valores"
               texto={institucion.valores}
-              color="text-tierra dark:text-sol"
+              color="text-tierra-oscuro dark:text-sol"
             />
           </div>
         </section>
+        </Reveal>
 
         {/* Plantel docente */}
+        <Reveal>
         <section aria-labelledby="plantel">
           <h2
             id="plantel"
@@ -176,8 +184,10 @@ export default function Nosotros() {
             </div>
           </div>
         </section>
+        </Reveal>
 
         {/* Ubicación */}
+        <Reveal>
         <section aria-labelledby="ubicacion">
           <h2
             id="ubicacion"
@@ -189,29 +199,29 @@ export default function Nosotros() {
             <div className="lg:col-span-2">
               <dl className="space-y-3 rounded-3xl border-2 border-rio/20 bg-white p-5 shadow-md dark:border-white/10 dark:bg-noche-claro">
                 <div>
-                  <dt className="font-bold text-tierra">Municipio</dt>
+                  <dt className="font-bold text-tierra-oscuro dark:text-sol">Municipio</dt>
                   <dd>
                     {ubicacion.municipio}, provincia {ubicacion.provincia}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-tierra">Departamento</dt>
+                  <dt className="font-bold text-tierra-oscuro dark:text-sol">Departamento</dt>
                   <dd>
                     {ubicacion.departamento}, {ubicacion.pais}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-tierra">Dirección exacta</dt>
+                  <dt className="font-bold text-tierra-oscuro dark:text-sol">Dirección exacta</dt>
                   <dd>{ubicacion.direccion_exacta}</dd>
                 </div>
                 <div>
-                  <dt className="font-bold text-tierra">Contacto</dt>
+                  <dt className="font-bold text-tierra-oscuro dark:text-sol">Contacto</dt>
                   <dd>
                     Director: {institucion.director}
                     <br />
                     Teléfono:{" "}
                     <a
-                      className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+                      className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
                       href={`tel:${institucion.contacto.telefono.replace(/\s/g, "")}`}
                     >
                       {institucion.contacto.telefono}
@@ -224,7 +234,7 @@ export default function Nosotros() {
               </p>
               <Link
                 href="/contacto"
-                className="mt-4 inline-block rounded-full bg-selva px-5 py-2 font-bold text-white transition-colors hover:bg-rio dark:bg-sol dark:text-noche"
+                className="mt-4 inline-block rounded-full bg-selva px-5 py-2 font-bold text-white transition-colors hover:bg-rio-oscuro dark:bg-sol dark:text-noche"
               >
                 Ver datos de contacto →
               </Link>
@@ -241,7 +251,7 @@ export default function Nosotros() {
                   href={mapaEnlace}
                   target="_blank"
                   rel="noreferrer"
-                  className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+                  className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
                 >
                   Abrir el mapa de Ixiamas en OpenStreetMap ↗
                 </a>
@@ -249,6 +259,7 @@ export default function Nosotros() {
             </div>
           </div>
         </section>
+        </Reveal>
       </div>
     </>
   );

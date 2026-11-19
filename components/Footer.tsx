@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="patron-cesteria-oscuro bg-noche text-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-3">
         <div>
-          <OrionLogo />
+          <OrionLogo sobreOscuro />
           <p className="mt-3 text-sm leading-relaxed text-white/85">
             {institucion.nombre}. {ubicacion.municipio}, provincia{" "}
             {ubicacion.provincia}, {ubicacion.departamento}, {ubicacion.pais}.

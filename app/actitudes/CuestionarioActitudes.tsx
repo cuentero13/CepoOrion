@@ -160,7 +160,7 @@ export default function CuestionarioActitudes({
   if (enviado && promedios) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <p className="text-sm font-bold uppercase tracking-widest text-rio">
+        <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
           Tu cuestionario de actitudes y hábitos
         </p>
         <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -193,7 +193,7 @@ export default function CuestionarioActitudes({
                   <h2 className="font-display text-xl font-bold text-noche dark:text-white">
                     {dim.nombre}
                   </h2>
-                  <span className="rounded-full bg-rio/15 px-3 py-1 text-sm font-bold text-rio dark:text-rio-claro">
+                  <span className="rounded-full bg-rio/15 px-3 py-1 text-sm font-bold text-rio-oscuro dark:text-rio-claro">
                     {promedio.toFixed(1)} de 5
                     {banda ? ` · ${banda.titulo}` : ""}
                   </span>
@@ -224,7 +224,7 @@ export default function CuestionarioActitudes({
                 )}
                 {sugerencias.length > 0 && (
                   <>
-                    <h3 className="mt-4 font-display text-base font-bold text-tierra dark:text-sol">
+                    <h3 className="mt-4 font-display text-base font-bold text-tierra-oscuro dark:text-sol">
                       Para probar esta semana
                     </h3>
                     <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
@@ -267,7 +267,7 @@ export default function CuestionarioActitudes({
   // ---------- Cuestionario ----------
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         Actitudes y hábitos de estudio
       </p>
       <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -308,7 +308,7 @@ export default function CuestionarioActitudes({
             key={dim.id}
             className="rounded-3xl border-2 border-rio/20 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-noche-claro"
           >
-            <legend className="font-display text-xl font-bold text-tierra dark:text-sol">
+            <legend className="font-display text-xl font-bold text-tierra-oscuro dark:text-sol">
               {dim.nombre}
             </legend>
             <p className="text-sm leading-relaxed text-neutral-600 dark:text-white/75">
@@ -366,7 +366,7 @@ export default function CuestionarioActitudes({
         {error && (
           <p
             role="alert"
-            className="rounded-2xl border-2 border-achiote/50 bg-achiote/10 p-3 text-sm font-bold text-achiote"
+            className="rounded-2xl border-2 border-achiote/50 bg-achiote/10 p-3 text-sm font-bold text-achiote dark:text-achiote-claro"
           >
             {error}
           </p>

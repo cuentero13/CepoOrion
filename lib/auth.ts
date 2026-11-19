@@ -8,10 +8,19 @@
  *
  * Si Supabase no está configurado (hoy no hay proyecto), todas las
  * funciones devuelven { ok: false, error: "Supabase no configurado" }
- * en lugar de fallar.
+ * en lugar de fallar. El cliente Supabase se importa de forma diferida
+ * dentro de cada función, para no cargar su chunk en el paquete
+ * inicial de las páginas que usan este módulo.
  */
 
-import { crearClienteNavegador } from "./supabase/client";
+import type { SupabaseClient } from "@supabase/supabase-js";
+import { supabaseConfigurado } from "./supabase/config";
+
+async function clienteSupabase(): Promise<SupabaseClient | null> {
+  if (!supabaseConfigurado) return null;
+  const { crearClienteNavegador } = await import("./supabase/client");
+  return crearClienteNavegador();
+}
 
 export type ResultadoAuth = { ok: true } | { ok: false; error: string };
 
@@ -92,7 +101,7 @@ export async function registrar(datos: DatosRegistro): Promise<ResultadoAuth> {
     };
   }
 
-  const supabase = crearClienteNavegador();
+  const supabase = await clienteSupabase();
   if (!supabase) return { ok: false, error: ERROR_NO_CONFIGURADO };
 
   const { data, error } = await supabase.auth.signUp({
@@ -135,7 +144,7 @@ export async function iniciarSesion(
   if (!password) {
     return { ok: false, error: "Escribe tu contraseña." };
   }
-  const supabase = crearClienteNavegador();
+  const supabase = await clienteSupabase();
   if (!supabase) return { ok: false, error: ERROR_NO_CONFIGURADO };
 
   const { error } = await supabase.auth.signInWithPassword({
@@ -148,7 +157,7 @@ export async function iniciarSesion(
 
 /** Cierra la sesión actual. */
 export async function cerrarSesion(): Promise<ResultadoAuth> {
-  const supabase = crearClienteNavegador();
+  const supabase = await clienteSupabase();
   if (!supabase) return { ok: false, error: ERROR_NO_CONFIGURADO };
   const { error } = await supabase.auth.signOut();
   if (error) return { ok: false, error: traducirErrorAuth(error.message) };

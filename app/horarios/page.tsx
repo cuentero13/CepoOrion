@@ -3,6 +3,7 @@ import { institucion, esMarcador } from "@/lib/institucion";
 import { horarios, tieneDatosReales } from "@/lib/horarios";
 import Marcador from "@/components/Marcador";
 import HorariosTabla from "@/components/HorariosTabla";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Horarios | CEPO",
@@ -16,7 +17,7 @@ export default function Horarios() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         Horarios
       </p>
       <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -46,13 +47,15 @@ export default function Horarios() {
         </p>
       </div>
 
-      <div className="mt-8">
-        <HorariosTabla
-          niveles={niveles}
-          esEjemplo={!reales}
-          aviso={reales ? undefined : horarios.ejemplo.aviso}
-        />
-      </div>
+      <Reveal>
+        <div className="mt-8">
+          <HorariosTabla
+            niveles={niveles}
+            esEjemplo={!reales}
+            aviso={reales ? undefined : horarios.ejemplo.aviso}
+          />
+        </div>
+      </Reveal>
 
       <p className="mt-8 max-w-2xl rounded-2xl border-2 border-sol/60 bg-white p-4 text-sm leading-relaxed dark:bg-noche-claro">
         ¿Sos docente o parte de la dirección? Los horarios se editan sin

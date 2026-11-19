@@ -44,6 +44,8 @@ export default function Hero() {
   const [desplazamiento, setDesplazamiento] = useState(0);
 
   useEffect(() => {
+    // Con movimiento reducido no hay parallax: el fondo queda fijo.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const alDesplazar = () => {
       if (!ref.current) return;
       const rect = ref.current.getBoundingClientRect();

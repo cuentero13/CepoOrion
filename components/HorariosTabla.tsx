@@ -54,17 +54,18 @@ export default function HorariosTabla({
     return (
       <article
         key={key}
-        className="rounded-3xl border-2 border-rio/20 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-noche-claro"
+        className="min-w-0 rounded-3xl border-2 border-rio/20 bg-white p-4 shadow-sm dark:border-white/10 dark:bg-noche-claro"
       >
-        <h3 className="font-display text-xl font-bold text-noche dark:text-white">
+        <h2 className="font-display text-xl font-bold text-noche dark:text-white">
           {dia.dia}
-        </h3>
+        </h2>
         {bloquesReales.length === 0 ? (
           <p className="mt-2 text-sm text-neutral-600 dark:text-white/75">
             Sin bloques publicados para este día.
           </p>
         ) : (
-          <table className="mt-3 w-full border-collapse text-sm">
+          <div className="overflow-x-auto">
+            <table className="mt-3 w-full min-w-80 border-collapse text-sm">
             <caption className="sr-only">
               Horario del {dia.dia}
               {esEjemplo ? " (ejemplo, no es el horario real)" : ""}
@@ -101,6 +102,7 @@ export default function HorariosTabla({
               ))}
             </tbody>
           </table>
+          </div>
         )}
       </article>
     );
@@ -160,8 +162,8 @@ export default function HorariosTabla({
           aria-pressed={vista === "hoy"}
           className={`rounded-full px-5 py-2 text-sm font-bold transition-colors ${
             vista === "hoy"
-              ? "bg-rio text-white"
-              : "text-rio hover:bg-rio/10 dark:text-rio-claro"
+              ? "bg-rio-oscuro text-white dark:bg-rio-claro dark:text-noche"
+              : "text-rio-oscuro hover:bg-rio/10 dark:text-rio-claro"
           }`}
         >
           Hoy
@@ -172,8 +174,8 @@ export default function HorariosTabla({
           aria-pressed={vista === "semana"}
           className={`rounded-full px-5 py-2 text-sm font-bold transition-colors ${
             vista === "semana"
-              ? "bg-rio text-white"
-              : "text-rio hover:bg-rio/10 dark:text-rio-claro"
+              ? "bg-rio-oscuro text-white dark:bg-rio-claro dark:text-noche"
+              : "text-rio-oscuro hover:bg-rio/10 dark:text-rio-claro"
           }`}
         >
           Semana

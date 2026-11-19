@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import GraficoRadar, { type ValorRadar } from "@/components/GraficoRadar";
+import Reveal from "@/components/Reveal";
 import SeccionJuegosProgreso from "@/components/SeccionJuegosProgreso";
 import { AREAS } from "@/lib/diagnostico";
 import { INSIGNIAS } from "@/lib/juegos";
@@ -11,7 +12,11 @@ import {
   obtenerUsuario,
 } from "@/lib/supabase/server";
 
-export const metadata: Metadata = { title: "Mi progreso | CEPO" };
+export const metadata: Metadata = {
+  title: "Mi progreso | CEPO",
+  description:
+    "Tu progreso en CEPO: resultados del diagnóstico, actitudes y hábitos, puntos, insignias y niveles de los juegos. Solo tú ves tus datos.",
+};
 
 export const dynamic = "force-dynamic";
 
@@ -189,7 +194,7 @@ export default async function PaginaProgreso() {
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-      <p className="text-sm font-bold uppercase tracking-widest text-rio">
+      <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
         Panel personal
       </p>
       <h1 className="mt-2 font-display text-3xl font-extrabold text-selva sm:text-4xl dark:text-sol">
@@ -204,20 +209,21 @@ export default async function PaginaProgreso() {
       {errorCarga && (
         <p
           role="alert"
-          className="mt-6 rounded-xl border-2 border-achiote bg-achiote/10 px-4 py-3 text-sm font-bold text-achiote"
+          className="mt-6 rounded-xl border-2 border-achiote bg-achiote/10 px-4 py-3 text-sm font-bold text-achiote dark:text-achiote-claro"
         >
           {errorCarga}
         </p>
       )}
 
-      <div className="mt-8 grid gap-6 md:grid-cols-2">
+      <Reveal>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
         <Tarjeta titulo="Historial de diagnósticos">
           {diagnosticos.length === 0 ? (
             <EstadoVacio>
               Aún no tienes diagnósticos. Hacé el{" "}
               <Link
                 href="/diagnostico"
-                className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+                className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
               >
                 examen diagnóstico
               </Link>{" "}
@@ -251,14 +257,14 @@ export default async function PaginaProgreso() {
               Aún no hay evolución que mostrar. Hacé el{" "}
               <Link
                 href="/diagnostico"
-                className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+                className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
               >
                 examen diagnóstico
               </Link>{" "}
               o el{" "}
               <Link
                 href="/actitudes"
-                className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+                className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
               >
                 cuestionario de actitudes
               </Link>{" "}
@@ -303,7 +309,7 @@ export default async function PaginaProgreso() {
               )}
               {dimensiones.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-wide text-rio">
+                  <h3 className="text-sm font-bold uppercase tracking-wide text-selva dark:text-rio-claro">
                     Actitudes — última medición ({fechaCorta(ultimaActitud!.created_at)})
                   </h3>
                   <ul className="mt-2 flex flex-col gap-2">
@@ -333,7 +339,7 @@ export default async function PaginaProgreso() {
               Aún no tienes insignias. Jugá a los{" "}
               <Link
                 href="/juegos"
-                className="font-bold text-rio underline-offset-2 hover:underline dark:text-rio-claro"
+                className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
               >
                 juegos
               </Link>{" "}
@@ -383,6 +389,7 @@ export default async function PaginaProgreso() {
           </p>
         </Tarjeta>
       </div>
+      </Reveal>
     </section>
   );
 }

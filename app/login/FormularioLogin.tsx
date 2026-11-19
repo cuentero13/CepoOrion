@@ -59,7 +59,7 @@ export default function FormularioLogin() {
       {error && (
         <p
           role="alert"
-          className="mb-4 rounded-xl border-2 border-achiote bg-achiote/10 px-4 py-3 text-sm font-bold text-achiote"
+          className="mb-4 rounded-xl border-2 border-achiote bg-achiote/10 px-4 py-3 text-sm font-bold text-achiote dark:text-achiote-claro"
         >
           {error}
         </p>
@@ -83,7 +83,7 @@ export default function FormularioLogin() {
           value={alias}
           onChange={(e) => setAlias(e.target.value)}
           placeholder="tu_alias"
-          className="mt-1 w-full rounded-xl border-2 border-rio/40 bg-white px-3 py-2 text-noche placeholder:text-neutral-400 dark:border-rio-claro/50 dark:bg-noche dark:text-white"
+          className="mt-1 w-full rounded-xl border-2 border-rio/40 bg-white px-3 py-2 text-noche placeholder:text-neutral-500 dark:placeholder:text-white/50 dark:border-rio-claro/50 dark:bg-noche dark:text-white"
         />
         <p className="mt-1 text-xs text-neutral-500 dark:text-white/60">
           El alias que elegiste al registrarte, en minúsculas.
