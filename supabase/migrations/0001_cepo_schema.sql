@@ -215,3 +215,18 @@ drop policy if exists "Preguntas: solo admin escribe" on public.preguntas;
 create policy "Preguntas: solo admin escribe" on public.preguntas
   for all using (public.mi_rol() = 'admin')
   with check (public.mi_rol() = 'admin');
+
+-- ---------- Permisos (GRANT) ----------
+-- Sin esto, PostgREST responde 42501 "permission denied for table ..."
+-- aunque las políticas RLS existan: el permiso es la puerta exterior y
+-- RLS es la interior. Las políticas siguen decidiendo quién ve o
+-- escribe qué; el GRANT solo deja pasar hasta ellas.
+grant usage on schema public to anon, authenticated;
+grant select, insert, update, delete on public.profiles to anon, authenticated;
+grant select, insert, update, delete on public.diagnosticos to anon, authenticated;
+grant select, insert, update, delete on public.actitudes to anon, authenticated;
+grant select, insert, update, delete on public.progreso_juegos to anon, authenticated;
+grant select, insert, update, delete on public.buzon to anon, authenticated;
+grant select, insert, update, delete on public.horarios to anon, authenticated;
+grant select on public.preguntas to anon, authenticated;
+grant insert, update, delete on public.preguntas to authenticated;
