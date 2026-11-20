@@ -2,12 +2,12 @@
   "institucion": {
     "anio_lectivo": "[COMPLETAR: año lectivo vigente]",
     "contacto": {
-      "correo": "[COMPLETAR: correo oficial]",
+      "correo": "Cepo.ixiamas@gmail.com",
       "horario_atencion": "Lunes a viernes, 10:00–15:00",
       "telefono": "+591 73956239",
       "tiktok": "https://www.tiktok.com/@cepoixiamas",
       "tiktok_usuario": "@cepoixiamas",
-      "whatsapp": "[VERIFICAR: confirmar si +591 73956239 es WhatsApp]",
+      "whatsapp": "+591 73956239",
       "whatsapp_url": "https://wa.me/59173956239"
     },
     "costos": {

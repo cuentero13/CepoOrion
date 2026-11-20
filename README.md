@@ -67,5 +67,5 @@ ni estadísticas. Lo que falta va como `[COMPLETAR]` y lo dudoso como
 
 - Director: **Irguen Rosas**
 - Niveles: solo **bachillerato** por ahora (se espera crecer)
-- Contacto oficial: **+591 73956239** (WhatsApp `[VERIFICAR]`)
+- Contacto oficial: **+591 73956239** (teléfono y WhatsApp, confirmado 20-nov-2026)
 - Logo real: la dirección lo enviará después; mientras tanto, SVG propio de Orión.

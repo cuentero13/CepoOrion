@@ -45,6 +45,6 @@ falte `[COMPLETAR]`.
 - Ubicación: Ixiamas, provincia Abel Iturralde, departamento de La Paz, Bolivia.
 - Director: Irguen Rosas.
 - Niveles: solo bachillerato por ahora (se espera crecer).
-- Contacto oficial: +591 73956239 (teléfono; WhatsApp `[VERIFICAR]`).
-- Lema propuesto (pendiente de aprobación): «Aprendamos en la selva».
-- Logo real: la dirección lo enviará después; mientras tanto se usa el SVG propio de Orión.
+- Contacto oficial: +591 73956239 (teléfono y WhatsApp, confirmado 20-nov-2026).
+- Lema oficial (aprobado por la dirección 20-nov-2026): «Aprendamos en la selva».
+- Logo oficial: la constelación de Orión diseñada por Muse (componente `OrionLogo` en el sitio), aprobada por la dirección el 20-nov-2026. Versión animada (GIF, 480×480): https://lh3.googleusercontent.com/d/183BwKoEWLQczgrG3645g25212JTj_814=w800 (Drive: carpeta «CEPO — Logo oficial»).

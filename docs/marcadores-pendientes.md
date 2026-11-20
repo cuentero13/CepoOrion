@@ -4,20 +4,17 @@
 > **Cómo se hizo:** búsqueda con `grep` en todo el repositorio (excepto
 > `node_modules` y `.next`), patrón `[COMPLETAR...]` y `[VERIFICAR...]`.
 >
-> **Totales vigentes: 55 marcadores — 39 `[COMPLETAR]` y 16 `[VERIFICAR]`.**
-> (Antes de esta fase eran 64, según el conteo de la fase f. El
-> movimiento neto es −9: se resolvieron 12 `[COMPLETAR]` de
-> `config/institucion.json` en la fase g (ver [Resueltos en fase
-> g](#resueltos-en-fase-g)); `docs/fase-f.md` — escrito en la fase f
-> después de aquel conteo — aporta 4 ocurrencias que ese total nunca
-> contó (1 `[COMPLETAR]` + 3 `[VERIFICAR]`); y el `[VERIFICAR]` de
-> `data/README.md:25` (CON-010) ya estaba resuelto en la fase f aunque
-> la tabla de entonces lo seguía contando. 64 − 12 + 4 − 1 = 55.)
+> **Totales vigentes: 51 marcadores — 38 `[COMPLETAR]` y 13 `[VERIFICAR]`.**
+> (Antes de este ajuste eran 52, según el conteo tras la fase g. El
+> movimiento es −1: el 20-nov-2026 Mike dio el correo oficial,
+> `Cepo.ixiamas@gmail.com`, que estaba `[COMPLETAR]` en
+> `config/institucion.json`. Ver [Resueltos tras la fase
+> g](#resueltos-tras-la-fase-g).)
 >
-> **Ojo al volver a contar con grep:** este conteo (55) **excluye** este
+> **Ojo al volver a contar con grep:** este conteo (52) **excluye** este
 > archivo y `docs/manual-docente.md`, que citan los marcadores como
-> documentación (107 menciones entre los dos). Un grep ingenuo sobre
-> todo el repo da 162: 55 pendientes reales + 107 citas en estos dos
+> documentación (101 menciones entre los dos). Un grep ingenuo sobre
+> todo el repo da 153: 52 pendientes reales + 101 citas en estos dos
 > documentos nuevos. Para repetir el conteo, excluya ambos archivos:
 > `grep -rn --exclude-dir=node_modules --exclude-dir=.next --exclude=manual-docente.md --exclude=marcadores-pendientes.md -o -E '\[(COMPLETAR|VERIFICAR)[^]]*\]' .`
 >
@@ -63,7 +60,31 @@ Inglés), los costos (Bs 10 inscripción, Bs 10 por materia) y
 Filosofía como sexta área del diagnóstico (10 preguntas nuevas, 60 en
 total); y se varió «selva» con «monte» y «jungla» en los textos del
 sitio. Quedan pendientes en el config: año lectivo, correo oficial,
-historia, valores y la confirmación de WhatsApp (ver A1).
+historia y valores (ver A1). La confirmación de WhatsApp se resolvió
+tras esta fase (ver [Resueltos tras la fase g](#resueltos-tras-la-fase-g)).
+
+## Resueltos tras la fase g
+
+El 20-nov-2026 Mike confirmó que **+591 73956239 sí es WhatsApp**.
+El hecho estaba marcado `[VERIFICAR]` en 3 archivos; en los 3 se
+reemplazó por el dato confirmado. En el sitio, el pie de página, la
+página de inicio y la de contacto ahora muestran "WhatsApp: +591
+73956239" como enlace a https://wa.me/59173956239 (el enlace ya
+existía en el config como `whatsapp_url`). Los próximos afiches
+llevan el logo de WhatsApp junto al número.
+
+El mismo día Mike dio el correo oficial: **Cepo.ixiamas@gmail.com**.
+Estaba `[COMPLETAR: correo oficial]` en `config/institucion.json`.
+En el sitio, el pie de página y la página de contacto ahora muestran
+el correo como enlace `mailto:`.
+
+El mismo día Mike decidió que el logo oficial es **el de Orión
+diseñado por Muse** (el que ya usa el sitio en el encabezado, el pie
+y la página Nosotros; componente `OrionLogo`). Ya no se espera un
+logo de la dirección. La versión animada (GIF) quedó guardada en
+Drive, carpeta «CEPO — Logo oficial» (id
+`1jtxm6IRGVOkR1x8jxmUfDxKJg5vx5aAv`, archivo
+`183BwKoEWLQczgrG3645g25212JTj_814`, enlace público verificado).
 
 ## Resueltos en fase f
 
@@ -94,18 +115,16 @@ línea ahora dice "mejor visibilidad de Orión en enero, verificada
 
 ## A. Datos pendientes reales
 
-### A1. `config/institucion.json` — 5 marcadores (4 COMPLETAR + 1 VERIFICAR)
+### A1. `config/institucion.json` — 3 marcadores (todos COMPLETAR)
 
 Es el archivo con más pendientes. Todos dependen de la **dirección del
-CEPO** (salvo el de WhatsApp, que es una confirmación). En la fase g se
-resolvieron 12 de los 17 que tenía (ver [Resueltos en fase
-g](#resueltos-en-fase-g)).
+CEPO**. En la fase g se resolvieron 12 de los 17 que tenía, y tras la
+fase g se resolvieron la confirmación de WhatsApp y el correo oficial
+(ver [Resueltos tras la fase g](#resueltos-tras-la-fase-g)).
 
 | Línea | Marcador exacto | Qué falta para resolverlo | Depende de |
 |---|---|---|---|
 | 3 | `[COMPLETAR: año lectivo vigente]` | Año lectivo vigente (ej. 2026) | Dirección |
-| 5 | `[COMPLETAR: correo oficial]` | Correo oficial del colegio | Dirección |
-| 10 | `[VERIFICAR: confirmar si +591 73956239 es WhatsApp]` | Confirmar si el número oficial +591 73956239 atiende por WhatsApp (mismo hecho que en README.md:70 y docs/guia-contenido-fuentes.md:48) | Dirección (probar el número o preguntar al director) |
 | 19 | `[COMPLETAR: historia del colegio]` | Historia del colegio | Dirección |
 | 53 | `[COMPLETAR: valores institucionales]` | Valores institucionales | Dirección |
 
@@ -158,23 +177,23 @@ de la sección A.
 | 45 | `[COMPLETAR: mañana/tarde]` | Ejemplo de formato del turno (texto de ejemplo, permanente) |
 | 48 | `[COMPLETAR: 08:00–08:45]`, `[COMPLETAR]`, `[COMPLETAR]` (3 ocurrencias) | Ejemplo de formato de un bloque (texto de ejemplo, permanente) |
 
-### B2. `README.md` (raíz) — 4 marcadores
+### B2. `README.md` (raíz) — 3 marcadores
 
 | Línea | Marcador exacto | Qué es |
 |---|---|---|
 | 32 | `[COMPLETAR]` | Estructura: `institucion.json` "con [COMPLETAR]" (se actualiza cuando A1 se resuelva) |
 | 42 | `[COMPLETAR]` | Regla de oro (texto explicativo, permanente) |
 | 43 | `[VERIFICAR]` | Regla de oro (texto explicativo, permanente) |
-| 70 | `[VERIFICAR]` | "Contacto oficial: +591 73956239 (WhatsApp `[VERIFICAR]`)" — mismo hecho que A1 línea 10; se resuelve con esa confirmación |
+| 70 | — | "Contacto oficial: +591 73956239 (WhatsApp `[VERIFICAR]`)" era la línea 70 hasta el 20-nov-2026; **resuelto ese día** (Mike confirmó que sí es WhatsApp). La línea ahora dice "(teléfono y WhatsApp, confirmado 20-nov-2026)". |
 
-### B3. `docs/guia-contenido-fuentes.md` — 4 marcadores
+### B3. `docs/guia-contenido-fuentes.md` — 3 marcadores
 
 | Línea | Marcador exacto | Qué es |
 |---|---|---|
 | 5 | `[VERIFICAR]` | Regla de contenido (texto explicativo, permanente) |
 | 6 | `[COMPLETAR]` | Regla de contenido (texto explicativo, permanente) |
 | 37 | `[COMPLETAR]` | Regla 5: los datos del colegio son "`[COMPLETAR]` en `config/institucion.json`" (se actualiza cuando A1 se resuelva) |
-| 48 | `[VERIFICAR]` | "Contacto oficial: +591 73956239 (teléfono; WhatsApp `[VERIFICAR]`)" — mismo hecho que A1 línea 10 |
+| 48 | — | "Contacto oficial: +591 73956239 (teléfono; WhatsApp `[VERIFICAR]`)" era la línea 48 hasta el 20-nov-2026; **resuelto ese día** (Mike confirmó que sí es WhatsApp). |
 
 ### B4. Reportes de fase (`docs/fase-*.md`) — 20 marcadores
 
@@ -210,13 +229,13 @@ mecanismo de detección, no un pendiente): `lib/institucion.ts:47` y
 
 | Archivo | COMPLETAR | VERIFICAR | Total |
 |---|---|---|---|
-| `config/institucion.json` | 4 | 1 | 5 |
+| `config/institucion.json` | 3 | 0 | 3 |
 | `docs/fase-b.md` | 7 | 3 | 10 |
 | `data/README.md` | 7 | 1 | 8 |
 | `data/horarios.json` | 5 | 0 | 5 |
 | `.env.example` | 5 | 0 | 5 |
-| `README.md` | 2 | 2 | 4 |
-| `docs/guia-contenido-fuentes.md` | 2 | 2 | 4 |
+| `README.md` | 2 | 1 | 3 |
+| `docs/guia-contenido-fuentes.md` | 2 | 1 | 3 |
 | `docs/fase-f.md` | 1 | 3 | 4 |
 | `docs/fase-c.md` | 2 | 1 | 3 |
 | `docs/fase-a.md` | 1 | 1 | 2 |
@@ -224,13 +243,12 @@ mecanismo de detección, no un pendiente): `lib/institucion.ts:47` y
 | `app/horarios/page.tsx` | 1 | 0 | 1 |
 | `docs/fase-d.md` | 0 | 1 | 1 |
 | `lib/turnstile.ts` | 1 | 0 | 1 |
-| **Total** | **39** | **16** | **55** |
+| **Total** | **38** | **13** | **51** |
 
-**Hechos distintos pendientes (sin contar menciones):** 5 en
-`config/institucion.json` (uno de ellos, WhatsApp, repetido en 2
-archivos más), 4 en `data/horarios.json` (+ los días vacíos) y 5
-claves técnicas en `.env.example`. Todo lo demás es documentación,
-reportes históricos o código.
+**Hechos distintos pendientes (sin contar menciones):** 3 en
+`config/institucion.json`, 4 en `data/horarios.json` (+ los días
+vacíos) y 5 claves técnicas en `.env.example`. Todo lo demás es
+documentación, reportes históricos o código.
 
 ---
 
