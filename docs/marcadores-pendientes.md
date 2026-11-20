@@ -4,10 +4,9 @@
 > **Cómo se hizo:** búsqueda con `grep` en todo el repositorio (excepto
 > `node_modules` y `.next`), patrón `[COMPLETAR...]` y `[VERIFICAR...]`.
 >
-> **Totales vigentes: 51 marcadores — 38 `[COMPLETAR]` y 13 `[VERIFICAR]`.**
-> (Antes de este ajuste eran 52, según el conteo tras la fase g. El
-> movimiento es −1: el 20-nov-2026 Mike dio el correo oficial,
-> `Cepo.ixiamas@gmail.com`, que estaba `[COMPLETAR]` en
+> **Totales vigentes: 50 marcadores — 37 `[COMPLETAR]` y 13 `[VERIFICAR]`.**
+> (Antes de este ajuste eran 51. El movimiento es −1: el 20-nov-2026
+> Mike dio los valores institucionales, que estaban `[COMPLETAR]` en
 > `config/institucion.json`. Ver [Resueltos tras la fase
 > g](#resueltos-tras-la-fase-g).)
 >
@@ -78,6 +77,12 @@ Estaba `[COMPLETAR: correo oficial]` en `config/institucion.json`.
 En el sitio, el pie de página y la página de contacto ahora muestran
 el correo como enlace `mailto:`.
 
+El mismo día Mike dio los valores institucionales: **«Dar clases con
+ética y responsabilidad. Respeto. Solidaridad. Compañerismo.»**
+Estaban `[COMPLETAR: valores institucionales]` en
+`config/institucion.json`. En el sitio, la tarjeta «Valores» de
+/nosotros los muestra junto a la misión y la visión.
+
 El mismo día Mike decidió que el logo oficial es **el de Orión
 diseñado por Muse** (el que ya usa el sitio en el encabezado, el pie
 y la página Nosotros; componente `OrionLogo`). Ya no se espera un
@@ -115,18 +120,17 @@ línea ahora dice "mejor visibilidad de Orión en enero, verificada
 
 ## A. Datos pendientes reales
 
-### A1. `config/institucion.json` — 3 marcadores (todos COMPLETAR)
+### A1. `config/institucion.json` — 2 marcadores (todos COMPLETAR)
 
 Es el archivo con más pendientes. Todos dependen de la **dirección del
 CEPO**. En la fase g se resolvieron 12 de los 17 que tenía, y tras la
-fase g se resolvieron la confirmación de WhatsApp y el correo oficial
-(ver [Resueltos tras la fase g](#resueltos-tras-la-fase-g)).
+fase g se resolvieron la confirmación de WhatsApp, el correo oficial y
+los valores (ver [Resueltos tras la fase g](#resueltos-tras-la-fase-g)).
 
 | Línea | Marcador exacto | Qué falta para resolverlo | Depende de |
 |---|---|---|---|
 | 3 | `[COMPLETAR: año lectivo vigente]` | Año lectivo vigente (ej. 2026) | Dirección |
 | 19 | `[COMPLETAR: historia del colegio]` | Historia del colegio | Dirección |
-| 53 | `[COMPLETAR: valores institucionales]` | Valores institucionales | Dirección |
 
 ### A2. `data/horarios.json` — 5 marcadores (todos COMPLETAR)
 
@@ -229,7 +233,7 @@ mecanismo de detección, no un pendiente): `lib/institucion.ts:47` y
 
 | Archivo | COMPLETAR | VERIFICAR | Total |
 |---|---|---|---|
-| `config/institucion.json` | 3 | 0 | 3 |
+| `config/institucion.json` | 2 | 0 | 2 |
 | `docs/fase-b.md` | 7 | 3 | 10 |
 | `data/README.md` | 7 | 1 | 8 |
 | `data/horarios.json` | 5 | 0 | 5 |
@@ -243,9 +247,9 @@ mecanismo de detección, no un pendiente): `lib/institucion.ts:47` y
 | `app/horarios/page.tsx` | 1 | 0 | 1 |
 | `docs/fase-d.md` | 0 | 1 | 1 |
 | `lib/turnstile.ts` | 1 | 0 | 1 |
-| **Total** | **38** | **13** | **51** |
+| **Total** | **37** | **13** | **50** |
 
-**Hechos distintos pendientes (sin contar menciones):** 3 en
+**Hechos distintos pendientes (sin contar menciones):** 2 en
 `config/institucion.json`, 4 en `data/horarios.json` (+ los días
 vacíos) y 5 claves técnicas en `.env.example`. Todo lo demás es
 documentación, reportes históricos o código.
