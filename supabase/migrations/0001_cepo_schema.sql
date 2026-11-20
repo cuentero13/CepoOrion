@@ -11,17 +11,6 @@
 -- - El rol (estudiante/docente/admin) solo lo cambia un admin por SQL;
 --   ningún usuario puede auto-asignarse un rol mayor.
 
--- ---------- Función auxiliar: rol del usuario actual ----------
--- SECURITY DEFINER para evitar recursión en las políticas de `profiles`.
-create or replace function public.mi_rol()
-returns text
-language sql
-security definer
-stable
-as $$
-  select rol from public.profiles where id = auth.uid();
-$$;
-
 -- ---------- profiles ----------
 create table if not exists public.profiles (
   id uuid primary key references auth.users (id) on delete cascade,
@@ -35,6 +24,20 @@ create table if not exists public.profiles (
   tutor_consent boolean not null default false,
   created_at timestamptz not null default now()
 );
+
+-- ---------- Función auxiliar: rol del usuario actual ----------
+-- SECURITY DEFINER para evitar recursión en las políticas de `profiles`.
+-- Va DESPUÉS de crear la tabla `profiles`: las funciones `language sql`
+-- se validan al crearlas, y antes la tabla no existía (error 42P01).
+create or replace function public.mi_rol()
+returns text
+language sql
+security definer
+stable
+as $$
+  select rol from public.profiles where id = auth.uid();
+$$;
+
 alter table public.profiles enable row level security;
 
 drop policy if exists "Perfiles: ver el propio" on public.profiles;
