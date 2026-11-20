@@ -97,7 +97,7 @@ el diseño**. No los tome como datos reales.
 3. Añada un bloque por cada clase, en orden de hora, con este formato:
 
 ```json
-{ "hora": "08:00–08:45", "materia": "Matemática", "docente": "Irgen Rosas" }
+{ "hora": "08:00–08:45", "materia": "Matemática", "docente": "Irguen Rosas" }
 ```
 
 - `hora`: inicio–fin con el guion largo, por ejemplo `"08:00–08:45"`.
@@ -449,13 +449,25 @@ reales y solo entonces se reemplazan los marcadores.
 |---|---|
 | `nombre` | Centro Educativo Privado Orion |
 | `sigla` | CEPO |
-| `director` | Irgen Rosas |
+| `director` | Irguen Rosas |
 | `niveles` | Bachillerato (nota: actualmente solo bachillerato; se espera crecer) |
 | `contacto.telefono` | +591 73956239 |
 | `contacto.whatsapp_url` | https://wa.me/59173956239 |
 | `ubicacion.pais` / `departamento` / `provincia` / `municipio` | Bolivia / La Paz / Abel Iturralde / Ixiamas |
 | `ubicacion.mapa_centro.latitud` / `longitud` | -13.23979 / -68.26586 (centro de Ixiamas, verificado por geocodificación) |
-| `lema` | "Bajo Orión, aprendemos de la selva" (ver abajo: es una propuesta) |
+| `ubicacion.direccion_exacta` | Avenida Sucre, Calle Santa Cruz, Ixiamas Centro |
+| `ubicacion.mapa_url` | https://www.openstreetmap.org/?mlat=-13.23979&mlon=-68.26586#map=16/-13.23979/-68.26586 |
+| `lema` | "Aprendamos en la selva" (lema oficial, aprobado por la dirección 20-nov-2026) |
+| `lema_estado` | Lema oficial, aprobado por la dirección (20-nov-2026) |
+| `mision` | Fortalecer y complementar los conocimientos y destrezas de los jóvenes en Ixiamas. |
+| `vision` | Desarrollar una plataforma permanente de capacitación para jóvenes de todas las edades. |
+| `materias` | Matemática, Física, Filosofía, Historia, Literatura, Inglés |
+| `costos` | Inscripción: Bs 10. Por materia: Bs 10. |
+| `horarios` | Clases lunes, miércoles y viernes, 19:00, 20:00 y 21:00. Horario sujeto a cambios. |
+| `turnos` | Noche |
+| `contacto.horario_atencion` | Lunes a viernes, 10:00–15:00 |
+| `contacto.tiktok` / `tiktok_usuario` | https://www.tiktok.com/@cepoixiamas / @cepoixiamas (única red social) |
+| `plantel_docente` | Irguen Rosas (director), Clarivel Loayza y Michael Navarro Hernández — ver la sección Nuestro equipo en `/nosotros` (fotos y semblanzas en `data/equipo.json`) |
 
 ### Campos con `[COMPLETAR]` (pendientes de la dirección)
 
@@ -463,25 +475,19 @@ reales y solo entonces se reemplazan los marcadores.
 |---|---|
 | `anio_lectivo` | Año lectivo vigente |
 | `contacto.correo` | Correo oficial |
-| `contacto.facebook` | Página de Facebook, si existe |
-| `contacto.instagram` | Cuenta de Instagram, si existe |
-| `contacto.horario_atencion` | Horario de atención al público |
 | `historia` | Historia del colegio |
-| `horarios` | Tabla de horarios por nivel, turno y materia (ver `data/horarios.json`) |
-| `lema_estado` | Lema oficial — la frase actual es una **propuesta pendiente de aprobación de la dirección**; cuando la dirección apruebe el lema (o dé otro), se escribe aquí y se quita el marcador |
-| `mision` | Misión institucional |
-| `vision` | Visión institucional |
 | `valores` | Valores institucionales |
-| `plantel_docente` | Nombres y materias del plantel docente — **solo datos reales proporcionados por la dirección** |
-| `turnos` | Turnos (mañana/tarde) y horarios por nivel |
-| `ubicacion.direccion_exacta` | Dirección exacta del colegio |
-| `ubicacion.mapa_url` | Enlace de Google Maps / OpenStreetMap a la ubicación exacta del colegio |
 
-Además, la `nota` dentro de `mapa_centro` dice que la ubicación exacta
-del colegio sigue `[COMPLETAR]`: las coordenadas actuales son del
-**centro de Ixiamas**, no del colegio. Cuando la dirección dé la
-dirección exacta, se actualizan `direccion_exacta`, `mapa_url` y esa
-nota (y, si hace falta, las coordenadas).
+> La tabla detallada por día y materia (`data/horarios.json`, sección
+> `niveles`) sigue pendiente: el marco real ya está (lunes, miércoles y
+> viernes, 19:00, 20:00 y 21:00), pero falta el reparto de materias por
+> día que debe dar la dirección.
+
+Además, la `nota` dentro de `mapa_centro` ya incluye la dirección
+exacta del colegio (Avenida Sucre, Calle Santa Cruz, Ixiamas Centro);
+las coordenadas siguen siendo del **centro de Ixiamas**, no del
+colegio. Si la dirección da las coordenadas exactas, se actualizan
+`mapa_centro` y `mapa_url`.
 
 ### Campo con `[VERIFICAR]`
 

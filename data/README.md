@@ -63,7 +63,7 @@ Cada pregunta tiene obligatoriamente estos campos:
 | Campo | Descripción |
 |---|---|
 | `id` | Identificador único, ej. `MAT-1-001` |
-| `area` | `Matemática`, `Lenguaje`, `Ciencias Naturales`, `Ciencias Sociales` o `Inglés` |
+| `area` | `Matemática`, `Lenguaje`, `Ciencias Naturales`, `Ciencias Sociales`, `Inglés` o `Filosofía` |
 | `nivel` | `1` (fácil), `2` (medio) o `3` (difícil) — para la dificultad adaptativa |
 | `pregunta` | Enunciado |
 | `opciones` | 4 opciones |

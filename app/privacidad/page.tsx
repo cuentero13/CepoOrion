@@ -115,7 +115,7 @@ export default function Privacidad() {
             buzón privado.
           </li>
           <li>
-            <strong>La dirección del colegio</strong> (director Irgen Rosas):
+            <strong>La dirección del colegio</strong> (director Irguen Rosas):
             ve los mismos datos que los docentes y administra el buzón
             privado.
           </li>

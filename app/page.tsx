@@ -45,7 +45,7 @@ const TARJETAS = [
 
 const FAUNA = [
   { Componente: Jaguar, nombre: "Jaguar", dato: "El felino más grande de América vive en Madidi." },
-  { Componente: Paraba, nombre: "Paraba roja", dato: "Guacamayo de colores vivos de la selva amazónica." },
+  { Componente: Paraba, nombre: "Paraba roja", dato: "Guacamayo de colores vivos de la jungla amazónica." },
   { Componente: Tapir, nombre: "Tapir", dato: "El mamífero terrestre más grande de Sudamérica." },
   { Componente: DelfinRio, nombre: "Bufeo", dato: "El delfín rosado de río, habitante de los ríos amazónicos." },
 ];
@@ -89,7 +89,7 @@ export default function Inicio() {
       <section aria-labelledby="fauna" className="patron-cesteria bg-rio/10 py-12 dark:bg-rio/20">
         <div className="mx-auto max-w-6xl px-4">
           <h2 id="fauna" className="text-center font-display text-3xl font-extrabold text-selva dark:text-sol">
-            Vecinos de la selva
+            Vecinos del monte
           </h2>
           <p className="mx-auto mt-2 max-w-2xl text-center text-neutral-700 dark:text-white/85">
             Ixiamas es puerta del Parque Nacional Madidi. Estas son algunas de

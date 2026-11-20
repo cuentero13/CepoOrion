@@ -2,7 +2,7 @@
  * Examen diagnóstico — tipos, motor adaptativo y recomendaciones.
  *
  * El examen es por área (Matemática, Lenguaje, Ciencias Naturales,
- * Ciencias Sociales, Inglés). En cada área se hacen 6 preguntas: se
+ * Ciencias Sociales, Inglés, Filosofía). En cada área se hacen 6 preguntas: se
  * empieza en dificultad media (2) y la dificultad sube con cada acierto
  * y baja con cada error. El nivel final se calcula con un puntaje
  * ponderado por dificultad. Todo es funciones puras: se puede probar
@@ -15,6 +15,7 @@ export const AREAS = [
   "Ciencias Naturales",
   "Ciencias Sociales",
   "Inglés",
+  "Filosofía",
 ] as const;
 
 export type Area = (typeof AREAS)[number];
@@ -192,6 +193,15 @@ export const RECOMENDACIONES_AREA: Record<
       "Aprendé 5 palabras nuevas por día y usalas en una frase.",
       "Escuchá canciones o videos cortos en inglés y tratá de entender las palabras que ya conocés.",
       "Practicá en voz alta: saludar, presentarte y contar tu rutina en inglés.",
+    ],
+  },
+  Filosofía: {
+    descripcion:
+      "La filosofía es preguntarse por qué: cada pregunta abre una puerta.",
+    consejos: [
+      "Cuando leas una idea, preguntá: ¿por qué dice esto? ¿Estoy de acuerdo? ¿Por qué?",
+      "Conversá las preguntas grandes con tu familia o tus compañeros: pensar juntos aclara las ideas.",
+      "Llevá un cuaderno de preguntas: anotá lo que te intriga y volvé a leerlo cada semana.",
     ],
   },
 };

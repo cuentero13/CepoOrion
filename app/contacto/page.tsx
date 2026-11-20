@@ -129,38 +129,17 @@ export default function Contacto() {
         </DatoContacto>
 
         <DatoContacto etiqueta="🌐 Redes sociales">
-          <ul className="space-y-2 text-sm">
-            <li>
-              Facebook:{" "}
-              {esMarcador(contacto.facebook) ? (
-                <span>{contacto.facebook}</span>
-              ) : (
-                <a
-                  href={contacto.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
-                >
-                  {contacto.facebook}
-                </a>
-              )}
-            </li>
-            <li>
-              Instagram:{" "}
-              {esMarcador(contacto.instagram) ? (
-                <span>{contacto.instagram}</span>
-              ) : (
-                <a
-                  href={contacto.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
-                >
-                  {contacto.instagram}
-                </a>
-              )}
-            </li>
-          </ul>
+          <p className="text-sm text-neutral-600 dark:text-white/75">
+            Nuestra única red social es TikTok:
+          </p>
+          <a
+            href={contacto.tiktok}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-1 inline-block font-display text-xl font-extrabold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
+          >
+            {contacto.tiktok_usuario} ↗
+          </a>
         </DatoContacto>
       </div>
       </Reveal>

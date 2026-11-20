@@ -169,5 +169,5 @@
       "turno": "[COMPLETAR: mañana/tarde]"
     }
   ],
-  "nota": "Tabla de horarios por nivel, turno y materia. Editar sin programar: reemplazar los marcadores [COMPLETAR] de \"niveles\" con los datos reales. La sección \"ejemplo\" muestra solo el formato y NO es el horario real de CEPO. Ver data/README.md para el formato."
+  "nota": "Tabla de horarios por nivel, turno y materia. Editar sin programar: reemplazar los marcadores [COMPLETAR] de \"niveles\" con los datos reales. La sección \"ejemplo\" muestra solo el formato y NO es el horario real de CEPO. Marco real (20-nov-2026): clases lunes, miércoles y viernes, 19:00, 20:00 y 21:00; horario sujeto a cambios. La tabla por materia y día sigue pendiente de la dirección. Ver data/README.md para el formato."
 }

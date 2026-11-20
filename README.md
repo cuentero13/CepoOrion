@@ -3,7 +3,7 @@
 Sitio web del **Centro Educativo Privado Orion (CEPO)**, en Ixiamas,
 provincia Abel Iturralde, departamento de La Paz, Bolivia.
 
-> «Bajo Orión, aprendemos de la selva» — lema propuesto, pendiente de
+> «Aprendamos en la selva» — lema propuesto, pendiente de
 > aprobación de la dirección.
 
 ## Stack
@@ -65,7 +65,7 @@ ni estadísticas. Lo que falta va como `[COMPLETAR]` y lo dudoso como
 
 ## Datos reales confirmados
 
-- Director: **Irgen Rosas**
+- Director: **Irguen Rosas**
 - Niveles: solo **bachillerato** por ahora (se espera crecer)
 - Contacto oficial: **+591 73956239** (WhatsApp `[VERIFICAR]`)
 - Logo real: la dirección lo enviará después; mientras tanto, SVG propio de Orión.

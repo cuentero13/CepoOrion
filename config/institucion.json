@@ -3,41 +3,54 @@
     "anio_lectivo": "[COMPLETAR: año lectivo vigente]",
     "contacto": {
       "correo": "[COMPLETAR: correo oficial]",
-      "facebook": "[COMPLETAR: página de Facebook, si existe]",
-      "horario_atencion": "[COMPLETAR: horario de atención al público]",
-      "instagram": "[COMPLETAR: cuenta de Instagram, si existe]",
+      "horario_atencion": "Lunes a viernes, 10:00–15:00",
       "telefono": "+591 73956239",
+      "tiktok": "https://www.tiktok.com/@cepoixiamas",
+      "tiktok_usuario": "@cepoixiamas",
       "whatsapp": "[VERIFICAR: confirmar si +591 73956239 es WhatsApp]",
       "whatsapp_url": "https://wa.me/59173956239"
     },
-    "director": "Irgen Rosas",
+    "costos": {
+      "inscripcion_bs": 10,
+      "nota": "Inscripción: Bs 10. Por materia: Bs 10.",
+      "por_materia_bs": 10
+    },
+    "director": "Irguen Rosas",
     "historia": "[COMPLETAR: historia del colegio]",
-    "horarios": "[COMPLETAR: tabla de horarios por nivel, turno y materia — ver data/horarios.json]",
-    "lema": "Bajo Orión, aprendemos de la selva",
-    "lema_estado": "[COMPLETAR: lema oficial — propuesta pendiente de aprobación de la dirección]",
-    "mision": "[COMPLETAR: misión institucional]",
+    "horarios": "Clases lunes, miércoles y viernes, a las 19:00, 20:00 y 21:00. Horario sujeto a cambios.",
+    "lema": "Aprendamos en la selva",
+    "lema_estado": "Lema oficial, aprobado por la dirección (20-nov-2026).",
+    "materias": [
+      "Matemática",
+      "Física",
+      "Filosofía",
+      "Historia",
+      "Literatura",
+      "Inglés"
+    ],
+    "mision": "Fortalecer y complementar los conocimientos y destrezas de los jóvenes en Ixiamas.",
     "niveles": [
       "Bachillerato"
     ],
     "niveles_nota": "Actualmente solo bachillerato. Se espera crecer a más niveles.",
     "nombre": "Centro Educativo Privado Orion",
-    "plantel_docente": "[COMPLETAR: nombres y materias del plantel docente — solo datos reales proporcionados por la dirección]",
+    "plantel_docente": "Irguen Rosas (director), Clarivel Loayza y Michael Navarro Hernández — ver la sección Nuestro equipo en /nosotros.",
     "sigla": "CEPO",
-    "turnos": "[COMPLETAR: turnos (mañana/tarde) y horarios por nivel]",
+    "turnos": "Noche",
     "ubicacion": {
       "departamento": "La Paz",
-      "direccion_exacta": "[COMPLETAR: dirección exacta del colegio]",
+      "direccion_exacta": "Avenida Sucre, Calle Santa Cruz, Ixiamas Centro",
       "mapa_centro": {
         "latitud": -13.23979,
         "longitud": -68.26586,
-        "nota": "Centro de Ixiamas (coordenadas verificadas por geocodificación). La ubicación exacta del colegio sigue [COMPLETAR]."
+        "nota": "Centro de Ixiamas (coordenadas verificadas por geocodificación). Dirección del colegio: Avenida Sucre, Calle Santa Cruz, Ixiamas Centro."
       },
-      "mapa_url": "[COMPLETAR: enlace de Google Maps / OpenStreetMap a la ubicación exacta del colegio]",
+      "mapa_url": "https://www.openstreetmap.org/?mlat=-13.23979&mlon=-68.26586#map=16/-13.23979/-68.26586",
       "municipio": "Ixiamas",
       "pais": "Bolivia",
       "provincia": "Abel Iturralde"
     },
     "valores": "[COMPLETAR: valores institucionales]",
-    "vision": "[COMPLETAR: visión institucional]"
+    "vision": "Desarrollar una plataforma permanente de capacitación para jóvenes de todas las edades."
   }
 }
