@@ -76,6 +76,8 @@ function traducirErrorAuth(mensaje: string): string {
     return "Ese alias ya está registrado. Elige otro alias.";
   if (m.includes("row-level security") || m.includes("rls"))
     return "No se pudo guardar tu perfil. Inténtalo de nuevo y, si persiste, avisa a la dirección del colegio.";
+  if (m.includes("permission denied"))
+    return "Falta un permiso en la base de datos. Avisá a la dirección del colegio.";
   return "Ocurrió un error. Inténtalo de nuevo.";
 }
 
