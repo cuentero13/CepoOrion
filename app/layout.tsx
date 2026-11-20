@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CEPO — Centro Educativo Privado Orion",
     description:
-      "Bajo Orión, aprendemos de la selva. Educación secundaria en Ixiamas, puerta del norte amazónico paceño.",
+      "Aprendamos en la selva. Educación secundaria en Ixiamas, puerta del norte amazónico paceño.",
     type: "website",
     locale: "es_BO",
   },

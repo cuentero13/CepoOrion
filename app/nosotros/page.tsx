@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { institucion, esMarcador } from "@/lib/institucion";
+import equipoData from "@/data/equipo.json";
 import Marcador from "@/components/Marcador";
 import OrionLogo from "@/components/OrionLogo";
 import Reveal from "@/components/Reveal";
@@ -30,6 +31,41 @@ function TarjetaTexto({
           <p className="leading-relaxed text-neutral-700 dark:text-white/85">{texto}</p>
         )}
       </div>
+    </article>
+  );
+}
+
+function TarjetaEquipo({
+  nombre,
+  rol,
+  semblanza,
+  foto,
+}: {
+  nombre: string;
+  rol: string;
+  semblanza: string;
+  foto: string;
+}) {
+  return (
+    <article className="rounded-3xl border-2 border-rio/20 bg-white p-5 text-center shadow-md dark:border-white/10 dark:bg-noche-claro">
+      <img
+        src={foto}
+        alt={`Foto de ${nombre}`}
+        loading="lazy"
+        decoding="async"
+        className="mx-auto h-32 w-32 rounded-full bg-rio/10 object-cover"
+      />
+      <h3 className="mt-4 font-display text-xl font-bold text-noche dark:text-white">
+        {nombre}
+      </h3>
+      {rol !== "" && (
+        <p className="mt-1 text-sm font-bold uppercase tracking-widest text-rio-oscuro dark:text-rio-claro">
+          {rol}
+        </p>
+      )}
+      <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+        {semblanza}
+      </p>
     </article>
   );
 }
@@ -67,6 +103,26 @@ export default function Nosotros() {
       </section>
 
       <div className="mx-auto max-w-6xl space-y-10 px-4 py-12">
+        {/* Nosotros */}
+        <Reveal>
+        <section aria-labelledby="nosotros">
+          <h2
+            id="nosotros"
+            className="font-display text-2xl font-extrabold text-selva dark:text-sol"
+          >
+            Nosotros
+          </h2>
+          <p className="mt-4 max-w-3xl leading-relaxed text-neutral-700 dark:text-white/85">
+            Nosotros somos 3 espíritus entusiastas con ganas de apoyar y
+            compartir saberes. Brindaremos herramientas a partir del
+            conocimiento que vamos a compartir para que las personas
+            participantes despierten, mejoren o pulan sus habilidades
+            técnicas y científicas y así poder crear y proyectar juntos el
+            Ixiamas del siglo XXI.
+          </p>
+        </section>
+        </Reveal>
+
         {/* Qué significa CEPO */}
         <Reveal>
         <section aria-labelledby="que-significa">
@@ -164,25 +220,41 @@ export default function Nosotros() {
         </section>
         </Reveal>
 
-        {/* Plantel docente */}
+        {/* Nuestro equipo */}
         <Reveal>
-        <section aria-labelledby="plantel">
+        <section aria-labelledby="equipo">
           <h2
-            id="plantel"
+            id="equipo"
             className="font-display text-2xl font-extrabold text-selva dark:text-sol"
           >
-            Plantel docente
+            Nuestro equipo
           </h2>
-          <div className="mt-4 max-w-2xl">
-            <p className="leading-relaxed text-neutral-700 dark:text-white/85">
-              Publicamos los nombres y materias del plantel solo con los datos
-              reales que proporcione la dirección, para no exponer información
-              incorrecta.
-            </p>
-            <div className="mt-3">
-              <Marcador texto={institucion.plantel_docente} />
-            </div>
+          <div className="mt-4 grid gap-5 md:grid-cols-3">
+            {equipoData.equipo.map((persona) => (
+              <TarjetaEquipo
+                key={persona.nombre}
+                nombre={persona.nombre}
+                rol={persona.rol}
+                semblanza={persona.semblanza}
+                foto={persona.foto}
+              />
+            ))}
           </div>
+        </section>
+        </Reveal>
+
+        {/* Costos */}
+        <Reveal>
+        <section aria-labelledby="costos">
+          <h2
+            id="costos"
+            className="font-display text-2xl font-extrabold text-selva dark:text-sol"
+          >
+            Costos
+          </h2>
+          <p className="mt-4 max-w-2xl leading-relaxed text-neutral-700 dark:text-white/85">
+            {institucion.costos.nota}
+          </p>
         </section>
         </Reveal>
 

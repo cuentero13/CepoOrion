@@ -113,9 +113,9 @@ export default function Hero() {
           Ixiamas · Abel Iturralde · La Paz · Bolivia
         </p>
         <h1 className="mt-4 font-display text-4xl font-extrabold leading-tight sm:text-6xl">
-          Bajo Orión,
+          Aprendamos
           <br />
-          <span className="text-sol">aprendemos de la selva</span>
+          <span className="text-sol">en la selva</span>
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white/90">
           {institucion.nombre}: educación secundaria con orgullo amazónico,

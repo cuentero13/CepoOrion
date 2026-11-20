@@ -47,6 +47,22 @@ export default function Horarios() {
         </p>
       </div>
 
+      <div className="mt-6 max-w-2xl">
+        <h2 className="font-display text-xl font-bold text-noche dark:text-white">
+          Materias
+        </h2>
+        <ul className="mt-3 flex flex-wrap gap-2">
+          {institucion.materias.map((materia) => (
+            <li
+              key={materia}
+              className="rounded-full bg-selva px-4 py-1.5 text-sm font-bold text-white dark:bg-sol dark:text-noche"
+            >
+              {materia}
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <Reveal>
         <div className="mt-8">
           <HorariosTabla

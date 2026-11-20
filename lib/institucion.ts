@@ -26,9 +26,15 @@ export interface Institucion {
     whatsapp: string;
     whatsapp_url: string;
     correo: string;
-    facebook: string;
-    instagram: string;
+    tiktok: string;
+    tiktok_usuario: string;
     horario_atencion: string;
+  };
+  materias: string[];
+  costos: {
+    inscripcion_bs: number;
+    por_materia_bs: number;
+    nota: string;
   };
   historia: string;
   mision: string;

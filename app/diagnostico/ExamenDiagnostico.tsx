@@ -463,13 +463,25 @@ export default function ExamenDiagnostico({
         Descubrí tu nivel, área por área
       </h1>
       <p className="mt-3 leading-relaxed text-neutral-700 dark:text-white/85">
-        Son 5 áreas con 6 preguntas cada una. Las preguntas se adaptan a
+        Son 6 áreas con 6 preguntas cada una. Las preguntas se adaptan a
         vos: si acertás, la siguiente es un poco más difícil; si no, un
         poco más fácil. Al final de cada área vas a ver tu nivel (Inicial,
         Básico, Intermedio o Avanzado) y recomendaciones para seguir
         aprendiendo. No es un examen con nota: es para saber por dónde
         empezar.
       </p>
+      <div
+        role="note"
+        className="mt-6 rounded-2xl border-2 border-sol/60 bg-sol/10 p-4 dark:border-sol/60"
+      >
+        <p className="font-display text-lg font-bold text-noche dark:text-white">
+          ⚠️ Este examen es privado
+        </p>
+        <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+          Solo usted sabrá el resultado. No use herramientas como internet
+          para responder las preguntas. La idea es evaluar su conocimiento.
+        </p>
+      </div>
       <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
         No necesitás cuenta para hacerlo. Si entrás con tu cuenta, tus
         resultados se guardan y los ves en{" "}

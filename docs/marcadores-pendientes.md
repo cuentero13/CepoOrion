@@ -1,25 +1,29 @@
 # Marcadores pendientes — CEPO (lista final consolidada)
 
-> **Fecha de la lista:** 19-nov-2026 (fase f).
+> **Fecha de la lista:** 20-nov-2026 (fase g).
 > **Cómo se hizo:** búsqueda con `grep` en todo el repositorio (excepto
 > `node_modules` y `.next`), patrón `[COMPLETAR...]` y `[VERIFICAR...]`.
 >
-> **Totales vigentes: 64 marcadores — 50 `[COMPLETAR]` y 14 `[VERIFICAR]`.**
-> (Antes de esta fase eran 67: los 3 `[VERIFICAR]` de
-> `data/juegos/constelaciones.json` — ítem CON-010 — quedaron
-> **resueltos** el 19-nov-2026; ver
-> [Resueltos en esta fase](#resueltos-en-esta-fase).)
+> **Totales vigentes: 55 marcadores — 39 `[COMPLETAR]` y 16 `[VERIFICAR]`.**
+> (Antes de esta fase eran 64, según el conteo de la fase f. El
+> movimiento neto es −9: se resolvieron 12 `[COMPLETAR]` de
+> `config/institucion.json` en la fase g (ver [Resueltos en fase
+> g](#resueltos-en-fase-g)); `docs/fase-f.md` — escrito en la fase f
+> después de aquel conteo — aporta 4 ocurrencias que ese total nunca
+> contó (1 `[COMPLETAR]` + 3 `[VERIFICAR]`); y el `[VERIFICAR]` de
+> `data/README.md:25` (CON-010) ya estaba resuelto en la fase f aunque
+> la tabla de entonces lo seguía contando. 64 − 12 + 4 − 1 = 55.)
 >
-> **Ojo al volver a contar con grep:** este conteo (64) **excluye** este
+> **Ojo al volver a contar con grep:** este conteo (55) **excluye** este
 > archivo y `docs/manual-docente.md`, que citan los marcadores como
-> documentación (101 menciones entre los dos). Un grep ingenuo sobre
-> todo el repo da 165: 64 pendientes reales + 101 citas en estos dos
+> documentación (107 menciones entre los dos). Un grep ingenuo sobre
+> todo el repo da 162: 55 pendientes reales + 107 citas en estos dos
 > documentos nuevos. Para repetir el conteo, excluya ambos archivos:
 > `grep -rn --exclude-dir=node_modules --exclude-dir=.next --exclude=manual-docente.md --exclude=marcadores-pendientes.md -o -E '\[(COMPLETAR|VERIFICAR)[^]]*\]' .`
 >
 > **Ocurrencias vs. hechos:** un mismo hecho pendiente puede aparecer
 > en varios archivos (por ejemplo, lo de WhatsApp está en 3 archivos).
-> Esta lista cuenta **ocurrencias** (64). Los hechos distintos son
+> Esta lista cuenta **ocurrencias** (55). Los hechos distintos son
 > menos; se indica en cada caso.
 >
 > **Dos tipos de entradas:**
@@ -32,7 +36,36 @@
 
 ---
 
-## Resueltos en esta fase
+## Resueltos en fase g
+
+Datos reales entregados por la dirección el 20-nov-2026 (correcciones
+de Mike). Todos estaban en `config/institucion.json` (12
+`[COMPLETAR]`).
+
+| Dónde estaba | Marcador resuelto | Dato real ahora |
+|---|---|---|
+| `config/institucion.json` — `contacto.facebook` / `contacto.instagram` | `[COMPLETAR: página de Facebook, si existe]` / `[COMPLETAR: cuenta de Instagram, si existe]` | No hay Facebook ni Instagram: la única red social es TikTok (`contacto.tiktok` = https://www.tiktok.com/@cepoixiamas, `contacto.tiktok_usuario` = @cepoixiamas). Las claves de Facebook/Instagram se eliminaron del config. |
+| `config/institucion.json` — `contacto.horario_atencion` | `[COMPLETAR: horario de atención al público]` | Lunes a viernes, 10:00–15:00. |
+| `config/institucion.json` — `horarios` | `[COMPLETAR: tabla de horarios por nivel, turno y materia — ver data/horarios.json]` | Clases lunes, miércoles y viernes, 19:00, 20:00 y 21:00. Horario sujeto a cambios. (La tabla por materia y día sigue pendiente: ver A2.) |
+| `config/institucion.json` — `lema_estado` | `[COMPLETAR: lema oficial — propuesta pendiente de aprobación de la dirección]` | Lema oficial, aprobado por la dirección (20-nov-2026). El lema es «Aprendamos en la selva». |
+| `config/institucion.json` — `mision` | `[COMPLETAR: misión institucional]` | Fortalecer y complementar los conocimientos y destrezas de los jóvenes en Ixiamas. |
+| `config/institucion.json` — `vision` | `[COMPLETAR: visión institucional]` | Desarrollar una plataforma permanente de capacitación para jóvenes de todas las edades. |
+| `config/institucion.json` — `plantel_docente` | `[COMPLETAR: nombres y materias del plantel docente — solo datos reales proporcionados por la dirección]` | Irguen Rosas (director), Clarivel Loayza y Michael Navarro Hernández. Fotos y semblanzas en `data/equipo.json` (fotos públicas en Drive, carpeta «CEPO — Fotos del equipo»). |
+| `config/institucion.json` — `turnos` | `[COMPLETAR: turnos (mañana/tarde) y horarios por nivel]` | Noche (clases 19:00, 20:00 y 21:00). |
+| `config/institucion.json` — `ubicacion.direccion_exacta` | `[COMPLETAR: dirección exacta del colegio]` | Avenida Sucre, Calle Santa Cruz, Ixiamas Centro. |
+| `config/institucion.json` — `mapa_centro.nota` | `[COMPLETAR]` (en la nota: "La ubicación exacta del colegio sigue [COMPLETAR]") | La nota ya incluye la dirección exacta. Las coordenadas siguen siendo del centro de Ixiamas (-13.23979, -68.26586), no del colegio. |
+| `config/institucion.json` — `ubicacion.mapa_url` | `[COMPLETAR: enlace de Google Maps / OpenStreetMap a la ubicación exacta del colegio]` | https://www.openstreetmap.org/?mlat=-13.23979&mlon=-68.26586#map=16/-13.23979/-68.26586 (centro de Ixiamas; actualizar cuando haya coordenadas exactas). |
+
+También se resolvió en esta fase (sin marcador asociado): el nombre
+del director es **Irguen Rosas** (no "Irgen"); se añadieron las
+materias (Matemática, Física, Filosofía, Historia, Literatura,
+Inglés), los costos (Bs 10 inscripción, Bs 10 por materia) y
+Filosofía como sexta área del diagnóstico (10 preguntas nuevas, 60 en
+total); y se varió «selva» con «monte» y «jungla» en los textos del
+sitio. Quedan pendientes en el config: año lectivo, correo oficial,
+historia, valores y la confirmación de WhatsApp (ver A1).
+
+## Resueltos en fase f
 
 | Dónde estaba | Marcador resuelto | Cómo se verificó |
 |---|---|---|
@@ -52,41 +85,29 @@ a febrero, alta al anochecer") quedó **confirmada**; el matiz es que la
 temporada buena se extiende de noviembre/diciembre a marzo, con enero
 como mejor mes.
 
-**⚠️ Texto que quedó desactualizado y hay que corregir (fuera del
-alcance de esta fase, porque no se me permitió tocar ese archivo):**
-`data/README.md:25` sigue diciendo "CON-010 con `[VERIFICAR]` (mes
-exacto de mejor visibilidad desde Ixiamas)". Esa línea ya no es
-cierta: CON-010 está verificado. Debe actualizarse a "CON-010
-verificado 19-nov-2026".
+**Nota (actualizada 20-nov-2026):** el texto desactualizado de
+`data/README.md:25` ("CON-010 con `[VERIFICAR]`…") ya se corrigió: la
+línea ahora dice "mejor visibilidad de Orión en enero, verificada
+19-nov-2026 (Wikipedia + Meteored)". Nada pendiente aquí.
 
 ---
 
 ## A. Datos pendientes reales
 
-### A1. `config/institucion.json` — 17 marcadores (16 COMPLETAR + 1 VERIFICAR)
+### A1. `config/institucion.json` — 5 marcadores (4 COMPLETAR + 1 VERIFICAR)
 
 Es el archivo con más pendientes. Todos dependen de la **dirección del
-CEPO** (salvo el de WhatsApp, que es una confirmación).
+CEPO** (salvo el de WhatsApp, que es una confirmación). En la fase g se
+resolvieron 12 de los 17 que tenía (ver [Resueltos en fase
+g](#resueltos-en-fase-g)).
 
 | Línea | Marcador exacto | Qué falta para resolverlo | Depende de |
 |---|---|---|---|
 | 3 | `[COMPLETAR: año lectivo vigente]` | Año lectivo vigente (ej. 2026) | Dirección |
 | 5 | `[COMPLETAR: correo oficial]` | Correo oficial del colegio | Dirección |
-| 6 | `[COMPLETAR: página de Facebook, si existe]` | Página de Facebook, si existe; si no existe, dejar vacío y avisar a quien mantiene el sitio | Dirección |
-| 7 | `[COMPLETAR: horario de atención al público]` | Horario de atención al público | Dirección |
-| 8 | `[COMPLETAR: cuenta de Instagram, si existe]` | Cuenta de Instagram, si existe; si no existe, dejar vacío y avisar | Dirección |
 | 10 | `[VERIFICAR: confirmar si +591 73956239 es WhatsApp]` | Confirmar si el número oficial +591 73956239 atiende por WhatsApp (mismo hecho que en README.md:70 y docs/guia-contenido-fuentes.md:48) | Dirección (probar el número o preguntar al director) |
-| 14 | `[COMPLETAR: historia del colegio]` | Historia del colegio | Dirección |
-| 15 | `[COMPLETAR: tabla de horarios por nivel, turno y materia — ver data/horarios.json]` | Horarios definitivos (se resuelve junto con A2) | Dirección |
-| 17 | `[COMPLETAR: lema oficial — propuesta pendiente de aprobación de la dirección]` | Que la dirección apruebe el lema propuesto ("Bajo Orión, aprendemos de la selva") o entregue otro; el campo `lema` ya tiene la propuesta | Dirección (aprobación) |
-| 18 | `[COMPLETAR: misión institucional]` | Misión institucional | Dirección |
-| 24 | `[COMPLETAR: nombres y materias del plantel docente — solo datos reales proporcionados por la dirección]` | Nombres y materias del plantel docente; solo datos reales | Dirección |
-| 26 | `[COMPLETAR: turnos (mañana/tarde) y horarios por nivel]` | Turnos y horarios por nivel (se resuelve junto con A2) | Dirección |
-| 29 | `[COMPLETAR: dirección exacta del colegio]` | Dirección exacta del colegio en Ixiamas | Dirección |
-| 33 | `[COMPLETAR]` (en la nota de `mapa_centro`: "La ubicación exacta del colegio sigue [COMPLETAR]") | Ubicación exacta del colegio; las coordenadas actuales (-13.23979, -68.26586) son del centro de Ixiamas, no del colegio | Dirección |
-| 35 | `[COMPLETAR: enlace de Google Maps / OpenStreetMap a la ubicación exacta del colegio]` | Enlace al mapa con la ubicación exacta | Dirección (tras conocer la dirección exacta) |
-| 40 | `[COMPLETAR: valores institucionales]` | Valores institucionales | Dirección |
-| 41 | `[COMPLETAR: visión institucional]` | Visión institucional | Dirección |
+| 19 | `[COMPLETAR: historia del colegio]` | Historia del colegio | Dirección |
+| 53 | `[COMPLETAR: valores institucionales]` | Valores institucionales | Dirección |
 
 ### A2. `data/horarios.json` — 5 marcadores (todos COMPLETAR)
 
@@ -96,7 +117,7 @@ CEPO** (salvo el de WhatsApp, que es una confirmación).
 | 145 | `[COMPLETAR: hora de inicio–fin]` (hora del mismo bloque) | Hora real de inicio–fin del bloque | Dirección |
 | 146 | `[COMPLETAR]` (materia del mismo bloque) | Materia real del bloque | Dirección |
 | 169 | `[COMPLETAR: mañana/tarde]` (turno de 1ro de Secundaria) | Turno real (mañana o tarde) | Dirección |
-| 172 | `[COMPLETAR]` (en la `nota`: "reemplazar los marcadores [COMPLETAR] de \"niveles\" con los datos reales") | Es la nota que explica el sistema; se resuelve sola cuando los 4 marcadores de arriba tengan datos reales (y los días martes a viernes, hoy con `"bloques": []`, tengan sus bloques) | Dirección |
+| 172 | `[COMPLETAR]` (en la `nota`: "reemplazar los marcadores [COMPLETAR] de \"niveles\" con los datos reales") | Es la nota que explica el sistema; se resuelve sola cuando los 4 marcadores de arriba tengan datos reales (y los días martes a viernes, hoy con `"bloques": []`, tengan sus bloques). La nota ya incluye el marco real (lunes, miércoles y viernes, 19:00, 20:00 y 21:00, sujeto a cambios — 20-nov-2026). | Dirección |
 
 Nota: los días martes a viernes de 1ro de Secundaria hoy tienen
 `"bloques": []` (vacíos, sin marcador). Completarlos es parte del mismo
@@ -126,13 +147,13 @@ reportes de fase, o es el código que detecta los marcadores. Se
 actualizan solas (o se reescriben) cuando se resuelven los datos reales
 de la sección A.
 
-### B1. `data/README.md` — 9 marcadores
+### B1. `data/README.md` — 8 marcadores
 
 | Línea | Marcador exacto | Qué es |
 |---|---|---|
 | 10 | `[COMPLETAR]` y `[VERIFICAR]` | La regla de oro: "lo que falte se marca `[COMPLETAR]` y lo dudoso `[VERIFICAR]`" (texto explicativo, permanente) |
 | 16 | `[COMPLETAR]` | Tabla de archivos: horarios es "Esqueleto con `[COMPLETAR]`" (se actualiza cuando A2 se resuelva) |
-| 25 | `[VERIFICAR]` | "CON-010 con `[VERIFICAR]`…" — **desactualizado desde el 19-nov-2026** (CON-010 verificado; ver nota arriba) |
+| 25 | — | "CON-010 con `[VERIFICAR]`…" era la línea 25 en la fase f; **resuelta en la fase f** (CON-010 verificado 19-nov-2026; la línea ahora dice "mejor visibilidad de Orión en enero, verificada 19-nov-2026"). Ya no lleva marcador. |
 | 32 | `[COMPLETAR]` | Explicación de `niveles`: "Hoy solo tiene marcadores `[COMPLETAR]`" (se actualiza cuando A2 se resuelva) |
 | 45 | `[COMPLETAR: mañana/tarde]` | Ejemplo de formato del turno (texto de ejemplo, permanente) |
 | 48 | `[COMPLETAR: 08:00–08:45]`, `[COMPLETAR]`, `[COMPLETAR]` (3 ocurrencias) | Ejemplo de formato de un bloque (texto de ejemplo, permanente) |
@@ -155,11 +176,12 @@ de la sección A.
 | 37 | `[COMPLETAR]` | Regla 5: los datos del colegio son "`[COMPLETAR]` en `config/institucion.json`" (se actualiza cuando A1 se resuelva) |
 | 48 | `[VERIFICAR]` | "Contacto oficial: +591 73956239 (teléfono; WhatsApp `[VERIFICAR]`)" — mismo hecho que A1 línea 10 |
 
-### B4. Reportes de fase (`docs/fase-*.md`) — 16 marcadores
+### B4. Reportes de fase (`docs/fase-*.md`) — 20 marcadores
 
-Son **reportes históricos** de las fases a–d: describen el estado en el
+Son **reportes históricos** de las fases a–f: describen el estado en el
 momento en que se escribieron. No se editan (son registro), y sus
 menciones se resuelven solas cuando se resuelvan los datos reales.
+(`docs/fase-e.md` no tiene marcadores.)
 
 | Archivo | Líneas y marcadores |
 |---|---|
@@ -167,6 +189,7 @@ menciones se resuelven solas cuando se resuelvan los datos reales.
 | `docs/fase-b.md` | 14: `[COMPLETAR]` (plantel docente); 18: `[COMPLETAR]`; 20: `[COMPLETAR]` (niveles = horario real); 27: `[VERIFICAR]` (WhatsApp); 28: `[COMPLETAR]` (correo y redes); 29: `[COMPLETAR]` ×2 (dirección exacta, horario de atención); 49: `[COMPLETAR]` y `[VERIFICAR]`; 95: `[VERIFICAR]` (lema propuesto pendiente de aprobación) |
 | `docs/fase-c.md` | 18: `[COMPLETAR]` (claves en `.env.example`); 69: `[COMPLETAR]` (correo); 133: `[VERIFICAR]` (lema propuesto) |
 | `docs/fase-d.md` | 127: `[VERIFICAR]` (lema propuesto) |
+| `docs/fase-f.md` | 127: `[VERIFICAR]` (CON-010); 148–149: `[COMPLETAR]` y `[VERIFICAR]` (totales de la lista: 64); 158: `[VERIFICAR]` (CON-010) |
 
 ### B5. Código — 3 marcadores
 
@@ -187,22 +210,23 @@ mecanismo de detección, no un pendiente): `lib/institucion.ts:47` y
 
 | Archivo | COMPLETAR | VERIFICAR | Total |
 |---|---|---|---|
-| `config/institucion.json` | 16 | 1 | 17 |
+| `config/institucion.json` | 4 | 1 | 5 |
 | `docs/fase-b.md` | 7 | 3 | 10 |
-| `data/README.md` | 7 | 2 | 9 |
+| `data/README.md` | 7 | 1 | 8 |
 | `data/horarios.json` | 5 | 0 | 5 |
 | `.env.example` | 5 | 0 | 5 |
 | `README.md` | 2 | 2 | 4 |
 | `docs/guia-contenido-fuentes.md` | 2 | 2 | 4 |
+| `docs/fase-f.md` | 1 | 3 | 4 |
 | `docs/fase-c.md` | 2 | 1 | 3 |
 | `docs/fase-a.md` | 1 | 1 | 2 |
 | `lib/institucion.ts` | 1 | 1 | 2 |
 | `app/horarios/page.tsx` | 1 | 0 | 1 |
 | `docs/fase-d.md` | 0 | 1 | 1 |
 | `lib/turnstile.ts` | 1 | 0 | 1 |
-| **Total** | **50** | **14** | **64** |
+| **Total** | **39** | **16** | **55** |
 
-**Hechos distintos pendientes (sin contar menciones):** 17 en
+**Hechos distintos pendientes (sin contar menciones):** 5 en
 `config/institucion.json` (uno de ellos, WhatsApp, repetido en 2
 archivos más), 4 en `data/horarios.json` (+ los días vacíos) y 5
 claves técnicas en `.env.example`. Todo lo demás es documentación,
@@ -210,5 +234,5 @@ reportes históricos o código.
 
 ---
 
-*Lista generada el 19-nov-2026 (fase f). Para saber cómo completar cada
+*Lista generada el 20-nov-2026 (fase g). Para saber cómo completar cada
 dato, ver `docs/manual-docente.md`.*
