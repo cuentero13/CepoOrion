@@ -63,6 +63,13 @@ function traducirErrorAuth(mensaje: string): string {
     return "Alias o contraseña incorrectos. Revisa los datos e inténtalo de nuevo.";
   if (m.includes("password"))
     return "La contraseña no cumple los requisitos. Debe tener al menos 8 caracteres.";
+  if (
+    m.includes("email_provider_disabled") ||
+    m.includes("signups are disabled")
+  )
+    return "El registro por correo está desactivado en el proyecto. Avisá a la dirección del colegio para que lo active.";
+  if (m.includes("email not confirmed") || m.includes("not confirmed"))
+    return "Tu cuenta aún no está confirmada. Si el colegio pide confirmación por correo, revisá tu bandeja de entrada.";
   if (m.includes("email"))
     return "El correo no es válido. Revisa el alias o el correo opcional.";
   if (m.includes("duplicate key") || m.includes("unique"))
