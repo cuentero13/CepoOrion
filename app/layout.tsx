@@ -24,7 +24,7 @@ const nunito = Nunito({
 export const metadata: Metadata = {
   title: "CEPO — Centro Educativo Privado Orion | Ixiamas, Bolivia",
   description:
-    "Centro Educativo Privado Orion (CEPO) en Ixiamas, Abel Iturralde, La Paz, Bolivia. Educación secundaria con orgullo amazónico: diagnóstico académico, juegos de conocimiento y progreso personal.",
+    "Centro Educativo Privado Orion (CEPO) en Ixiamas, Iturralde, La Paz, Bolivia. Educación secundaria con orgullo amazónico: diagnóstico académico, juegos de conocimiento y progreso personal.",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: "/icons/icon-192.svg",

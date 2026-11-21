@@ -42,7 +42,7 @@ falte `[COMPLETAR]`.
 ## Datos reales confirmados (19-nov-2026)
 
 - Institución: CEPO — Centro Educativo Privado Orion.
-- Ubicación: Ixiamas, provincia Abel Iturralde, departamento de La Paz, Bolivia.
+- Ubicación: Ixiamas, provincia Iturralde, departamento de La Paz, Bolivia.
 - Director: Irguen Rosas.
 - Niveles: solo bachillerato por ahora (se espera crecer).
 - Contacto oficial: +591 73956239 (teléfono y WhatsApp, confirmado 20-nov-2026).

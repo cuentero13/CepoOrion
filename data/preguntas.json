@@ -590,7 +590,7 @@
    "area": "Ciencias Sociales",
    "fuente": "SERNAP — Parque Nacional y ANMI Madidi (D.S. N.º 24123, 21-sep-1995)",
    "id": "SOC-3-003",
-   "justificacion": "El Madidi es administrado por el SERNAP y se ubica en el noroeste del departamento de La Paz, en las provincias Franz Tamayo, Abel Iturralde y Bautista Saavedra.",
+   "justificacion": "El Madidi es administrado por el SERNAP y se ubica en el noroeste del departamento de La Paz, en las provincias Franz Tamayo, Iturralde y Bautista Saavedra.",
    "nivel": 3,
    "opciones": [
     "El Instituto Nacional de Estadística (INE)",
@@ -598,7 +598,7 @@
     "El Ministerio de Educación",
     "La Gobernación de Beni"
    ],
-   "pregunta": "¿Qué institución administra el Parque Nacional y ANMI Madidi, ubicado en las provincias Franz Tamayo, Abel Iturralde y Bautista Saavedra del noroeste de La Paz?",
+   "pregunta": "¿Qué institución administra el Parque Nacional y ANMI Madidi, ubicado en las provincias Franz Tamayo, Iturralde y Bautista Saavedra del noroeste de La Paz?",
    "respuesta_correcta": 1
   },
   {

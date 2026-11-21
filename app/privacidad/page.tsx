@@ -203,7 +203,7 @@ export default function Privacidad() {
       <Seccion titulo="7. Contacto">
         <p>
           Responsable de este sitio: {institucion.nombre}, Ixiamas, provincia
-          Abel Iturralde, La Paz, Bolivia. Director: {institucion.director}.
+          Iturralde, La Paz, Bolivia. Director: {institucion.director}.
         </p>
         <p>
           Teléfono:{" "}

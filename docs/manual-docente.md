@@ -453,7 +453,7 @@ reales y solo entonces se reemplazan los marcadores.
 | `niveles` | Bachillerato (nota: actualmente solo bachillerato; se espera crecer) |
 | `contacto.telefono` | +591 73956239 |
 | `contacto.whatsapp_url` | https://wa.me/59173956239 |
-| `ubicacion.pais` / `departamento` / `provincia` / `municipio` | Bolivia / La Paz / Abel Iturralde / Ixiamas |
+| `ubicacion.pais` / `departamento` / `provincia` / `municipio` | Bolivia / La Paz / Iturralde / Ixiamas |
 | `ubicacion.mapa_centro.latitud` / `longitud` | -13.23979 / -68.26586 (centro de Ixiamas, verificado por geocodificación) |
 | `ubicacion.direccion_exacta` | Avenida Sucre, Calle Santa Cruz, Ixiamas Centro |
 | `ubicacion.mapa_url` | https://www.openstreetmap.org/?mlat=-13.23979&mlon=-68.26586#map=16/-13.23979/-68.26586 |
