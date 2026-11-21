@@ -110,7 +110,7 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-4 pb-40 pt-16 text-center sm:pt-24">
         <p className="text-sm font-bold uppercase tracking-[0.3em] text-rio-claro">
-          Ixiamas · Abel Iturralde · La Paz · Bolivia
+          Ixiamas · Iturralde · La Paz · Bolivia
         </p>
         <h1 className="mt-4 font-display text-4xl font-extrabold leading-tight sm:text-6xl">
           Aprendamos

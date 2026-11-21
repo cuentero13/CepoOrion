@@ -1,7 +1,7 @@
 # CEPO — Centro Educativo Privado Orion
 
 Sitio web del **Centro Educativo Privado Orion (CEPO)**, en Ixiamas,
-provincia Abel Iturralde, departamento de La Paz, Bolivia.
+provincia Iturralde, departamento de La Paz, Bolivia.
 
 > «Aprendamos en la selva» — lema propuesto, pendiente de
 > aprobación de la dirección.

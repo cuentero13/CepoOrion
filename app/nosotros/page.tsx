@@ -9,7 +9,7 @@ import Reveal from "@/components/Reveal";
 export const metadata: Metadata = {
   title: "Nosotros | CEPO",
   description:
-    "Historia, misión, visión y valores del Centro Educativo Privado Orion (CEPO) en Ixiamas, Abel Iturralde, La Paz, Bolivia.",
+    "Historia, misión, visión y valores del Centro Educativo Privado Orion (CEPO) en Ixiamas, Iturralde, La Paz, Bolivia.",
 };
 
 function TarjetaTexto({
