@@ -7,7 +7,7 @@ import bancoJson from "@/data/preguntas.json";
 export const metadata: Metadata = {
   title: "Examen diagnóstico académico | CEPO",
   description:
-    "Examen diagnóstico adaptativo de CEPO: Matemática, Lenguaje, Ciencias Naturales, Ciencias Sociales e Inglés. Descubre tu nivel en cada área y recibe recomendaciones de estudio.",
+    "Examen diagnóstico adaptativo de CEPO: Matemática, Lenguaje, Ciencias Naturales, Ciencias Sociales, Inglés y Filosofía, más el reto de lógica matemática. Descubre tu nivel en cada área, tus temas a reforzar y qué carreras combinan con vos.",
 };
 
 export const dynamic = "force-static";

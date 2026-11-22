@@ -14,8 +14,10 @@ que falte se marca `[COMPLETAR]` y lo dudoso `[VERIFICAR]`.
 | Archivo | Uso | Estado |
 |---|---|---|
 | `horarios.json` | Tabla de horarios por nivel, turno y materia | Esqueleto con `[COMPLETAR]` |
-| `preguntas.json` | Banco de preguntas del examen diagnóstico | 10 preguntas por área (fase d) |
+| `preguntas.json` | Banco de preguntas del examen diagnóstico | 68 preguntas: 10 por área + 2 de división (MAT-1-004/005) + 6 de lógica (LOG-*) (fase h) |
 | `actitudes.json` | Cuestionario de actitudes y hábitos | Fase (d) |
+| `vocacional.json` | Cuestionario vocacional RIASEC (18 ítems) | Fase (h) |
+| `despues-del-cole.json` | Contenido de «Tu futuro»: universidades, becas, plazos, demanda, trabajos y cursos | Fase (h) — última revisión 22-nov-2026 |
 | `juegos/` | (fase e) Bancos de datos de los 6 juegos, un archivo por juego | Fase (e) — contenido real verificado, 19-nov-2026 |
 | `juegos/madidi.json` | Trivia fauna/flora de Madidi | 12 preguntas (MAD-001–012), fuente SERNAP |
 | `juegos/presupuesto.json` | Simulador de educación financiera en bolivianos | 10 escenarios (PRE-001–010), fuente BCB; montos de ejemplo, no precios oficiales |
@@ -209,6 +211,33 @@ está pasando, antes de la pregunta):
 4. Las insignias de rendimiento piden al menos el 80% de aciertos
    (8 de 10). Los juegos actuales tienen entre 10 y 14 ítems, así que
    con 12 ítems hacen falta 10 aciertos y con 14 hacen falta 12.
+
+## `vocacional.json` (fase h)
+
+Cuestionario vocacional RIASEC: 18 ítems (3 por dimensión: Realista,
+Investigativo, Artístico, Social, Emprendedor, Convencional), escala
+Likert 1–5 (Nada / Poco / Más o menos / Bastante / Mucho). Bandas de
+interpretación: ≥4 interés fuerte, 3–3,99 medio, <3 bajo. Lleva un aviso
+claro: es solo orientativo, no decide por el estudiante. Las familias de
+carreras y el cruce con el diagnóstico viven en `lib/vocacional.ts`
+(ver `docs/plan-fase-h-orientacion.md` §4–§5).
+
+## `despues-del-cole.json` (fase h)
+
+Contenido de la página pública `/futuro` («Tu futuro»): universidades,
+becas, plazos, demanda laboral, trabajos modernos con cursos gratis y
+cursos para mejorar en matemática y en lectura. Cada entrada lleva
+`fuente` (URL oficial), `verificado` (fecha de la última revisión) y
+`estado` (`vigente` | `cerrado` | `por confirmar`).
+
+- **CERO sueldos por carrera:** ningún organismo público de Bolivia
+  publica sueldos por carrera. La página lleva un aviso que lo dice.
+- **Actualización:** las convocatorias 2027 del MinEdu (becas y ESFM)
+  se revisan en diciembre de 2026 en `minedu.gob.bo`. Al actualizar una
+  fecha, cambiar su `estado` y su `verificado`, y quitar el marcador
+  correspondiente de `config/institucion.json` → `despues_del_cole`.
+- Los marcadores nuevos de esta fase están en
+  `docs/marcadores-pendientes.md` (sección fase h).
 
 ## Fuentes obligatorias
 

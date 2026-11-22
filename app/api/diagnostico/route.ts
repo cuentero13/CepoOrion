@@ -2,9 +2,11 @@ import { NextResponse, type NextRequest } from "next/server";
 import { supabaseConfigurado } from "@/lib/supabase/config";
 import { crearClienteServidor, obtenerUsuario } from "@/lib/supabase/server";
 import {
+  AREA_LOGICA,
   AREAS,
   NIVELES,
   type Area,
+  type AreaLogica,
   type Nivel,
 } from "@/lib/diagnostico";
 
@@ -34,10 +36,9 @@ export async function POST(request: NextRequest) {
   }
 
   const area = cuerpo.area;
-  if (
-    typeof area !== "string" ||
-    !(AREAS as readonly string[]).includes(area)
-  ) {
+  // Fase h: también se guarda el módulo «Lógica matemática».
+  const areasGuardables = [...AREAS, AREA_LOGICA] as readonly string[];
+  if (typeof area !== "string" || !areasGuardables.includes(area)) {
     return error("Elegí un área válida.", 400);
   }
 
@@ -93,7 +94,7 @@ export async function POST(request: NextRequest) {
 
   const { error: errorInsert } = await supabase.from("diagnosticos").insert({
     user_id: usuario.id,
-    area: area as Area,
+    area: area as Area | AreaLogica,
     nivel: nivel as Nivel,
     puntaje,
     respuestas,

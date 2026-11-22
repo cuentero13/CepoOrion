@@ -574,6 +574,77 @@ quién depende cada cosa.
 
 ---
 
+## Fase (h) — Orientación: nivel, lógica, vocación y «Tu futuro» (22-nov-2026)
+
+### Qué se añadió
+
+- **Lógica matemática** (`/diagnostico`, 7.ª tarjeta): módulo aparte de
+  6 preguntas fijas, no adaptativas. Es práctica directa para la prueba
+  de las Escuelas de Maestros (ESFM): 30 de 100 preguntas de ese examen
+  son de razonamiento lógico-matemático. Se muestra como barra aparte en
+  el resumen y en `/progreso`, no como 7.º eje del radar.
+- **Temas a reforzar**: el resultado de Matemática ahora dice en qué
+  tema falló el estudiante (Aritmética, Álgebra, Geometría,
+  Estadística). Si falla las preguntas de división, el resultado dice
+  «Aritmética: división — a reforzar».
+- **Cuestionario vocacional** (`/vocacional`): 18 frases RIASEC
+  (Realista, Investigativo, Artístico, Social, Emprendedor,
+  Convencional), unos 5 minutos. Al terminar las 6 áreas + lógica +
+  vocacional, el estudiante ve 2–3 familias de carreras con sus vías
+  reales (universidad, técnico, virtual).
+- **«Tu futuro»** (`/futuro`, pública, sin cuenta): dónde estudiar,
+  becas, carreras con futuro, trabajos modernos con cursos gratis,
+  cursos para mejorar en matemática y en lectura, calendario de
+  convocatorias y preguntas frecuentes. Datos en
+  `data/despues-del-cole.json`.
+
+### Cómo se lee el perfil vocacional
+
+En `/progreso`, tarjeta «Tu perfil vocacional»: los dos intereses más
+fuertes del estudiante y las familias de carreras que combinan con lo
+que sabe hoy y lo que le interesa hoy. Si el estudiante no completó
+todo, la tarjeta dice qué falta. **Los docentes también ven el perfil
+vocacional** (decisión de Mike, 22-nov-2026): en Supabase, la tabla
+`orientacion_vocacional` tiene las mismas reglas que `actitudes`
+(el dueño ve lo suyo; docentes y admin leen).
+
+### Qué NO es el cuestionario vocacional
+
+- No es un test psicológico ni un examen de admisión: es solo
+  orientativo. No decide por el estudiante.
+- No es una promesa de trabajo ni de sueldo: ningún organismo público
+  de Bolivia publica sueldos por carrera, por eso la página no muestra
+  ninguno y avisa que los sueldos de los infográficos de TikTok no son
+  oficiales.
+- Las carreras que sugiere son un punto de partida para averiguar más,
+  no una decisión tomada.
+
+### Cómo se actualizan las convocatorias (diciembre de 2026)
+
+Las convocatorias 2027 del Programa de Becas para Jóvenes del MinEdu y
+de las ESFM se publican en diciembre. Procedimiento:
+
+1. Revisar `https://minedu.gob.bo` en diciembre y anotar las fechas
+   nuevas.
+2. En `data/despues-del-cole.json`: actualizar la beca o la institución
+   (fechas, `estado`, `verificado`) y el calendario de plazos.
+3. En `config/institucion.json` → `despues_del_cole`: quitar el
+   marcador `[VERIFICAR]` que se resolvió.
+4. Avisar a quien despliega: los datos se leen al construir el sitio,
+   así que el cambio se ve tras reconstruir y desplegar.
+
+### Migración 0002 (importante)
+
+La fase (h) trae una migración nueva,
+`supabase/migrations/0002_fase_h.sql` (tabla `orientacion_vocacional`).
+Hay que correrla en el SQL Editor de Supabase (pegar y ejecutar). Sin
+ella, el cuestionario vocacional muestra el resultado en pantalla pero
+**no lo guarda**: el estudiante lo ve una vez y `/progreso` no muestra
+su perfil vocacional. La migración ya incluye los GRANTs a
+`anon`/`authenticated` (sin ellos, PostgREST da error 42501).
+
+---
+
 *Manual creado el 19-nov-2026 (fase f). Fuentes de contenido:
 `docs/guia-contenido-fuentes.md`, `data/README.md`,
 `docs/fase-d.md`, `docs/fase-e.md`.*

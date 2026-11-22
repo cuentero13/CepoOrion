@@ -15,6 +15,18 @@
       "nota": "Inscripción: Bs 10. Por materia: Bs 10.",
       "por_materia_bs": 10
     },
+    "despues_del_cole": {
+      "becas_internas_upea_detalle": "[VERIFICAR: detalle de las becas internas de la UPEA (comedor, ayudantía, trabajo, tesis) y de cada universidad pública]",
+      "convocatoria_esfm_2027": "[VERIFICAR: convocatoria 2027 de las ESFM — revisar minedu.gob.bo en diciembre de 2026]",
+      "convocatoria_minedu_2027": "[VERIFICAR: convocatoria 2027 del Programa de Becas para Jóvenes del MinEdu (sociales y tecnológicas) — revisar minedu.gob.bo en diciembre de 2026]",
+      "costos_psa_2027_por_facultad": "[VERIFICAR: costos exactos de todas las PSA 2027 por facultad — varían cada gestión]",
+      "demanda_laboral_post_2019": "[VERIFICAR: demanda laboral actualizada posterior a 2019 — el INE no publica demanda por carrera; la encuesta BID/IBCE es de 2019 y solo del eje troncal]",
+      "distancias_transporte": "[VERIFICAR: distancias y transporte Ixiamas–Riberalta, Ixiamas–Cobija e Ixiamas–La Paz]",
+      "elegibilidad_gamlp_upb_ixiamas": "[VERIFICAR: elegibilidad de un bachiller de Ixiamas en el convenio GAMLP–UPB (9 becas completas)]",
+      "montos_turkiye_burslari": "[VERIFICAR: montos exactos del estipendio de Türkiye Bursları — las fuentes consultadas discrepan]",
+      "plazos_2027_mext_stipendium": "[VERIFICAR: plazos 2027 de MEXT (Japón) y Stipendium Hungaricum (Hungría) en sus webs oficiales]",
+      "testimonios_egresados": "[COMPLETAR: testimonios reales de egresados — recoger por el Buzón, con nombre real y consentimiento]"
+    },
     "director": "Irguen Rosas",
     "historia": "[COMPLETAR: historia del colegio]",
     "horarios": "Clases lunes, miércoles y viernes, a las 19:00, 20:00 y 21:00. Horario sujeto a cambios.",

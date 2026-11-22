@@ -1,0 +1,542 @@
+{
+  "nota": "Contenido de «Tu futuro» (/futuro). Solo datos reales y verificables de los informes de investigación del 22-nov-2026 (educacion-superior-becas-bolivia.md y docs/trabajos-modernos-cursos-online.md). Cada entrada lleva fuente, fecha de verificación y estado (vigente | cerrado | por confirmar). CERO sueldos por carrera: ningún organismo público de Bolivia publica sueldos por carrera. Ver data/README.md.",
+  "ultima_revision": "22 de noviembre de 2026",
+  "como_entrar": {
+    "titulo": "Cómo se entra a la universidad pública",
+    "texto": "El sistema es el mismo en casi todas las universidades públicas del país. Hay tres vías principales.",
+    "vias": [
+      {
+        "nombre": "Prueba de Suficiencia Académica (PSA) / examen de ingreso",
+        "descripcion": "Un examen de conocimientos por facultad. Se aprueba generalmente con 51/100 o por orden de mérito hasta llenar los cupos."
+      },
+      {
+        "nombre": "Curso preuniversitario / prefalcultativo (CPF/CUP)",
+        "descripcion": "Un curso de nivelación de semanas o meses; se aprueba con nota mínima (generalmente 51/100 por materia) y da ingreso directo."
+      },
+      {
+        "nombre": "Admisión especial",
+        "descripcion": "Sin examen, para bachilleres con excelencia académica (promedio alto), profesionales con título, personas con discapacidad y convenios con comunidades indígenas."
+      }
+    ],
+    "nota": "Casi todas tienen dos periodos de admisión al año (semestre I y semestre II). Los costos del examen varían por facultad (Bs 150 a Bs 1.000 en los casos consultados) y dependen de si el colegio es fiscal, particular o extranjero.",
+    "fuente": "https://www.minedu.gob.bo",
+    "verificado": "22-nov-2026"
+  },
+  "instituciones": [
+    {
+      "id": "umsa",
+      "nombre": "UMSA — Universidad Mayor de San Andrés",
+      "ciudad": "La Paz",
+      "sedes": ["La Paz"],
+      "como_se_entra": "PSA por facultad, curso preuniversitario (CPU) y admisión especial.",
+      "carreras_cercanas": ["Facultad de Tecnología: Aeronáutica, Construcciones Civiles, Electricidad Industrial, Electrónica y Telecomunicaciones, Electromecánica, Geodesia/Topografía, Mecánica Automotriz, Mecánica Industrial, Química Industrial", "Medicina, Enfermería, Nutrición y Tecnología Médica", "Agronomía", "Humanidades", "Económicas / Contaduría", "Ingeniería"],
+      "costo_examen": "PSA Tecnología Bs 150; Medicina Bs 1.000 nacionales; Económicas Bs 890; varían por facultad.",
+      "enlace": "https://convocatorias.umsa.bo/",
+      "estado": "vigente",
+      "verificado": "22-nov-2026",
+      "nota": "Es la universidad pública del departamento y la opción de referencia para un bachiller de Ixiamas, pero exige traslado y alojamiento en La Paz. Los plazos 2027 están en el calendario de abajo."
+    },
+    {
+      "id": "upea",
+      "nombre": "UPEA — Universidad Pública de El Alto",
+      "ciudad": "El Alto, La Paz",
+      "sedes": ["El Alto"],
+      "como_se_entra": "PSA / examen de dispensación, curso preuniversitario, excelencia académica y admisión especial.",
+      "carreras_cercanas": ["Zootecnia", "Gestión Turística y Hotelera (Técnico Medio 2 años → Técnico Superior 3 años → Licenciatura 4 años)"],
+      "costo_examen": "Ejemplo vigente: Zootecnia, depósito Bs 200.",
+      "enlace": "https://preuniversitario.upea.bo",
+      "estado": "vigente",
+      "verificado": "22-nov-2026",
+      "nota": "Segunda opción dentro del departamento de La Paz. Becas internas mencionadas en sus flyers (comedor, ayudantía, trabajo, tesis): detalle [VERIFICAR]."
+    },
+    {
+      "id": "uabjb",
+      "nombre": "UABJB — Universidad Autónoma del Beni «José Ballivián»",
+      "ciudad": "Trinidad, Riberalta, Guayaramerín",
+      "sedes": ["Trinidad", "Riberalta", "Guayaramerín"],
+      "como_se_entra": "PSA por computadora (PSAE), curso preuniversitario (inscripciones desde diciembre, clases desde enero), curso propedéutico (Medicina, anual) y admisión especial (Excelencia Bachiller, promedio mínimo 85, excepto Medicina).",
+      "carreras_cercanas": ["Riberalta: Derecho, Contaduría Pública, Ciencias de la Educación, Ingeniería Civil, Ingeniería Forestal", "Guayaramerín: Ingeniería Agropecuaria", "Trinidad: Medicina (5 años), Veterinaria y Zootecnia, Bioquímica y Farmacia, Enfermería, Administración de Empresas, Economía, Turismo, Comunicación Social, Ingeniería de Sistemas, Ingeniería Agronómica"],
+      "costo_examen": "Costo por confirmar en la convocatoria.",
+      "enlace": "https://moxos.uabjb.edu.bo/admisiones",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "nota": "La universidad pública amazónica. Riberalta es una de las sedes universitarias más cercanas a Ixiamas. La distancia y el transporte deben verificarse en cada caso [VERIFICAR]. Último ciclo verificado: PSAE 2/2026 (cerrado)."
+    },
+    {
+      "id": "uap",
+      "nombre": "UAP — Universidad Amazónica de Pando",
+      "ciudad": "Cobija (virtual)",
+      "sedes": ["Cobija", "100% virtual"],
+      "como_se_entra": "Curso preuniversitario y admisión por la plataforma virtual.",
+      "carreras_cercanas": ["100% virtuales: Diseño Gráfico, Psicología, Administración Secretarial, Educación Especial, Educación Virtual, Contaduría Pública, Ingeniería en Inteligencia Artificial, Técnico Superior en Inglés", "Semipresenciales: Imagenología Médica Digital, Gestión Ganadera, Criminología, Ingeniería Biomédica", "A distancia: Marketing Digital"],
+      "costo_examen": "Costo por confirmar en la convocatoria.",
+      "enlace": "https://campusvirtual.uap.edu.bo",
+      "estado": "vigente",
+      "verificado": "22-nov-2026",
+      "nota": "Su oferta 100% virtual es la más práctica para estudiar desde Ixiamas sin mudarse. En total: 6 facultades, 26 carreras y 8 unidades académicas."
+    },
+    {
+      "id": "uagrm",
+      "nombre": "UAGRM — Universidad Autónoma Gabriel René Moreno",
+      "ciudad": "Santa Cruz",
+      "sedes": ["Santa Cruz"],
+      "como_se_entra": "PSA (vale el 100% de la nota final) y Curso Preuniversitario CUP (mínimo 192 horas, hasta 2 parciales + examen final). Admisión especial: Bachilleres Destacados.",
+      "carreras_cercanas": ["Carreras de todas las facultades (ver convocatoria)"],
+      "costo_examen": "PSA Bs 300 (colegio fiscal/convenio), Bs 500 (particular), Bs 600 (extranjero); CUP FICCT Bs 700.",
+      "enlace": "https://admisionweb.uagrm.edu.bo",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "nota": ""
+    },
+    {
+      "id": "umss",
+      "nombre": "UMSS — Universidad Mayor de San Simón",
+      "ciudad": "Cochabamba",
+      "sedes": ["Cochabamba"],
+      "como_se_entra": "PSA (nota mínima 51/100, con certificación de Notario de Fe Pública), curso preuniversitario (presencial, semipresencial o virtual) y admisión especial (profesionales, discapacidad, convenios, méritos/excelencia).",
+      "carreras_cercanas": ["Ciencias Económicas: Economía, Contaduría Pública, Administración de Empresas, Ingeniería Comercial e Ingeniería Financiera", "Facultad de Ciencias y Tecnología", "Veterinaria y Zootecnia"],
+      "costo_examen": "Facultad de Ciencias y Tecnología Bs 600; Veterinaria y Zootecnia Bs 701 (costos de referencia 2026).",
+      "enlace": "https://www.umss.edu.bo/modalidades-de-adminision/",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "nota": ""
+    },
+    {
+      "id": "uto",
+      "nombre": "UTO — Universidad Técnica de Oruro",
+      "ciudad": "Oruro (Huanuni, Challapata)",
+      "sedes": ["Oruro", "Huanuni", "Challapata"],
+      "como_se_entra": "Examen de ingreso directo y curso preuniversitario, en dos semestres al año.",
+      "carreras_cercanas": ["Facultad Nacional de Ingeniería", "Medicina (210 plazas), Enfermería (78 plazas)"],
+      "costo_examen": "Ejemplo verificado: Facultad Nacional de Ingeniería, examen II/2026, Bs 653. Medicina Bs 850 nacionales.",
+      "enlace": "https://www.uto.edu.bo",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "nota": ""
+    },
+    {
+      "id": "usfx",
+      "nombre": "USFX — Universidad San Francisco Xavier de Chuquisaca",
+      "ciudad": "Sucre (Enfermería también en Monteagudo y Padilla)",
+      "sedes": ["Sucre", "Monteagudo", "Padilla"],
+      "como_se_entra": "Curso preuniversitario (70% de las plazas) y examen directo (30%), más modalidades de mejores bachilleres, deportistas, olimpiadas y concursos.",
+      "carreras_cercanas": ["Más de 55 carreras. Nuevas en 2026: Filosofía, Contabilidad Pública e Ingeniería de Sistemas."],
+      "costo_examen": "Datos 2026 de prensa local: curso preuniversitario Bs 850 (en dos cuotas); examen directo Bs 350 (Bs 175 si aprobó el preuniversitario).",
+      "enlace": "https://correodelsur.com/local/20260129/usfx-6-067-inscritos-para-6-050-plazas-disponibles-para-el-examen-directo.html",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "nota": "Datos 2026 de prensa local (Correo del Sur); la web oficial de la USFX no fue consultada en esta sesión [VERIFICAR]. Unas 8.000 plazas en más de 55 carreras; solo el 44% de ~6.500 postulantes fue admitido al preuniversitario."
+    },
+    {
+      "id": "uajms",
+      "nombre": "UAJMS — Universidad Autónoma «Juan Misael Saracho»",
+      "ciudad": "Tarija",
+      "sedes": ["Tarija"],
+      "como_se_entra": "Curso preuniversitario (CPU), PSA y admisión especial (excelencia académica para bachilleres de Tarija, gestiones 2024–2026, promedio ≥80; profesionales nacionales y extranjeros).",
+      "carreras_cercanas": ["Medicina (180 cupos)", "Carreras de todas las facultades (ver convocatoria)"],
+      "costo_examen": "Bs 700 (colegio fiscal), Bs 800 (particular), Bs 1.600 (extranjero).",
+      "enlace": "https://www.uajms.edu.bo/aunpasodelau",
+      "estado": "vigente",
+      "verificado": "22-nov-2026",
+      "nota": "Gestión 2027 vigente: CPU inscripciones 23-nov al 18-dic-2026, curso 4 al 29-ene-2027; segunda PSA inscripciones 11 al 29-ene-2027, examen jueves 4-feb-2027, 08:30."
+    },
+    {
+      "id": "uatf",
+      "nombre": "UATF — Universidad Autónoma «Tomás Frías»",
+      "ciudad": "Potosí y subsedes departamentales",
+      "sedes": ["Potosí"],
+      "como_se_entra": "PSA y curso preuniversitario (solo Ingeniería Civil y Odontología en esta gestión).",
+      "carreras_cercanas": ["Unas 45 carreras habilitadas en la PSA 1/2027"],
+      "costo_examen": "Pago por QR, CPT o efectivo (Banco Unión). Los bachilleres 2026 no necesitan presentar el diploma todavía: basta cédula de identidad y certificado de nacimiento.",
+      "enlace": "https://postulaciones.uatf.edu.bo/",
+      "estado": "vigente",
+      "verificado": "22-nov-2026",
+      "nota": "PSA 1/2027: inscripciones 16-nov al 9-dic-2026, examen 10-dic-2026."
+    },
+    {
+      "id": "esfm",
+      "nombre": "ESFM — Escuelas Superiores de Formación de Maestros",
+      "ciudad": "Todo el país",
+      "sedes": ["Todo el país"],
+      "como_se_entra": "Examen único a nivel nacional: prueba académica digital única, 100 preguntas en 120 minutos (comprensión lectora 30, razonamiento lógico-matemático 30, conocimientos generales y realidad del país 20, habilidades socioemocionales 20). Ingreso por mérito, hasta llenar los cupos.",
+      "carreras_cercanas": ["Maestro/a, título de Licenciatura"],
+      "costo_examen": "Bs 108 por derecho de postulación. Exentos de pago: postulantes propuestos por los Consejos Educativos de Naciones y Pueblos Indígena Originario Campesinos y por organizaciones de personas con discapacidad.",
+      "enlace": "https://www.minedu.gob.bo/index.php?option=com_content&view=article&id=8223:admision-2026-a-las-esfm-y-unidades-academicas-sera-transparente-y-basada-en-meritos&catid=182:noticias&Itemid=854",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "nota": "3.010 plazas a nivel nacional en 2026. La convocatoria 2027 NO está publicada al 22-nov-2026 [VERIFICAR]: por el patrón de 2026, saldría en diciembre. Vigilar minedu.gob.bo en diciembre. El reto de lógica matemática de CEPO es práctica directa para este examen."
+    },
+    {
+      "id": "infocal",
+      "nombre": "INFOCAL — Fundación INFOCAL",
+      "ciudad": "9 departamentos (15 centros)",
+      "sedes": ["La Paz", "Cochabamba", "Santa Cruz", "y los 9 departamentos"],
+      "como_se_entra": "Título de bachiller. Técnico Superior: 3 años (6 semestres), 70% práctico / 30% teórico; los títulos tienen validez nacional (Resolución Ministerial).",
+      "carreras_cercanas": ["La Paz: Enfermería, Parvulario, Secretariado Ejecutivo, Mecánica Automotriz, Mecánica Industrial, Sistemas Informáticos, Gastronomía, Contaduría General, Administración Industrial, Mercadotecnia, Informática Industrial"],
+      "costo_examen": "En Cochabamba: cuotas mensuales (5 por semestre), sin matrícula. Costos por confirmar en cada centro.",
+      "enlace": "https://ftb.formaciontecnicabolivia.org",
+      "estado": "vigente",
+      "verificado": "22-nov-2026",
+      "nota": "Institución privada sin fines de lucro (Decreto Supremo 22105, 29-dic-1988). Más de 3.000 estudiantes por año en La Paz. Becas: «La institución no otorga ningún tipo de becas en la actualidad» (FAQ oficial de INFOCAL Cochabamba). Es la vía más rápida al trabajo, pero se paga."
+    }
+  ],
+  "becas": [
+    {
+      "id": "minedu-sociales",
+      "nombre": "Programa de Becas para Jóvenes — Becas Sociales (Ministerio de Educación)",
+      "para_quien": "Bachilleres destacados de colegios fiscales o de convenio, de 18 a 25 años.",
+      "que_cubre": "Licenciaturas en universidades privadas y técnico superior en institutos privados. Áreas: empresariales y sociales, informática y electrónica, ciencias de la salud, arquitectura, urbanismo, diseño, gastronomía, turismo y tecnología. 7.000 becas en 2026.",
+      "estado": "cerrado",
+      "verificado": "22-nov-2026",
+      "fuente": "https://www.minedu.gob.bo/index.php?option=com_content&view=article&id=8250%3Aprograma-de-becas-para-jovenes-gestion-2026&catid=182%3Anoticias&Itemid=854",
+      "nota": "Ciclo 2026 cerrado (registro hasta el 9-ene-2026; Prueba Académica 20 al 24-ene-2026; más de 23.000 postulantes). La convocatoria 2027 NO está publicada [VERIFICAR]: revisá minedu.gob.bo en diciembre."
+    },
+    {
+      "id": "minedu-tecnologicas",
+      "nombre": "Programa de Becas para Jóvenes — Becas Tecnológicas (Ministerio de Educación)",
+      "para_quien": "Jóvenes de 18 a 25 años.",
+      "que_cubre": "Cursos 100% virtuales certificados por Oracle, Google y Microsoft (también IBM, AWS y PMI según la prensa): desarrollo de software, inteligencia artificial, ciencia de datos, marketing digital, gestión de proyectos e infraestructura tecnológica. 10.000 becas en 2026. Los 20 mejores estudiantes: visita académica a SpaceX.",
+      "estado": "cerrado",
+      "verificado": "22-nov-2026",
+      "fuente": "https://www.minedu.gob.bo/index.php?option=com_content&view=article&id=8250%3Aprograma-de-becas-para-jovenes-gestion-2026&catid=182%3Anoticias&Itemid=854",
+      "nota": "Ciclo 2026 cerrado (convocatoria 27-feb-2026, registro 1 al 20-feb-2026, clases desde el 10-mar-2026). La convocatoria 2027 NO está publicada [VERIFICAR]: revisá minedu.gob.bo en diciembre."
+    },
+    {
+      "id": "ucb",
+      "nombre": "Universidad Católica Boliviana «San Pablo» — Becas",
+      "para_quien": "Bachilleres talentosos (Beca Bachiller, por examen de selección de la UCB); excelencia académica (Beca Patiño, el examen y la selección los hace la propia Fundación Patiño); área rural (Beca Estrella del Sur, pertenencia a Prelatura o Vicariato Apostólico).",
+      "que_cubre": "Beca Bachiller 100% y Beca Patiño 100%. También becas de alcaldía para el Macrodistrito Sur de La Paz.",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "fuente": "https://lpz.ucb.edu.bo/becas-2/",
+      "nota": "Relevante porque las Becas Sociales del MinEdu cubren universidades privadas. La beca Patiño de pregrado existe solo como la Beca Patiño de la UCB; la convocatoria propia de la Fundación Simón I. Patiño es de maestría (posgrado) y NO aplica a bachilleres."
+    },
+    {
+      "id": "gamlp-upb",
+      "nombre": "Convenio GAMLP–UPB — Gobierno Autónomo Municipal de La Paz y Universidad Privada Boliviana",
+      "para_quien": "Jóvenes del municipio de La Paz, incluidas las zonas rurales, por selección meritocrática de la UPB mediante exámenes de suficiencia.",
+      "que_cubre": "9 becas completas (100%). Convenio firmado el 25-jun-2026.",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "fuente": "https://lapaz.bo",
+      "nota": "Elegibilidad de un bachiller de Ixiamas NO verificada [VERIFICAR]: Ixiamas pertenece al departamento de La Paz pero no al municipio de La Paz. Verificar elegibilidad antes de anunciarla. No se verificó si la convocatoria se repite en 2027."
+    },
+    {
+      "id": "upea-internas",
+      "nombre": "Becas internas de las universidades públicas (ejemplo: UPEA)",
+      "para_quien": "Estudiantes ya admitidos en cada universidad pública.",
+      "que_cubre": "La UPEA menciona beca comedor, beca ayudantía, beca trabajo y beca tesis. Cada universidad pública tiene su propio sistema de becas internas.",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "fuente": "https://preuniversitario.upea.bo",
+      "nota": "Detalle no verificado [VERIFICAR]. Conviene consultarlas una vez admitido."
+    },
+    {
+      "id": "internacionales",
+      "nombre": "Becas internacionales de grado (MEXT Japón, Türkiye Bursları, Stipendium Hungaricum)",
+      "para_quien": "Bachilleres con inglés avanzado y promedios altos, que planifiquen con un año de anticipación.",
+      "que_cubre": "Beca completa de grado: matrícula, alojamiento, seguro médico, pasajes y curso de idioma, según el programa. MEXT (Gobierno de Japón): beca completa de grado, incluida Medicina (7 años). Türkiye Bursları (Gobierno de Turquía): menos de 21 años para grado y promedio mínimo 90% para Medicina, Farmacia y Odontología. Stipendium Hungaricum (Gobierno de Hungría): solo se pueden elegir 2 programas.",
+      "estado": "por confirmar",
+      "verificado": "22-nov-2026",
+      "fuente": "https://buscadordebecas.com/becas/emisor/gobierno-extranjero/",
+      "nota": "Montos y plazos 2027 por confirmar en las webs oficiales [VERIFICAR]. Para el inicio en abril de 2027, las embajadas recibieron solicitudes entre mayo y junio de 2026 (cerrado). Las fuentes consultadas discrepan en el monto del estipendio de Türkiye Bursları: verificar en la web oficial."
+    }
+  ],
+  "becas_no_existen": [
+    "No se encontró ninguna beca de la Gobernación de La Paz para bachilleres.",
+    "No se encontró ninguna beca específica para Ixiamas o la provincia Iturralde."
+  ],
+  "checklist_beca": [
+    "Cédula de identidad vigente.",
+    "Diploma de bachiller (o certificado de que estás por egresar, según la convocatoria).",
+    "Promedio de notas del colegio.",
+    "Registrarte en la convocatoria dentro del plazo (cada convocatoria tiene sus fechas).",
+    "Cada convocatoria pide sus propios requisitos: leé la convocatoria oficial antes de postular.",
+    "Para becas internacionales: inglés avanzado y documentos apostillados y traducidos."
+  ],
+  "demanda": {
+    "fuente": "Encuesta de Mercado Laboral del BID (2019), difundida por el Instituto Boliviano de Comercio Exterior (IBCE).",
+    "limite": "La encuesta es de 2019 y cubre solo el eje troncal (La Paz, Cochabamba y Santa Cruz). El Instituto Nacional de Estadística (INE) NO publica demanda laboral por carrera.",
+    "areas_mas_demandadas": [
+      { "area": "Economía, finanzas y administración", "porcentaje": "50%" },
+      { "area": "Ingeniería y tecnología", "porcentaje": "32%" }
+    ],
+    "carreras_mas_demandadas": ["Contabilidad", "Ingeniería Comercial", "Administración de Empresas", "Hotelería y Turismo", "Geografía y Geodesia", "Ingeniería de Sistemas", "Ingeniería Eléctrica", "Marketing y Publicidad", "Auditoría", "Ingeniería Electrónica"],
+    "perfiles_tecnicos_mas_buscados": ["electrónica", "mecánica", "eléctrica", "electromecánica", "secretariado", "comercio exterior", "gas y petróleo", "enfermería", "industrial", "comunicación social y periodismo"],
+    "titulados_por_anio": "Unos 19.000 licenciados por año salen de las universidades bolivianas.",
+    "demanda_estimada": "De 3.032 a 5.054 profesionales por año en las empresas encuestadas (solo el eje troncal).",
+    "carreras_con_mas_titulados_que_demanda": ["Derecho", "Medicina", "Contabilidad", "Administración de Empresas", "Ingeniería Comercial", "Ciencias de la Educación", "Odontología", "Sistemas", "Enfermería", "Bioquímica y Farmacia"],
+    "contexto_ine": {
+      "desempleo_urbano": "2,9% (3.er trimestre 2025)",
+      "desempleo_juvenil": "4,4%",
+      "empleo_informal": "80–85% del empleo es informal",
+      "sectores_con_mas_empleo": "comercio (23,8%), manufactura (14,6%), alojamiento y comida (10,7%), transporte y almacenamiento (9,5%)"
+    },
+    "conclusion": "La mayoría de los profesionales se gradúan en carreras donde ya hay más titulados de los que las empresas demandan. Elegí también mirando lo que se demanda y lo que se puede estudiar desde Ixiamas."
+  },
+  "aviso_sueldos": "En TikTok circulan infográficos con sueldos por carrera. Esos números no son oficiales: ningún organismo público de Bolivia publica sueldos por carrera. No tomes una decisión por un número de un video.",
+  "pregunta_ia": {
+    "pregunta": "¿Qué carreras va a reemplazar la IA?",
+    "respuesta": "No hay ninguna lista oficial. Lo que sí se sabe: la demanda empresarial se concentra en economía, finanzas y administración (50%) e ingeniería y tecnología (32%) (encuesta BID 2019). La UAP ofrece Ingeniería en Inteligencia Artificial 100% virtual y el MinEdu beca cursos de IA, datos y software. La IA cambia todas las carreras: la ventaja es combinar tu oficio con herramientas digitales."
+  },
+  "trabajar_ya": {
+    "intro": "No hace falta esperar a terminar el bachillerato para empezar a ganar plata o a formarse para un oficio. Estas son las opciones reales, con sus cursos gratis.",
+    "infocal": "INFOCAL: técnico superior de 3 años, 70% práctico, títulos con validez nacional. No otorga becas: es la vía más rápida al trabajo, pero se paga.",
+    "tecnicas": [
+      "UMSA Tecnología: carreras técnicas como Electromecánica y Mecánica Automotriz.",
+      "UPEA: Gestión Turística y Hotelera con ruta escalonada Técnico Medio (2 años) → Técnico Superior (3 años) → Licenciatura (4 años)."
+    ],
+    "ruta": [
+      "Primero las bases (2–4 semanas): matemática básica con Khan Academy y lectura con Edutin, 15–30 minutos por día.",
+      "Elegir UN solo trabajo de la lista (el que más te guste, no todos a la vez).",
+      "Hacer UN curso de ese trabajo, completo, practicando con ejemplos reales.",
+      "Armar 3 muestras: por ejemplo, 3 publicaciones en Canva, 3 videos editados, o una página de prueba. Sin muestras no te contrata nadie.",
+      "Practicar con negocios locales (tiendas de Ixiamas, el CEPO, el Festival) y recién después abrir perfil en Workana o Fiverr (a los 18 años)."
+    ],
+    "trabajos": [
+      {
+        "id": "community-manager",
+        "nombre": "Community manager / manejo de redes sociales",
+        "descripcion": "Manejar las redes de un negocio: publicar, responder mensajes y hacer crecer la cuenta.",
+        "que_necesita": "Saber usar las redes sociales, escribir claro y constancia. Cero matemática.",
+        "cursos": [
+          { "nombre": "Curso Community Manager y Redes Sociales ¡COMPLETO y GRATIS! (SEOSVE)", "plataforma": "SEOSVE (YouTube)", "enlace": "https://www.youtube.com/watch?v=AHJ2IynrLNM", "costo": "Gratis", "descripcion": "Un solo video largo (~6,5 h), paso a paso, incluye Canva, TikTok y analítica. Ideal para ver de a pocos.", "estado": "vigente" },
+          { "nombre": "Curso Community Manager COMPLETO Y GRATIS (2026) (VirtuallCorp)", "plataforma": "VirtuallCorp (YouTube)", "enlace": "https://www.youtube.com/watch?v=d_Y7M7u_O24", "costo": "Gratis", "descripcion": "Actualizado a 2026, con casos reales. Certificado opcional de pago.", "estado": "vigente" },
+          { "nombre": "Fundamentos de Marketing Digital", "plataforma": "Google Activate (ahora en Google Skillshop)", "enlace": "https://learndigital.withgoogle.com/activate", "costo": "Gratis, con certificado", "descripcion": "40 horas, con videos y ejercicios. La plataforma original cambió: los cursos pasaron a Google Skillshop; el enlace abre la página actual de Grow with Google (verificado 22-nov-2026). Buscar el curso dentro de Skillshop.", "estado": "vigente" }
+        ]
+      },
+      {
+        "id": "editor-video",
+        "nombre": "Editor de video con el celular (CapCut)",
+        "descripcion": "Editar videos cortos para redes: los que más se usan hoy para vender y promocionar.",
+        "que_necesita": "Un celular. Cero lectura y cero matemática.",
+        "cursos": [
+          { "nombre": "Cómo editar videos en CapCut desde cero (Dina Martínez)", "plataforma": "Dina Martínez (YouTube)", "enlace": "https://www.youtube.com/watch?v=5smCc0lLfik", "costo": "Gratis", "descripcion": "Desde el celular, video vertical 9:16, cortar, textos, subtítulos automáticos, exportar en 1080p. Exactamente lo que se cobra.", "estado": "vigente" },
+          { "nombre": "Tutoriales dentro de la app CapCut", "plataforma": "CapCut (dentro de la app)", "enlace": null, "costo": "Gratis", "descripcion": "La propia app trae plantillas y tutoriales. [NO VERIFICADO: disponibilidad de los tutoriales en la versión actual de la app.]", "estado": "por confirmar" }
+        ]
+      },
+      {
+        "id": "disenador-canva",
+        "nombre": "Diseñador con Canva",
+        "descripcion": "Diseñar afiches, tarjetas, logos y publicaciones para negocios, con plantillas.",
+        "que_necesita": "Gusto por lo visual. Cero matemática.",
+        "cursos": [
+          { "nombre": "Curso de Canva (María Victoria Andrade)", "plataforma": "Edutin Academy", "enlace": "https://edutin.com/curso-de-canva", "costo": "Contenido gratis; certificado opcional con costo ajustado al país", "descripcion": "Verificado en la página el 22-nov-2026: 40.802 estudiantes, 4,9/5, sin conocimientos previos, proyecto práctico guiado (banner, publicaciones, pieza animada, cartel). 120 h certificables; duración del contenido [NO VERIFICADA].", "estado": "vigente" },
+          { "nombre": "Canva completo", "plataforma": "Cursa", "enlace": "https://cursa.app/es/curso-gratis/canva-completo-bggg", "costo": "Gratis, certificado digital gratis", "descripcion": "Solo video, con ejercicios. Certificado gratis incluido. 9 h 41 min de video.", "estado": "vigente" }
+        ]
+      },
+      {
+        "id": "asistente-virtual",
+        "nombre": "Asistente virtual",
+        "descripcion": "Ayudar a un negocio o profesional por internet: responder correos, agendar, organizar archivos y documentos.",
+        "que_necesita": "Ser ordenado y saber escribir bien. Poca matemática.",
+        "cursos": [
+          { "nombre": "Curso de Asistente Virtual Gratis (8 fascículos)", "plataforma": "InfotepCursos", "enlace": "https://infotepcursos.com/curso-de-asistente-virtual-y-trabajo-remoto/", "costo": "Gratis, sin registro", "descripcion": "8 fascículos gratuitos. Enseña el oficio completo y cómo conseguir clientes y cobrar. Advertencia: es mayormente TEXTO, no video; mejor como segundo paso, después de aprender las herramientas. Incluye la advertencia anti-estafas.", "estado": "vigente" },
+          { "nombre": "Productividad Personal", "plataforma": "Google Activate", "enlace": "https://learndigital.withgoogle.com/activate", "costo": "Gratis", "descripcion": "Herramientas de Google (Gmail, Drive, Calendar, Docs, Sheets): justo lo que usa un asistente virtual. ~20 h (según guía secundaria).", "estado": "vigente" },
+          { "nombre": "Trabajar como Asistente Virtual", "plataforma": "Alison", "enlace": "https://alison.com/es/curso/trabajar-como-asistente-virtual", "costo": "Curso gratis; certificado de pago [NO VERIFICADO el costo]", "descripcion": "Explica el oficio, los nichos y cómo destacar. A tu ritmo.", "estado": "vigente" }
+        ]
+      },
+      {
+        "id": "atencion-cliente",
+        "nombre": "Atención al cliente por chat y WhatsApp",
+        "descripcion": "Responder mensajes y reclamos de clientes por chat, para negocios que venden por internet.",
+        "que_necesita": "Escribir bien y con paciencia. Cero matemática.",
+        "cursos": [
+          { "nombre": "Curso de atención al cliente", "plataforma": "Certhana Academy", "enlace": "https://www.certhana.com/curso-de-atencion-al-cliente/", "costo": "Gratis, con certificado incluido", "descripcion": "Video clases, desde cero, con WhatsApp Business, tickets y manejo de quejas. 4 unidades, 40 h. El más completo y gratis.", "estado": "vigente" },
+          { "nombre": "Curso de atención al cliente gratis", "plataforma": "LaborIA", "enlace": "https://laboria.app/curso-atencion-al-cliente-gratis/", "costo": "Gratis, certificado PDF gratis, sin registro", "descripcion": "Alternativa corta, ~2 h. Advertencia: es mayormente LECTURA (120 min), no video; menos ideal para quien lee poco.", "estado": "vigente" }
+        ]
+      },
+      {
+        "id": "ventas-whatsapp",
+        "nombre": "Ventas por internet / WhatsApp Business",
+        "descripcion": "Vender productos por WhatsApp e Instagram: catálogo, pedidos y seguimiento.",
+        "que_necesita": "Saber conversar y ser constante. Matemática básica: sumar y calcular el vuelto.",
+        "cursos": [
+          { "nombre": "Curso de ventas gratis", "plataforma": "CursosRentables", "enlace": "https://cursosrentables.com/curso/curso-de-ventas-gratis", "costo": "Gratis, certificado incluido", "descripcion": "Empieza desde cero, incluye vender por WhatsApp Business con guiones. 16 lecciones, 3 h 32 min. Advertencia: las lecciones son mayormente texto, no video.", "estado": "vigente" },
+          { "nombre": "Ventas por WhatsApp (33 videos cortos)", "plataforma": "Google Classroom (Axel Gualda)", "enlace": "https://classroom.google.com/c/Nzg5NTA3ODU3ODUx?cjc=lhw42mjz", "costo": "Gratis, con certificado", "descripcion": "Todo en video corto: automatizar mensajes, campañas y seguimiento. 33 videos de menos de 10 min. Requiere cuenta de Google.", "estado": "vigente" }
+        ]
+      },
+      {
+        "id": "wordpress",
+        "nombre": "Páginas web sin código (WordPress)",
+        "descripcion": "Hacer páginas web para negocios sin programar, con plantillas.",
+        "que_necesita": "Paciencia y gusto por lo visual. Cero matemática.",
+        "cursos": [
+          { "nombre": "Curso de WordPress y Elementor Pro gratis", "plataforma": "Daniel Sulbarán (YouTube)", "enlace": "https://danielsulbaran.com/curso-wordpress-gratis", "costo": "Gratis", "descripcion": "De un diseño a una web publicada, sin escribir código. 11 clases, 4 h 9 min de video. Advertencia: usa Elementor Pro (de pago); con el Elementor gratis se puede hacer casi todo lo básico.", "estado": "vigente" },
+          { "nombre": "Curso de WordPress", "plataforma": "Edutin Academy", "enlace": null, "costo": "Gratis; certificado opcional con costo", "descripcion": "Para principiantes, sin programar. ~5 semanas, 1–2 h por semana. [NO VERIFICADO: enlace directo del curso.] Buscar «WordPress» en edutin.com.", "estado": "por confirmar" },
+          { "nombre": "Crea una página web sin programar con WordPress y Divi", "plataforma": "Udemy", "enlace": "https://www.udemy.com/course/crea-una-pagina-web-sin-programar-con-wordpress-y-divi/", "costo": "Gratis al momento de la consulta (nov-2026)", "descripcion": "A tu ritmo. Advertencias: curso de 2018; Divi es de pago; Udemy a veces cambia el precio: verificar que siga gratis al inscribirse.", "estado": "vigente" }
+        ]
+      },
+      {
+        "id": "fotografia-celular",
+        "nombre": "Fotografía con el celular",
+        "descripcion": "Sacar fotos de productos y personas para redes y catálogos, y editarlas en el celular.",
+        "que_necesita": "Un celular con buena cámara. Cero matemática.",
+        "cursos": [
+          { "nombre": "Curso de Fotografía y Photoshop (AulaClic)", "plataforma": "AulaClic (YouTube, vía plataformasdecursos.gratis)", "enlace": "https://www.plataformasdecursos.gratis/curso-de-fotografia-y-photoshop/", "costo": "Gratis", "descripcion": "59 videos gratis. Incluye sección de cámara de celular (trucos, enfoque, disparo) y edición. Advertencia: gran parte es de cámara réflex y Photoshop (computadora); la parte de celular es una sección, no todo el curso.", "estado": "vigente" },
+          { "nombre": "Fotografía profesional con smartphones", "plataforma": "Crehana", "enlace": "https://www.crehana.com/blog/estilo-vida/por-que-tomar-un-curso-de-fotografia-gratis-aqui-la-respuesta/", "costo": "Precio [NO VERIFICADO]", "descripcion": "Recomendado en el blog de Crehana, pero no se verificó si es gratis o de pago. Buscar en crehana.com.", "estado": "por confirmar" }
+        ],
+        "herramienta": "Snapseed (app gratis de Google para editar fotos en el celular)."
+      },
+      {
+        "id": "transcripcion",
+        "nombre": "Transcripción de audio a texto",
+        "descripcion": "Pasar audios y videos a texto escrito: entrevistas, clases, reuniones.",
+        "que_necesita": "Saber escribir bien y escuchar con atención. Cero matemática.",
+        "cursos": [
+          { "nombre": "Guía: cómo transcribir audio a texto gratis", "plataforma": "ByteTony", "enlace": "https://bytetony.com/es/como-transcribir-audio-a-texto-gratis/", "costo": "Gratis", "descripcion": "Explica paso a paso cómo usar TurboScribe (plan gratis: 3 archivos por día, hasta 30 min cada uno) y corregir el texto. Es una guía, no un curso.", "estado": "vigente" },
+          { "nombre": "Transcribir en el navegador con Whisper", "plataforma": "NativeConvert", "enlace": "https://nativeconvert.com/es/guides/how-to-transcribe-audio-to-text", "costo": "Gratis", "descripcion": "La IA transcribe en tu propio teléfono o computadora, sin subir el archivo. Sirve para practicar y para trabajar.", "estado": "vigente" }
+        ],
+        "advertencia": "La IA ya transcribe sola: el trabajo es revisar y corregir el texto. Es un trabajo de precisión, no de velocidad."
+      },
+      {
+        "id": "entrada-datos",
+        "nombre": "Entrada de datos / Excel básico",
+        "descripcion": "Pasar datos a planillas, organizar listas y hacer cuentas básicas en Excel o Google Sheets.",
+        "que_necesita": "Matemática básica: sumar, restar y porcentajes. El CEPO te ayuda con eso.",
+        "cursos": [
+          { "nombre": "Curso básico de Excel online 100% GRATIS", "plataforma": "OfficeATope", "enlace": "https://officeatope.com/excel/curso-basico-gratis/", "costo": "Gratis, sin registro", "descripcion": "Paso a paso y en orden. 30 lecciones en video, ~5 h. Enseña a usar Excel online GRATIS con OneDrive (no hace falta comprar Office). Ideal para Ixiamas.", "estado": "vigente" },
+          { "nombre": "Cómo Usar Excel para Principiantes 2026", "plataforma": "HubSpot Español (YouTube)", "enlace": "https://www.youtube.com/watch?v=stRd64hplfQ", "costo": "Gratis", "descripcion": "Fórmulas básicas, filtros, BUSCARV y gráficos explicados desde cero. 1 video (~10 min).", "estado": "vigente" },
+          { "nombre": "Curso de Excel Completo (Dostin Hurtado)", "plataforma": "Dostin Hurtado (YouTube, vía Class Central)", "enlace": "https://www.classcentral.com/course/youtube-curso-de-excel-completo-y-gratis-dostin-hurtado-54026", "costo": "Gratis", "descripcion": "Curso completo en video, muy popular en Latinoamérica. Básico e intermedio, en 1 día.", "estado": "vigente" }
+        ]
+      }
+    ],
+    "bonus": [
+      { "nombre": "Tester de apps", "descripcion": "Probar aplicaciones y reportar errores. Plataforma: TesterWork. Requisitos exactos en Bolivia [VERIFICAR]." },
+      { "nombre": "Creador UGC", "descripcion": "Grabar videos cortos con el celular para marcas, con CapCut. No hace falta tener seguidores." },
+      { "nombre": "Tutor de español por conversación", "descripcion": "Conversar en español con estudiantes de otros países, por video. Plataformas: Preply, italki, Upwork. Requisitos [VERIFICAR]." }
+    ],
+    "advertencias": [
+      "Casi todas las plataformas freelance exigen ser mayor de 18 años (o una cuenta con un adulto responsable). Para menores de 18, el camino realista es: aprender ahora, practicar con negocios locales y registrarse al cumplir 18. [VERIFICAR en cada plataforma al registrarse.]",
+      "Cobrar desde Bolivia es el cuello de botella (PayPal no recibe en Bolivia). Workana paga por Payoneer o transferencia, entre otras vías. [VERIFICAR las vías de cobro antes de prometer ingresos.]",
+      "Cuidado con las estafas: un trabajo legítimo NUNCA pide dinero por adelantado: ni para «reservar la vacante», ni para un curso obligatorio, ni para un kit de trabajo.",
+      "Internet lento: YouTube se puede ver en calidad baja (144p/360p) y gasta pocos datos. Lo ideal es descargar o ver los videos donde haya wifi (por ejemplo, en el CEPO) y practicar después sin conexión."
+    ],
+    "donde_buscar": [
+      "Workana (toda en español, la más útil)",
+      "Fiverr (se publica un servicio con precio cerrado)",
+      "Upwork (la de más volumen, pero casi todo en inglés)",
+      "LinkedIn",
+      "Negocios locales de Ixiamas y Rurrenabaque"
+    ]
+  },
+  "cursos_mejora": {
+    "matematica": {
+      "titulo": "Mejorar en matemática (desde cero)",
+      "nota": "Para quien no sabe dividir bien, no domina las tablas o se pierde con fracciones y porcentajes. Todo desde cero, en español, en video, gratis.",
+      "cursos": [
+        {
+          "nombre": "Khan Academy en español",
+          "plataforma": "Khan Academy",
+          "enlace": "https://es.khanacademy.org",
+          "costo": "Gratis, para siempre",
+          "descripcion": "Videos cortos de 5 a 15 minutos + ejercicios con corrección inmediata. Aritmética desde cero (sumar, restar, multiplicar, dividir), fracciones, decimales, porcentajes, álgebra y geometría. No da certificados: sirve para aprender.",
+          "recomendado": true
+        },
+        {
+          "nombre": "Matemáticas desde cero",
+          "plataforma": "Cursa",
+          "enlace": "https://cursa.app/es/curso-gratis/matematicas-deii",
+          "costo": "Gratis, con certificado digital gratis",
+          "descripcion": "Lecciones en video (11–20 min) + ejercicios: operaciones con signo, fracciones, jerarquía de operaciones, potencias, raíces, ecuaciones de primer grado."
+        },
+        {
+          "nombre": "Matemáticas desde cero",
+          "plataforma": "Antonio Díaz Profe (YouTube)",
+          "enlace": "https://www.antoniodiazprofe.com/courses/matematicas-desde-cero/lessons/%f0%9f%a7%ae-clase-1-operaciones-basicas-y-aritmetica-facil/",
+          "costo": "Gratis",
+          "descripcion": "20+ clases en video: clase 1 suma, resta, multiplicación, división, potencia y raíz; luego fracciones, regla de tres y porcentajes (clase 13), álgebra."
+        },
+        {
+          "nombre": "Micro-videos solo para la división",
+          "plataforma": "YouTube",
+          "enlace": "https://youtu.be/SHCxvnZMoRk",
+          "costo": "Gratis",
+          "descripcion": "Videos cortos, uno por tema: dividir entre 1 cifra, entre 2 cifras, entre 3 cifras, y las tablas de multiplicar (lista completa del 1 al 10).",
+          "videos": [
+            { "tema": "Dividir entre 1 cifra", "enlace": "https://youtu.be/SHCxvnZMoRk" },
+            { "tema": "Dividir entre 2 cifras", "enlace": "https://youtu.be/ZoyRgFS6xlo" },
+            { "tema": "Dividir entre 3 cifras", "enlace": "https://youtu.be/GaoIPNVqsrk" },
+            { "tema": "Las tablas de multiplicar (lista completa, del 1 al 10)", "enlace": "https://www.youtube.com/playlist?list=PLzYMtd-ocbTWGgsPLhFUC3b4ntslODvdF" },
+            { "tema": "Índice completo de videos por tema (suma, resta, multiplicación, división, fracciones y más)", "enlace": "https://educacion.fespugtclm.es/videos-de-matematicas-para-educacion-infantil-primaria-secundaria-bachillerato-y-selectividad-evau-fernando-gallar-fernandez/" }
+          ]
+        }
+      ]
+    },
+    "lectura": {
+      "titulo": "Mejorar en lectura",
+      "nota": "Para quien lee poco o se pierde al leer textos largos. La lectura se entrena como la matemática: con práctica diaria, no con talento.",
+      "cursos": [
+        {
+          "nombre": "Curso de lectura (método IPLER)",
+          "plataforma": "Edutin",
+          "enlace": "https://edutin.com/curso-de-lectura",
+          "costo": "Gratis (contenido); certificado opcional con costo",
+          "descripcion": "Método IPLER (Inspeccionar, Preguntar, Leer, Expresar, Revisar). 5 unidades, 90 horas certificables. Contenido gratis; certificado opcional con costo. 22.233 estudiantes, 4,9/5.",
+          "recomendado": true
+        },
+        {
+          "nombre": "Lenguaje 2016",
+          "plataforma": "Cursa",
+          "enlace": "https://cursa.app/es/curso-gratis/lenguaje-2016-eca",
+          "costo": "Gratis, con certificado",
+          "descripcion": "Videos de 17 a 34 minutos + ejercicios con preguntas después de cada clase: idea principal de un texto, información explícita e implícita, inferencias, conectores, lectura activa y síntesis."
+        },
+        {
+          "nombre": "Tips para Lectura Veloz",
+          "plataforma": "FUDE",
+          "enlace": "https://www.educativo.net/cursos-gratis/tips-lectura-veloz",
+          "costo": "Gratis; certificado se paga aparte",
+          "descripcion": "Curso gratis de lectura veloz: leer rápido y comprender, eliminar malos hábitos (releer, detenerse en cada palabra), ampliar el campo visual, ejercicios iniciales. Requisitos: ser mayor de 16 años, haber terminado el ciclo básico de secundaria, internet de más de 1 MB. Los jóvenes de 14–15 años no cumplen el requisito de edad."
+        },
+        {
+          "nombre": "Lectura rápida",
+          "plataforma": "CursosGratisUNAM",
+          "enlace": "https://cursosgratisunam.com/educacion/lectura-rapida/",
+          "costo": "Gratis",
+          "descripcion": "Curso de lectura rápida, unas 5 horas, paso a paso, a tu ritmo: por qué el ojo se atasca, ejercicios oculares, campo visual, duplicar el ritmo inicial sin perder comprensión, escaneo de textos. [NO VERIFICADO: la página es un directorio; no se verificó en qué plataforma se aloja el curso ni su contenido exacto.]",
+          "estado": "por confirmar"
+        }
+      ],
+      "habito": [
+        "15 minutos al día, siempre a la misma hora, con un texto corto (un cuento, una noticia, una letra de canción).",
+        "Leer con una pregunta en mente: «¿de qué trata esto en una frase?». Al terminar, decirlo en voz alta.",
+        "Empezar por lo que gusta: cuentos, fútbol, música, historias de la selva. El CEPO tiene literatura y narración oral para esto.",
+        "Subrayar o anotar las palabras que no se entienden y buscarlas después."
+      ]
+    }
+  },
+  "plazos": [
+    { "fecha": "Hasta 6-dic-2026", "que": "UMSA Agronomía: inscripción a la PSA", "estado": "vigente", "fuente": "https://convocatorias.umsa.bo/" },
+    { "fecha": "Hasta 9-dic-2026 · examen 10-dic-2026", "que": "UATF PSA 1/2027 (unas 45 carreras)", "estado": "vigente", "fuente": "https://postulaciones.uatf.edu.bo/" },
+    { "fecha": "Hasta 11-dic-2026", "que": "UMSA Humanidades: inscripción a la PSA", "estado": "vigente", "fuente": "https://convocatorias.umsa.bo/" },
+    { "fecha": "Hasta 18-dic-2026", "que": "UAJMS CPU: inscripciones", "estado": "vigente", "fuente": "https://www.uajms.edu.bo/aunpasodelau" },
+    { "fecha": "Diciembre 2026", "que": "Vigilar minedu.gob.bo: convocatoria 2027 de Becas para Jóvenes y de ESFM", "estado": "por confirmar", "fuente": "https://minedu.gob.bo" },
+    { "fecha": "Hasta 14-ene-2027", "que": "UMSA Económicas / Contaduría: inscripción a la PSA", "estado": "vigente", "fuente": "https://convocatorias.umsa.bo/" },
+    { "fecha": "Hasta 23-ene-2027 · exámenes 25, 27, 29 y 30-ene-2027", "que": "UMSA Tecnología: inscripción a la PSA (Bs 150)", "estado": "vigente", "fuente": "https://convocatorias.umsa.bo/" },
+    { "fecha": "Hasta 29-ene-2027 · examen 4-feb-2027", "que": "UAJMS segunda PSA", "estado": "vigente", "fuente": "https://www.uajms.edu.bo/aunpasodelau" }
+  ],
+  "preguntas_frecuentes": [
+    {
+      "pregunta": "¿Puedo conseguir beca?",
+      "respuesta": "Sí. La más importante es el Programa de Becas para Jóvenes del Ministerio de Educación: 7.000 becas sociales y 10.000 tecnológicas en 2026. El ciclo 2026 cerró; la convocatoria 2027 hay que revisarla en minedu.gob.bo en diciembre. También hay becas de universidades (UCB, UPEA) y becas para estudiar fuera, que se preparan con un año de anticipación."
+    },
+    {
+      "pregunta": "¿Universidad o carrera técnica?",
+      "respuesta": "Depende de lo que quieras. El técnico superior dura 3 años y es 70% práctico (INFOCAL), y te pone a trabajar más rápido; la licenciatura dura más años y abre más puertas a largo plazo. En esta página están las dos rutas, con sus costos y plazos."
+    },
+    {
+      "pregunta": "¿Se puede estudiar y trabajar?",
+      "respuesta": "Sí. Hay carreras 100% virtuales (UAP) que se hacen desde Ixiamas sin mudarse, y los cursos tecnológicos del MinEdu también son 100% virtuales. Las carreras técnicas (INFOCAL, 3 años) te ponen a trabajar más rápido, y los trabajos modernos de esta página se aprenden con cursos gratis en video."
+    },
+    {
+      "pregunta": "¿Qué necesito para estudiar en el exterior?",
+      "respuesta": "Inglés avanzado, promedios altos y documentos apostillados y traducidos. Las becas internacionales de grado (MEXT Japón, Türkiye Bursları, Stipendium Hungaricum) se preparan con un año de anticipación."
+    },
+    {
+      "pregunta": "¿Y si no quedo en la universidad que quiero?",
+      "respuesta": "Hay varias vías: el curso preuniversitario, una segunda PSA, la admisión especial por excelencia y otras universidades (UAP virtual, UABJB Riberalta). También están las carreras técnicas (INFOCAL, 3 años) y los trabajos modernos con cursos gratis que están en esta misma página."
+    }
+  ],
+  "invitacion_testimonios": "¿Ya terminaste el cole y estás estudiando o trabajando? Contanos tu historia por el Buzón y la publicamos con tu nombre, solo si vos querés."
+}
