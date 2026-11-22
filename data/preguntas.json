@@ -1,905 +1,1045 @@
 {
- "nota": "Banco de preguntas del examen diagnóstico. 10 preguntas por área (Matemática, Lenguaje, Ciencias Naturales, Ciencias Sociales, Inglés, Filosofía), con dificultad adaptativa 1–3. Cada pregunta lleva fuente y justificación obligatorias. Ver data/README.md.",
- "preguntas": [
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
-   "id": "MAT-1-001",
-   "justificacion": "7 × 8 = 56. La multiplicación es una suma repetida: 7 sumado 8 veces da 56.",
-   "nivel": 1,
-   "opciones": [
-    "54",
-    "56",
-    "64",
-    "48"
-   ],
-   "pregunta": "¿Cuál es el resultado de 7 × 8?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
-   "id": "MAT-1-002",
-   "justificacion": "Al sumar un número negativo con uno positivo se restan los valores absolutos: 8 − 5 = 3, y el resultado conserva el signo del número mayor, que es positivo.",
-   "nivel": 1,
-   "opciones": [
-    "3",
-    "−3",
-    "13",
-    "−13"
-   ],
-   "pregunta": "¿Cuál es el resultado de (−5) + 8?",
-   "respuesta_correcta": 0
-  },
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
-   "id": "MAT-1-003",
-   "justificacion": "El 25% es la cuarta parte de 80: 80 ÷ 4 = 20. También se calcula como 80 × 25 ÷ 100 = 20.",
-   "nivel": 1,
-   "opciones": [
-    "20 bolivianos",
-    "25 bolivianos",
-    "40 bolivianos",
-    "16 bolivianos"
-   ],
-   "pregunta": "¿Cuánto es el 25% de 80 bolivianos?",
-   "respuesta_correcta": 0
-  },
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
-   "id": "MAT-2-001",
-   "justificacion": "Por regla de tres simple directa: cada cuaderno cuesta 30 ÷ 5 = 6 bolivianos, y 8 × 6 = 48 bolivianos.",
-   "nivel": 2,
-   "opciones": [
-    "40 bolivianos",
-    "48 bolivianos",
-    "45 bolivianos",
-    "54 bolivianos"
-   ],
-   "pregunta": "Si 5 cuadernos cuestan 30 bolivianos, ¿cuánto cuestan 8 cuadernos del mismo precio?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
-   "id": "MAT-2-002",
-   "justificacion": "El área del rectángulo es base por altura: 6 × 4 = 24 m².",
-   "nivel": 2,
-   "opciones": [
-    "20 m²",
-    "24 m²",
-    "10 m²",
-    "28 m²"
-   ],
-   "pregunta": "¿Cuál es el área de un rectángulo de 6 m de largo y 4 m de ancho?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
-   "id": "MAT-2-003",
-   "justificacion": "Despejando: 2x = 13 − 5 = 8, luego x = 8 ÷ 2 = 4. Comprobación: 2 × 4 + 5 = 13.",
-   "nivel": 2,
-   "opciones": [
-    "3",
-    "5",
-    "4",
-    "6"
-   ],
-   "pregunta": "¿Cuál es el valor de x en la ecuación 2x + 5 = 13?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
-   "id": "MAT-2-004",
-   "justificacion": "Por el Teorema de Pitágoras: h² = 3² + 4² = 9 + 16 = 25, y la raíz cuadrada de 25 es 5 cm.",
-   "nivel": 2,
-   "opciones": [
-    "6 cm",
-    "7 cm",
-    "5 cm",
-    "4 cm"
-   ],
-   "pregunta": "Un triángulo rectángulo tiene catetos de 3 cm y 4 cm. ¿Cuánto mide su hipotenusa?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
-   "id": "MAT-3-001",
-   "justificacion": "El trinomio se factoriza como (x − 2)(x − 3) = 0, porque 2 + 3 = 5 y 2 × 3 = 6; por tanto x = 2 o x = 3.",
-   "nivel": 3,
-   "opciones": [
-    "x = 2 y x = 3",
-    "x = 1 y x = 6",
-    "x = −2 y x = −3",
-    "x = 2 y x = −3"
-   ],
-   "pregunta": "¿Cuáles son las soluciones de la ecuación x² − 5x + 6 = 0?",
-   "respuesta_correcta": 0
-  },
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
-   "id": "MAT-3-002",
-   "justificacion": "El interés simple es I = C × r × t = 1.000 × 0,05 × 2 = 100 bolivianos.",
-   "nivel": 3,
-   "opciones": [
-    "50 bolivianos",
-    "150 bolivianos",
-    "100 bolivianos",
-    "200 bolivianos"
-   ],
-   "pregunta": "Se depositan 1.000 bolivianos a interés simple del 5% anual. ¿Cuánto interés se genera en 2 años?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Matemática",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
-   "id": "MAT-3-003",
-   "justificacion": "La media es la suma de los datos dividida entre la cantidad de datos: (4 + 6 + 8 + 10 + 12) ÷ 5 = 40 ÷ 5 = 8.",
-   "nivel": 3,
-   "opciones": [
-    "6",
-    "10",
-    "8",
-    "9"
-   ],
-   "pregunta": "¿Cuál es la media aritmética de los datos 4, 6, 8, 10 y 12?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-1-001",
-   "justificacion": "«Vaca» se escribe con v; «baca» es otra palabra (la parrilla portaequipajes de un vehículo) y las formas con k no existen en español.",
-   "nivel": 1,
-   "opciones": [
-    "Baca",
-    "Vaca",
-    "Baka",
-    "Vaka"
-   ],
-   "pregunta": "¿Cuál es la escritura correcta del animal que da leche y se escribe con «v»?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-1-002",
-   "justificacion": "«Camión» es una palabra aguda terminada en n y las agudas terminadas en vocal, n o s llevan tilde; «árbol» y «lápiz» también la llevarían, pero aquí aparecen sin ella.",
-   "nivel": 1,
-   "opciones": [
-    "arbol",
-    "camión",
-    "lapiz",
-    "mesa"
-   ],
-   "pregunta": "¿Cuál de estas palabras está escrita correctamente con tilde?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-1-003",
-   "justificacion": "En «país» las vocales a-í se pronuncian en sílabas distintas (pa-ís), es decir, forman un hiato; en «aire», «cielo» y «bueno» las vocales forman diptongo.",
-   "nivel": 1,
-   "opciones": [
-    "país",
-    "aire",
-    "cielo",
-    "bueno"
-   ],
-   "pregunta": "¿Cuál de estas palabras tiene un hiato?",
-   "respuesta_correcta": 0
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-2-001",
-   "justificacion": "«Rápido» es un adverbio de modo porque modifica al verbo «corre» indicando cómo se realiza la acción; «el» es artículo, «perro» sustantivo y «corre» verbo.",
-   "nivel": 2,
-   "opciones": [
-    "El",
-    "perro",
-    "corre",
-    "rápido"
-   ],
-   "pregunta": "En la oración «El perro corre rápido», ¿qué palabra es el adverbio?",
-   "respuesta_correcta": 3
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-2-002",
-   "justificacion": "El cuento es una narración breve con pocos personajes y una sola acción principal; la novela es extensa y la leyenda se basa en la tradición popular.",
-   "nivel": 2,
-   "opciones": [
-    "Novela",
-    "Cuento",
-    "Leyenda",
-    "Ensayo"
-   ],
-   "pregunta": "¿Qué género literario es un relato breve en prosa, con pocos personajes y un solo desenlace?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-2-003",
-   "justificacion": "«Libro» es un sustantivo común porque nombra un objeto; «lee» es el verbo, «un» y «la» son artículos.",
-   "nivel": 2,
-   "opciones": [
-    "lee",
-    "un",
-    "libro",
-    "la"
-   ],
-   "pregunta": "En la oración «La niña lee un libro», ¿qué palabra es el sustantivo?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-2-004",
-   "justificacion": "La noticia es el género periodístico que relata hechos actuales con objetividad y estructura las respuestas a las preguntas básicas; la crónica narra con estilo personal y la entrevista se basa en preguntas y respuestas.",
-   "nivel": 2,
-   "opciones": [
-    "Entrevista",
-    "Crónica",
-    "Noticia",
-    "Ensayo"
-   ],
-   "pregunta": "¿Qué género periodístico informa sobre un hecho reciente de forma objetiva, respondiendo qué, quién, cuándo, dónde y por qué?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-3-001",
-   "justificacion": "Es una metáfora: identifica directamente los ojos con los luceros sin usar «como», que sería propio de la comparación.",
-   "nivel": 3,
-   "opciones": [
-    "Comparación",
-    "Metáfora",
-    "Hipérbole",
-    "Personificación"
-   ],
-   "pregunta": "¿Qué figura literaria hay en la expresión «Tus ojos son dos luceros»?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-3-002",
-   "justificacion": "«Visitaremos» es la primera persona del plural del futuro del indicativo del verbo visitar, y la acción ocurrirá mañana.",
-   "nivel": 3,
-   "opciones": [
-    "Presente",
-    "Pasado",
-    "Futuro",
-    "Condicional"
-   ],
-   "pregunta": "¿En qué tiempo verbal está el verbo de la oración «Mañana visitaremos el museo»?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Lenguaje",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
-   "id": "LEN-3-003",
-   "justificacion": "Adela Zamudio (1854–1928) fue una escritora y poeta boliviana, autora de obras como «Íntimas»; Gabriela Mistral es chilena, Alfonsina Storni argentina y Sor Juana Inés de la Cruz mexicana.",
-   "nivel": 3,
-   "opciones": [
-    "Gabriela Mistral",
-    "Alfonsina Storni",
-    "Adela Zamudio",
-    "Sor Juana Inés de la Cruz"
-   ],
-   "pregunta": "¿Cuál de estas autoras es una escritora boliviana destacada de los siglos XIX y XX?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
-   "id": "NAT-1-001",
-   "justificacion": "En la fotosíntesis las plantas absorben dióxido de carbono (CO₂) y liberan oxígeno.",
-   "nivel": 1,
-   "opciones": [
-    "Oxígeno",
-    "Dióxido de carbono",
-    "Nitrógeno",
-    "Hidrógeno"
-   ],
-   "pregunta": "¿Qué gas absorben las plantas de la atmósfera para realizar la fotosíntesis?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
-   "id": "NAT-1-002",
-   "justificacion": "A temperatura ambiente el agua es líquida; se vuelve sólida (hielo) al enfriarse y gaseosa (vapor) al calentarse.",
-   "nivel": 1,
-   "opciones": [
-    "Sólido",
-    "Líquido",
-    "Gaseoso",
-    "Plasma"
-   ],
-   "pregunta": "¿En qué estado de la materia se encuentra el agua a temperatura ambiente?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
-   "id": "NAT-1-003",
-   "justificacion": "La teoría celular establece que todos los seres vivos están formados por una o más células.",
-   "nivel": 1,
-   "opciones": [
-    "De átomos sueltos",
-    "De células",
-    "De rocas",
-    "De agua solamente"
-   ],
-   "pregunta": "Según la teoría celular, ¿de qué están formados todos los seres vivos?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "SERNAP — Parque Nacional y ANMI Madidi (D.S. N.º 24123, 21-sep-1995)",
-   "id": "NAT-2-001",
-   "justificacion": "El Madidi fue creado el 21 de septiembre de 1995 mediante el Decreto Supremo N.º 24123.",
-   "nivel": 2,
-   "opciones": [
-    "21 de septiembre de 1995",
-    "6 de agosto de 1825",
-    "25 de mayo de 1809",
-    "1 de enero de 2000"
-   ],
-   "pregunta": "¿En qué fecha fue creado el Parque Nacional y Área Natural de Manejo Integrado Madidi?",
-   "respuesta_correcta": 0
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "SERNAP — Parque Nacional y ANMI Madidi (D.S. N.º 24123, 21-sep-1995)",
-   "id": "NAT-2-002",
-   "justificacion": "El Madidi tiene una superficie de aproximadamente 1.895.750 hectáreas, cerca de 1,9 millones de hectáreas.",
-   "nivel": 2,
-   "opciones": [
-    "Aproximadamente 1.895.750 hectáreas",
-    "Aproximadamente 100.000 hectáreas",
-    "Aproximadamente 500.000 hectáreas",
-    "Aproximadamente 5.000.000 de hectáreas"
-   ],
-   "pregunta": "¿Cuál es la superficie aproximada del Parque Nacional y ANMI Madidi?",
-   "respuesta_correcta": 0
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
-   "id": "NAT-2-003",
-   "justificacion": "Las plantas son productoras porque fabrican su propio alimento mediante la fotosíntesis y sostienen la cadena trófica.",
-   "nivel": 2,
-   "opciones": [
-    "Los herbívoros",
-    "Los carnívoros",
-    "Las plantas",
-    "Los descomponedores"
-   ],
-   "pregunta": "En una cadena trófica, ¿qué organismos son los productores?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
-   "id": "NAT-2-004",
-   "justificacion": "En el intestino delgado se absorben la mayoría de los nutrientes, que pasan a la sangre para distribuirse por el cuerpo.",
-   "nivel": 2,
-   "opciones": [
-    "En el esófago",
-    "En el estómago",
-    "En el intestino delgado",
-    "En el intestino grueso"
-   ],
-   "pregunta": "¿En qué parte del sistema digestivo se absorben la mayoría de los nutrientes hacia la sangre?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
-   "id": "NAT-3-001",
-   "justificacion": "La tercera ley de Newton (acción y reacción) dice que a toda acción corresponde una reacción igual en magnitud y opuesta en sentido.",
-   "nivel": 3,
-   "opciones": [
-    "El segundo cuerpo no reacciona",
-    "El segundo cuerpo ejerce una fuerza igual y opuesta sobre el primero",
-    "El segundo cuerpo desaparece",
-    "El segundo cuerpo duplica la fuerza recibida"
-   ],
-   "pregunta": "Según la tercera ley de Newton, ¿qué ocurre cuando un cuerpo ejerce una fuerza sobre otro?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
-   "id": "NAT-3-002",
-   "justificacion": "La ley de la segregación establece que los dos alelos de un gen se separan al formarse los gametos, de modo que cada gameto lleva un solo alelo.",
-   "nivel": 3,
-   "opciones": [
-    "Se duplican",
-    "Se separan, y cada gameto recibe solo uno",
-    "Se mezclan en uno solo",
-    "Desaparecen"
-   ],
-   "pregunta": "Según la primera ley de Mendel (ley de la segregación), ¿qué ocurre con los dos alelos de un gen durante la formación de los gametos?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Ciencias Naturales",
-   "fuente": "SERNAP — Parque Nacional y ANMI Madidi (D.S. N.º 24123, 21-sep-1995)",
-   "id": "NAT-3-003",
-   "justificacion": "El Madidi va desde aproximadamente 180 m en las tierras bajas hasta aproximadamente 6.000 m en la cordillera, uno de los gradientes más grandes del mundo.",
-   "nivel": 3,
-   "opciones": [
-    "De aproximadamente 180 m a aproximadamente 6.000 m",
-    "De aproximadamente 500 m a aproximadamente 1.000 m",
-    "De aproximadamente 3.000 m a aproximadamente 4.000 m",
-    "De aproximadamente 0 m a aproximadamente 500 m"
-   ],
-   "pregunta": "¿Cuál es el gradiente altitudinal aproximado del Parque Nacional y ANMI Madidi?",
-   "respuesta_correcta": 0
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "Instituto Nacional de Estadística (INE) — organización político-administrativa de Bolivia",
-   "id": "SOC-1-001",
-   "justificacion": "Bolivia está organizada políticamente en 9 departamentos.",
-   "nivel": 1,
-   "opciones": [
-    "6",
-    "7",
-    "9",
-    "12"
-   ],
-   "pregunta": "¿Cuántos departamentos tiene Bolivia?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Sociales",
-   "id": "SOC-1-002",
-   "justificacion": "Bolivia proclamó su independencia el 6 de agosto de 1825.",
-   "nivel": 1,
-   "opciones": [
-    "25 de mayo de 1809",
-    "6 de agosto de 1825",
-    "21 de septiembre de 1995",
-    "1 de enero de 1825"
-   ],
-   "pregunta": "¿En qué fecha se proclamó la independencia de Bolivia?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "Instituto Nacional de Estadística (INE) — organización político-administrativa de Bolivia",
-   "id": "SOC-1-003",
-   "justificacion": "Sucre es la capital constitucional de Bolivia; La Paz es la sede de gobierno.",
-   "nivel": 1,
-   "opciones": [
-    "La Paz",
-    "Cochabamba",
-    "Santa Cruz de la Sierra",
-    "Sucre"
-   ],
-   "pregunta": "¿Cuál es la capital constitucional de Bolivia?",
-   "respuesta_correcta": 3
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Sociales",
-   "id": "SOC-2-001",
-   "justificacion": "El primer grito libertario se dio en Chuquisaca el 25 de mayo de 1809.",
-   "nivel": 2,
-   "opciones": [
-    "La Paz, 6 de agosto de 1825",
-    "Chuquisaca, 25 de mayo de 1809",
-    "Cochabamba, 25 de mayo de 1809",
-    "Sucre, 6 de agosto de 1825"
-   ],
-   "pregunta": "¿Dónde y cuándo se dio el primer grito libertario de Bolivia?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "Instituto Nacional de Estadística (INE) — organización político-administrativa de Bolivia",
-   "id": "SOC-2-002",
-   "justificacion": "Santa Cruz es el departamento más grande de Bolivia en superficie.",
-   "nivel": 2,
-   "opciones": [
-    "La Paz",
-    "Beni",
-    "Santa Cruz",
-    "Cochabamba"
-   ],
-   "pregunta": "¿Cuál es el departamento más grande de Bolivia?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "INE — Hidrografía de Bolivia",
-   "id": "SOC-2-003",
-   "justificacion": "La cuenca del Amazonas cubre aproximadamente el 65,9% del territorio de Bolivia.",
-   "nivel": 2,
-   "opciones": [
-    "La cuenca del Plata",
-    "La cuenca cerrada o del Altiplano",
-    "La cuenca del Amazonas",
-    "La cuenca del Titicaca"
-   ],
-   "pregunta": "¿Qué cuenca hidrográfica cubre aproximadamente el 65,9% del territorio boliviano?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "INE — Hidrografía de Bolivia",
-   "id": "SOC-2-004",
-   "justificacion": "El río Mamoré es el principal río de Bolivia.",
-   "nivel": 2,
-   "opciones": [
-    "El río Beni",
-    "El río Desaguadero",
-    "El río Mamoré",
-    "El río Madre de Dios"
-   ],
-   "pregunta": "¿Cuál es el río principal de Bolivia?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "INE — Hidrografía de Bolivia",
-   "id": "SOC-3-001",
-   "justificacion": "El río Beni tiene una longitud aproximada de 1.113 km.",
-   "nivel": 3,
-   "opciones": [
-    "Aproximadamente 436 km",
-    "Aproximadamente 1.113 km",
-    "Aproximadamente 500 km",
-    "Aproximadamente 2.000 km"
-   ],
-   "pregunta": "¿Cuál es la longitud aproximada del río Beni?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "INE — Hidrografía de Bolivia",
-   "id": "SOC-3-002",
-   "justificacion": "El río Desaguadero, de aproximadamente 436 km, une el lago Titicaca con el lago Poopó.",
-   "nivel": 3,
-   "opciones": [
-    "El lago Titicaca con el lago Poopó",
-    "El lago Poopó con el lago Uru Uru",
-    "El lago Titicaca con el lago Menor",
-    "El lago Poopó con el lago Salar de Uyuni"
-   ],
-   "pregunta": "¿Qué dos lagos une el río Desaguadero, de aproximadamente 436 km de longitud?",
-   "respuesta_correcta": 0
-  },
-  {
-   "area": "Ciencias Sociales",
-   "fuente": "SERNAP — Parque Nacional y ANMI Madidi (D.S. N.º 24123, 21-sep-1995)",
-   "id": "SOC-3-003",
-   "justificacion": "El Madidi es administrado por el SERNAP y se ubica en el noroeste del departamento de La Paz, en las provincias Franz Tamayo, Iturralde y Bautista Saavedra.",
-   "nivel": 3,
-   "opciones": [
-    "El Instituto Nacional de Estadística (INE)",
-    "El Servicio Nacional de Áreas Protegidas (SERNAP)",
-    "El Ministerio de Educación",
-    "La Gobernación de Beni"
-   ],
-   "pregunta": "¿Qué institución administra el Parque Nacional y ANMI Madidi, ubicado en las provincias Franz Tamayo, Iturralde y Bautista Saavedra del noroeste de La Paz?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-1-001",
-   "justificacion": "\"I'm fine, thank you\" is the correct answer to the greeting \"How are you?\"",
-   "nivel": 1,
-   "opciones": [
-    "I'm fine, thank you.",
-    "I am ten years old.",
-    "My name is Ana.",
-    "I live in Ixiamas."
-   ],
-   "pregunta": "Choose the correct answer: — How are you? — ___",
-   "respuesta_correcta": 0
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-1-002",
-   "justificacion": "With the subject \"she\" (third person singular), the verb to be is \"is\".",
-   "nivel": 1,
-   "opciones": [
-    "am",
-    "are",
-    "is",
-    "be"
-   ],
-   "pregunta": "Complete with the verb to be: She ___ a teacher.",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-1-003",
-   "justificacion": "Ten plus five equals fifteen (10 + 5 = 15).",
-   "nivel": 1,
-   "opciones": [
-    "Twelve",
-    "Fourteen",
-    "Fifteen",
-    "Sixteen"
-   ],
-   "pregunta": "What is ten plus five?",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-2-001",
-   "justificacion": "\"There are\" is used with plural nouns; \"three books\" is plural.",
-   "nivel": 2,
-   "opciones": [
-    "is",
-    "are",
-    "am",
-    "be"
-   ],
-   "pregunta": "Complete: There ___ three books on the table.",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-2-002",
-   "justificacion": "In the present simple, third person singular (he) takes \"goes\"; \"every day\" marks a routine.",
-   "nivel": 2,
-   "opciones": [
-    "go",
-    "goes",
-    "going",
-    "went"
-   ],
-   "pregunta": "Complete with the present simple: He ___ to school every day.",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-2-003",
-   "justificacion": "Your father's brother is your uncle.",
-   "nivel": 2,
-   "opciones": [
-    "cousin",
-    "uncle",
-    "nephew",
-    "grandfather"
-   ],
-   "pregunta": "My father's brother is my ___.",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-2-004",
-   "justificacion": "The present continuous uses \"to be + verb-ing\"; with the plural subject \"the children\" the verb is \"are\".",
-   "nivel": 2,
-   "opciones": [
-    "is",
-    "are",
-    "am",
-    "be"
-   ],
-   "pregunta": "Complete with the present continuous: Look! The children ___ playing in the park.",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-3-001",
-   "justificacion": "\"Went\" is the past simple of \"go\"; \"yesterday\" marks a finished past action.",
-   "nivel": 3,
-   "opciones": [
-    "go",
-    "goes",
-    "went",
-    "going"
-   ],
-   "pregunta": "Complete with the past simple: Yesterday, Maria ___ to school.",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-3-002",
-   "justificacion": "The structure is \"to be + going to\"; with the subject \"I\" the verb is \"am\".",
-   "nivel": 3,
-   "opciones": [
-    "is",
-    "are",
-    "am",
-    "be"
-   ],
-   "pregunta": "Complete with \"going to\": I ___ going to visit Madidi National Park next week.",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Inglés",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
-   "id": "ING-3-003",
-   "justificacion": "The present perfect uses \"has/have + past participle\"; the past participle of \"study\" is \"studied\".",
-   "nivel": 3,
-   "opciones": [
-    "study",
-    "studies",
-    "studied",
-    "studying"
-   ],
-   "pregunta": "Complete with the present perfect: She has ___ English for three years.",
-   "respuesta_correcta": 2
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-1-001",
-   "justificacion": "La filosofía busca comprender la verdad, el ser y el sentido de las cosas, no datos sueltos.",
-   "nivel": 1,
-   "opciones": [
-    "¿Cuánto cuesta algo?",
-    "¿Qué es la verdad y por qué existen las cosas?",
-    "¿Qué hora es?",
-    "¿Cuál es la capital de Bolivia?"
-   ],
-   "pregunta": "¿Qué pregunta se hace la filosofía?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-1-002",
-   "justificacion": "Sócrates decía que reconocer la propia ignorancia es el primer paso para aprender.",
-   "nivel": 1,
-   "opciones": [
-    "Aristóteles",
-    "Sócrates",
-    "Platón",
-    "Descartes"
-   ],
-   "pregunta": "¿Quién dijo «Solo sé que no sé nada»?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-1-003",
-   "justificacion": "La ética reflexiona sobre lo que está bien y lo que está mal en lo que hacemos.",
-   "nivel": 1,
-   "opciones": [
-    "El clima",
-    "El bien y el mal en las acciones humanas",
-    "Los números",
-    "Las estrellas"
-   ],
-   "pregunta": "¿Qué estudia la ética?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-2-001",
-   "justificacion": "Platón usa la caverna para mostrar que muchas veces confundimos las apariencias con la realidad; salir de la caverna es buscar la verdad.",
-   "nivel": 2,
-   "opciones": [
-    "Las cosas reales",
-    "Las apariencias que tomamos por realidad",
-    "Los sueños",
-    "Los dioses"
-   ],
-   "pregunta": "En la alegoría de la caverna de Platón, ¿qué representan las sombras en la pared?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-2-002",
-   "justificacion": "Descartes parte de la duda: aunque dude de todo, no puede dudar de que está pensando, y eso prueba su existencia.",
-   "nivel": 2,
-   "opciones": [
-    "Que pensar es un lujo",
-    "Que el hecho de dudar y pensar prueba que existimos",
-    "Que solo existen las cosas que se ven",
-    "Que el cuerpo no existe"
-   ],
-   "pregunta": "¿Qué quiso decir Descartes con «Pienso, luego existo»?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-2-003",
-   "justificacion": "El silogismo, estudiado por Aristóteles, une dos premisas para llegar a una conclusión lógica.",
-   "nivel": 2,
-   "opciones": [
-    "Un tipo de poema",
-    "Un razonamiento con dos premisas y una conclusión",
-    "Una figura geométrica",
-    "Un experimento científico"
-   ],
-   "pregunta": "¿Qué es un silogismo?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-2-004",
-   "justificacion": "La lógica estudia cómo razonar bien, para distinguir argumentos correctos de los incorrectos.",
-   "nivel": 2,
-   "opciones": [
-    "Las emociones",
-    "Las reglas del razonamiento correcto",
-    "La historia de los reyes",
-    "Los astros"
-   ],
-   "pregunta": "¿Qué estudia la lógica?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-3-001",
-   "justificacion": "Kant propone actuar según reglas que podrían valer para todos, sin excepciones: «obra solo según la máxima que puedas querer que se convierta en ley universal».",
-   "nivel": 3,
-   "opciones": [
-    "Obedecer siempre al más fuerte",
-    "Actuar solo como querrías que todos actuaran",
-    "Buscar el placer ante todo",
-    "Seguir la costumbre del lugar"
-   ],
-   "pregunta": "Según Kant, ¿qué es el imperativo categórico?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-3-002",
-   "justificacion": "Heráclito enseñaba que todo fluye y cambia: el río de hoy ya no es el mismo de ayer.",
-   "nivel": 3,
-   "opciones": [
-    "Que el agua está sucia",
-    "Que todo cambia constantemente",
-    "Que los ríos son peligrosos",
-    "Que no hay que bañarse"
-   ],
-   "pregunta": "¿Qué afirmaba Heráclito con «nadie se baña dos veces en el mismo río»?",
-   "respuesta_correcta": 1
-  },
-  {
-   "area": "Filosofía",
-   "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
-   "id": "FIL-3-003",
-   "justificacion": "La moral es el conjunto de costumbres y normas de una comunidad; la ética es la reflexión filosófica sobre si esas normas son buenas y por qué.",
-   "nivel": 3,
-   "opciones": [
-    "No hay ninguna diferencia",
-    "La moral son las costumbres de un grupo; la ética reflexiona sobre ellas",
-    "La ética es religión y la moral es ley",
-    "La moral es individual y la ética es secreta"
-   ],
-   "pregunta": "¿Cuál es la diferencia entre ética y moral?",
-   "respuesta_correcta": 1
-  }
- ]
+  "nota": "Banco de preguntas del examen diagnóstico. 10 preguntas por área (Matemática 12, Lenguaje, Ciencias Naturales, Ciencias Sociales, Inglés, Filosofía), con dificultad adaptativa 1–3, más 6 preguntas fijas de Lógica matemática (módulo aparte, fase h). Cada pregunta lleva fuente y justificación obligatorias. Ver data/README.md.",
+  "preguntas": [
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
+      "id": "MAT-1-001",
+      "justificacion": "7 × 8 = 56. La multiplicación es una suma repetida: 7 sumado 8 veces da 56.",
+      "nivel": 1,
+      "opciones": [
+        "54",
+        "56",
+        "64",
+        "48"
+      ],
+      "pregunta": "¿Cuál es el resultado de 7 × 8?",
+      "respuesta_correcta": 1,
+      "tema": "Aritmética"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
+      "id": "MAT-1-002",
+      "justificacion": "Al sumar un número negativo con uno positivo se restan los valores absolutos: 8 − 5 = 3, y el resultado conserva el signo del número mayor, que es positivo.",
+      "nivel": 1,
+      "opciones": [
+        "3",
+        "−3",
+        "13",
+        "−13"
+      ],
+      "pregunta": "¿Cuál es el resultado de (−5) + 8?",
+      "respuesta_correcta": 0,
+      "tema": "Aritmética"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
+      "id": "MAT-1-003",
+      "justificacion": "El 25% es la cuarta parte de 80: 80 ÷ 4 = 20. También se calcula como 80 × 25 ÷ 100 = 20.",
+      "nivel": 1,
+      "opciones": [
+        "20 bolivianos",
+        "25 bolivianos",
+        "40 bolivianos",
+        "16 bolivianos"
+      ],
+      "pregunta": "¿Cuánto es el 25% de 80 bolivianos?",
+      "respuesta_correcta": 0,
+      "tema": "Aritmética",
+      "habilidad": "logica"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
+      "id": "MAT-2-001",
+      "justificacion": "Por regla de tres simple directa: cada cuaderno cuesta 30 ÷ 5 = 6 bolivianos, y 8 × 6 = 48 bolivianos.",
+      "nivel": 2,
+      "opciones": [
+        "40 bolivianos",
+        "48 bolivianos",
+        "45 bolivianos",
+        "54 bolivianos"
+      ],
+      "pregunta": "Si 5 cuadernos cuestan 30 bolivianos, ¿cuánto cuestan 8 cuadernos del mismo precio?",
+      "respuesta_correcta": 1,
+      "tema": "Aritmética",
+      "habilidad": "logica"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
+      "id": "MAT-2-002",
+      "justificacion": "El área del rectángulo es base por altura: 6 × 4 = 24 m².",
+      "nivel": 2,
+      "opciones": [
+        "20 m²",
+        "24 m²",
+        "10 m²",
+        "28 m²"
+      ],
+      "pregunta": "¿Cuál es el área de un rectángulo de 6 m de largo y 4 m de ancho?",
+      "respuesta_correcta": 1,
+      "tema": "Geometría"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
+      "id": "MAT-2-003",
+      "justificacion": "Despejando: 2x = 13 − 5 = 8, luego x = 8 ÷ 2 = 4. Comprobación: 2 × 4 + 5 = 13.",
+      "nivel": 2,
+      "opciones": [
+        "3",
+        "5",
+        "4",
+        "6"
+      ],
+      "pregunta": "¿Cuál es el valor de x en la ecuación 2x + 5 = 13?",
+      "respuesta_correcta": 2,
+      "tema": "Álgebra",
+      "habilidad": "logica"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
+      "id": "MAT-2-004",
+      "justificacion": "Por el Teorema de Pitágoras: h² = 3² + 4² = 9 + 16 = 25, y la raíz cuadrada de 25 es 5 cm.",
+      "nivel": 2,
+      "opciones": [
+        "6 cm",
+        "7 cm",
+        "5 cm",
+        "4 cm"
+      ],
+      "pregunta": "Un triángulo rectángulo tiene catetos de 3 cm y 4 cm. ¿Cuánto mide su hipotenusa?",
+      "respuesta_correcta": 2,
+      "tema": "Geometría",
+      "habilidad": "logica"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
+      "id": "MAT-3-001",
+      "justificacion": "El trinomio se factoriza como (x − 2)(x − 3) = 0, porque 2 + 3 = 5 y 2 × 3 = 6; por tanto x = 2 o x = 3.",
+      "nivel": 3,
+      "opciones": [
+        "x = 2 y x = 3",
+        "x = 1 y x = 6",
+        "x = −2 y x = −3",
+        "x = 2 y x = −3"
+      ],
+      "pregunta": "¿Cuáles son las soluciones de la ecuación x² − 5x + 6 = 0?",
+      "respuesta_correcta": 0,
+      "tema": "Álgebra"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
+      "id": "MAT-3-002",
+      "justificacion": "El interés simple es I = C × r × t = 1.000 × 0,05 × 2 = 100 bolivianos.",
+      "nivel": 3,
+      "opciones": [
+        "50 bolivianos",
+        "150 bolivianos",
+        "100 bolivianos",
+        "200 bolivianos"
+      ],
+      "pregunta": "Se depositan 1.000 bolivianos a interés simple del 5% anual. ¿Cuánto interés se genera en 2 años?",
+      "respuesta_correcta": 2,
+      "tema": "Aritmética",
+      "habilidad": "logica"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Matemática, Educación Secundaria Comunitaria Productiva",
+      "id": "MAT-3-003",
+      "justificacion": "La media es la suma de los datos dividida entre la cantidad de datos: (4 + 6 + 8 + 10 + 12) ÷ 5 = 40 ÷ 5 = 8.",
+      "nivel": 3,
+      "opciones": [
+        "6",
+        "10",
+        "8",
+        "9"
+      ],
+      "pregunta": "¿Cuál es la media aritmética de los datos 4, 6, 8, 10 y 12?",
+      "respuesta_correcta": 2,
+      "tema": "Estadística",
+      "habilidad": "logica"
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-1-001",
+      "justificacion": "«Vaca» se escribe con v; «baca» es otra palabra (la parrilla portaequipajes de un vehículo) y las formas con k no existen en español.",
+      "nivel": 1,
+      "opciones": [
+        "Baca",
+        "Vaca",
+        "Baka",
+        "Vaka"
+      ],
+      "pregunta": "¿Cuál es la escritura correcta del animal que da leche y se escribe con «v»?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-1-002",
+      "justificacion": "«Camión» es una palabra aguda terminada en n y las agudas terminadas en vocal, n o s llevan tilde; «árbol» y «lápiz» también la llevarían, pero aquí aparecen sin ella.",
+      "nivel": 1,
+      "opciones": [
+        "arbol",
+        "camión",
+        "lapiz",
+        "mesa"
+      ],
+      "pregunta": "¿Cuál de estas palabras está escrita correctamente con tilde?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-1-003",
+      "justificacion": "En «país» las vocales a-í se pronuncian en sílabas distintas (pa-ís), es decir, forman un hiato; en «aire», «cielo» y «bueno» las vocales forman diptongo.",
+      "nivel": 1,
+      "opciones": [
+        "país",
+        "aire",
+        "cielo",
+        "bueno"
+      ],
+      "pregunta": "¿Cuál de estas palabras tiene un hiato?",
+      "respuesta_correcta": 0
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-2-001",
+      "justificacion": "«Rápido» es un adverbio de modo porque modifica al verbo «corre» indicando cómo se realiza la acción; «el» es artículo, «perro» sustantivo y «corre» verbo.",
+      "nivel": 2,
+      "opciones": [
+        "El",
+        "perro",
+        "corre",
+        "rápido"
+      ],
+      "pregunta": "En la oración «El perro corre rápido», ¿qué palabra es el adverbio?",
+      "respuesta_correcta": 3
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-2-002",
+      "justificacion": "El cuento es una narración breve con pocos personajes y una sola acción principal; la novela es extensa y la leyenda se basa en la tradición popular.",
+      "nivel": 2,
+      "opciones": [
+        "Novela",
+        "Cuento",
+        "Leyenda",
+        "Ensayo"
+      ],
+      "pregunta": "¿Qué género literario es un relato breve en prosa, con pocos personajes y un solo desenlace?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-2-003",
+      "justificacion": "«Libro» es un sustantivo común porque nombra un objeto; «lee» es el verbo, «un» y «la» son artículos.",
+      "nivel": 2,
+      "opciones": [
+        "lee",
+        "un",
+        "libro",
+        "la"
+      ],
+      "pregunta": "En la oración «La niña lee un libro», ¿qué palabra es el sustantivo?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-2-004",
+      "justificacion": "La noticia es el género periodístico que relata hechos actuales con objetividad y estructura las respuestas a las preguntas básicas; la crónica narra con estilo personal y la entrevista se basa en preguntas y respuestas.",
+      "nivel": 2,
+      "opciones": [
+        "Entrevista",
+        "Crónica",
+        "Noticia",
+        "Ensayo"
+      ],
+      "pregunta": "¿Qué género periodístico informa sobre un hecho reciente de forma objetiva, respondiendo qué, quién, cuándo, dónde y por qué?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-3-001",
+      "justificacion": "Es una metáfora: identifica directamente los ojos con los luceros sin usar «como», que sería propio de la comparación.",
+      "nivel": 3,
+      "opciones": [
+        "Comparación",
+        "Metáfora",
+        "Hipérbole",
+        "Personificación"
+      ],
+      "pregunta": "¿Qué figura literaria hay en la expresión «Tus ojos son dos luceros»?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-3-002",
+      "justificacion": "«Visitaremos» es la primera persona del plural del futuro del indicativo del verbo visitar, y la acción ocurrirá mañana.",
+      "nivel": 3,
+      "opciones": [
+        "Presente",
+        "Pasado",
+        "Futuro",
+        "Condicional"
+      ],
+      "pregunta": "¿En qué tiempo verbal está el verbo de la oración «Mañana visitaremos el museo»?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Lenguaje",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Comunicación y Lenguajes, Lengua Castellana",
+      "id": "LEN-3-003",
+      "justificacion": "Adela Zamudio (1854–1928) fue una escritora y poeta boliviana, autora de obras como «Íntimas»; Gabriela Mistral es chilena, Alfonsina Storni argentina y Sor Juana Inés de la Cruz mexicana.",
+      "nivel": 3,
+      "opciones": [
+        "Gabriela Mistral",
+        "Alfonsina Storni",
+        "Adela Zamudio",
+        "Sor Juana Inés de la Cruz"
+      ],
+      "pregunta": "¿Cuál de estas autoras es una escritora boliviana destacada de los siglos XIX y XX?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
+      "id": "NAT-1-001",
+      "justificacion": "En la fotosíntesis las plantas absorben dióxido de carbono (CO₂) y liberan oxígeno.",
+      "nivel": 1,
+      "opciones": [
+        "Oxígeno",
+        "Dióxido de carbono",
+        "Nitrógeno",
+        "Hidrógeno"
+      ],
+      "pregunta": "¿Qué gas absorben las plantas de la atmósfera para realizar la fotosíntesis?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
+      "id": "NAT-1-002",
+      "justificacion": "A temperatura ambiente el agua es líquida; se vuelve sólida (hielo) al enfriarse y gaseosa (vapor) al calentarse.",
+      "nivel": 1,
+      "opciones": [
+        "Sólido",
+        "Líquido",
+        "Gaseoso",
+        "Plasma"
+      ],
+      "pregunta": "¿En qué estado de la materia se encuentra el agua a temperatura ambiente?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
+      "id": "NAT-1-003",
+      "justificacion": "La teoría celular establece que todos los seres vivos están formados por una o más células.",
+      "nivel": 1,
+      "opciones": [
+        "De átomos sueltos",
+        "De células",
+        "De rocas",
+        "De agua solamente"
+      ],
+      "pregunta": "Según la teoría celular, ¿de qué están formados todos los seres vivos?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "SERNAP — Parque Nacional y ANMI Madidi (D.S. N.º 24123, 21-sep-1995)",
+      "id": "NAT-2-001",
+      "justificacion": "El Madidi fue creado el 21 de septiembre de 1995 mediante el Decreto Supremo N.º 24123.",
+      "nivel": 2,
+      "opciones": [
+        "21 de septiembre de 1995",
+        "6 de agosto de 1825",
+        "25 de mayo de 1809",
+        "1 de enero de 2000"
+      ],
+      "pregunta": "¿En qué fecha fue creado el Parque Nacional y Área Natural de Manejo Integrado Madidi?",
+      "respuesta_correcta": 0
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "SERNAP — Parque Nacional y ANMI Madidi (D.S. N.º 24123, 21-sep-1995)",
+      "id": "NAT-2-002",
+      "justificacion": "El Madidi tiene una superficie de aproximadamente 1.895.750 hectáreas, cerca de 1,9 millones de hectáreas.",
+      "nivel": 2,
+      "opciones": [
+        "Aproximadamente 1.895.750 hectáreas",
+        "Aproximadamente 100.000 hectáreas",
+        "Aproximadamente 500.000 hectáreas",
+        "Aproximadamente 5.000.000 de hectáreas"
+      ],
+      "pregunta": "¿Cuál es la superficie aproximada del Parque Nacional y ANMI Madidi?",
+      "respuesta_correcta": 0
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
+      "id": "NAT-2-003",
+      "justificacion": "Las plantas son productoras porque fabrican su propio alimento mediante la fotosíntesis y sostienen la cadena trófica.",
+      "nivel": 2,
+      "opciones": [
+        "Los herbívoros",
+        "Los carnívoros",
+        "Las plantas",
+        "Los descomponedores"
+      ],
+      "pregunta": "En una cadena trófica, ¿qué organismos son los productores?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
+      "id": "NAT-2-004",
+      "justificacion": "En el intestino delgado se absorben la mayoría de los nutrientes, que pasan a la sangre para distribuirse por el cuerpo.",
+      "nivel": 2,
+      "opciones": [
+        "En el esófago",
+        "En el estómago",
+        "En el intestino delgado",
+        "En el intestino grueso"
+      ],
+      "pregunta": "¿En qué parte del sistema digestivo se absorben la mayoría de los nutrientes hacia la sangre?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
+      "id": "NAT-3-001",
+      "justificacion": "La tercera ley de Newton (acción y reacción) dice que a toda acción corresponde una reacción igual en magnitud y opuesta en sentido.",
+      "nivel": 3,
+      "opciones": [
+        "El segundo cuerpo no reacciona",
+        "El segundo cuerpo ejerce una fuerza igual y opuesta sobre el primero",
+        "El segundo cuerpo desaparece",
+        "El segundo cuerpo duplica la fuerza recibida"
+      ],
+      "pregunta": "Según la tercera ley de Newton, ¿qué ocurre cuando un cuerpo ejerce una fuerza sobre otro?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Naturales (Biología–Geografía, Física, Química)",
+      "id": "NAT-3-002",
+      "justificacion": "La ley de la segregación establece que los dos alelos de un gen se separan al formarse los gametos, de modo que cada gameto lleva un solo alelo.",
+      "nivel": 3,
+      "opciones": [
+        "Se duplican",
+        "Se separan, y cada gameto recibe solo uno",
+        "Se mezclan en uno solo",
+        "Desaparecen"
+      ],
+      "pregunta": "Según la primera ley de Mendel (ley de la segregación), ¿qué ocurre con los dos alelos de un gen durante la formación de los gametos?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Ciencias Naturales",
+      "fuente": "SERNAP — Parque Nacional y ANMI Madidi (D.S. N.º 24123, 21-sep-1995)",
+      "id": "NAT-3-003",
+      "justificacion": "El Madidi va desde aproximadamente 180 m en las tierras bajas hasta aproximadamente 6.000 m en la cordillera, uno de los gradientes más grandes del mundo.",
+      "nivel": 3,
+      "opciones": [
+        "De aproximadamente 180 m a aproximadamente 6.000 m",
+        "De aproximadamente 500 m a aproximadamente 1.000 m",
+        "De aproximadamente 3.000 m a aproximadamente 4.000 m",
+        "De aproximadamente 0 m a aproximadamente 500 m"
+      ],
+      "pregunta": "¿Cuál es el gradiente altitudinal aproximado del Parque Nacional y ANMI Madidi?",
+      "respuesta_correcta": 0
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "Instituto Nacional de Estadística (INE) — organización político-administrativa de Bolivia",
+      "id": "SOC-1-001",
+      "justificacion": "Bolivia está organizada políticamente en 9 departamentos.",
+      "nivel": 1,
+      "opciones": [
+        "6",
+        "7",
+        "9",
+        "12"
+      ],
+      "pregunta": "¿Cuántos departamentos tiene Bolivia?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Sociales",
+      "id": "SOC-1-002",
+      "justificacion": "Bolivia proclamó su independencia el 6 de agosto de 1825.",
+      "nivel": 1,
+      "opciones": [
+        "25 de mayo de 1809",
+        "6 de agosto de 1825",
+        "21 de septiembre de 1995",
+        "1 de enero de 1825"
+      ],
+      "pregunta": "¿En qué fecha se proclamó la independencia de Bolivia?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "Instituto Nacional de Estadística (INE) — organización político-administrativa de Bolivia",
+      "id": "SOC-1-003",
+      "justificacion": "Sucre es la capital constitucional de Bolivia; La Paz es la sede de gobierno.",
+      "nivel": 1,
+      "opciones": [
+        "La Paz",
+        "Cochabamba",
+        "Santa Cruz de la Sierra",
+        "Sucre"
+      ],
+      "pregunta": "¿Cuál es la capital constitucional de Bolivia?",
+      "respuesta_correcta": 3
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Ciencias Sociales",
+      "id": "SOC-2-001",
+      "justificacion": "El primer grito libertario se dio en Chuquisaca el 25 de mayo de 1809.",
+      "nivel": 2,
+      "opciones": [
+        "La Paz, 6 de agosto de 1825",
+        "Chuquisaca, 25 de mayo de 1809",
+        "Cochabamba, 25 de mayo de 1809",
+        "Sucre, 6 de agosto de 1825"
+      ],
+      "pregunta": "¿Dónde y cuándo se dio el primer grito libertario de Bolivia?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "Instituto Nacional de Estadística (INE) — organización político-administrativa de Bolivia",
+      "id": "SOC-2-002",
+      "justificacion": "Santa Cruz es el departamento más grande de Bolivia en superficie.",
+      "nivel": 2,
+      "opciones": [
+        "La Paz",
+        "Beni",
+        "Santa Cruz",
+        "Cochabamba"
+      ],
+      "pregunta": "¿Cuál es el departamento más grande de Bolivia?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "INE — Hidrografía de Bolivia",
+      "id": "SOC-2-003",
+      "justificacion": "La cuenca del Amazonas cubre aproximadamente el 65,9% del territorio de Bolivia.",
+      "nivel": 2,
+      "opciones": [
+        "La cuenca del Plata",
+        "La cuenca cerrada o del Altiplano",
+        "La cuenca del Amazonas",
+        "La cuenca del Titicaca"
+      ],
+      "pregunta": "¿Qué cuenca hidrográfica cubre aproximadamente el 65,9% del territorio boliviano?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "INE — Hidrografía de Bolivia",
+      "id": "SOC-2-004",
+      "justificacion": "El río Mamoré es el principal río de Bolivia.",
+      "nivel": 2,
+      "opciones": [
+        "El río Beni",
+        "El río Desaguadero",
+        "El río Mamoré",
+        "El río Madre de Dios"
+      ],
+      "pregunta": "¿Cuál es el río principal de Bolivia?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "INE — Hidrografía de Bolivia",
+      "id": "SOC-3-001",
+      "justificacion": "El río Beni tiene una longitud aproximada de 1.113 km.",
+      "nivel": 3,
+      "opciones": [
+        "Aproximadamente 436 km",
+        "Aproximadamente 1.113 km",
+        "Aproximadamente 500 km",
+        "Aproximadamente 2.000 km"
+      ],
+      "pregunta": "¿Cuál es la longitud aproximada del río Beni?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "INE — Hidrografía de Bolivia",
+      "id": "SOC-3-002",
+      "justificacion": "El río Desaguadero, de aproximadamente 436 km, une el lago Titicaca con el lago Poopó.",
+      "nivel": 3,
+      "opciones": [
+        "El lago Titicaca con el lago Poopó",
+        "El lago Poopó con el lago Uru Uru",
+        "El lago Titicaca con el lago Menor",
+        "El lago Poopó con el lago Salar de Uyuni"
+      ],
+      "pregunta": "¿Qué dos lagos une el río Desaguadero, de aproximadamente 436 km de longitud?",
+      "respuesta_correcta": 0
+    },
+    {
+      "area": "Ciencias Sociales",
+      "fuente": "SERNAP — Parque Nacional y ANMI Madidi (D.S. N.º 24123, 21-sep-1995)",
+      "id": "SOC-3-003",
+      "justificacion": "El Madidi es administrado por el SERNAP y se ubica en el noroeste del departamento de La Paz, en las provincias Franz Tamayo, Iturralde y Bautista Saavedra.",
+      "nivel": 3,
+      "opciones": [
+        "El Instituto Nacional de Estadística (INE)",
+        "El Servicio Nacional de Áreas Protegidas (SERNAP)",
+        "El Ministerio de Educación",
+        "La Gobernación de Beni"
+      ],
+      "pregunta": "¿Qué institución administra el Parque Nacional y ANMI Madidi, ubicado en las provincias Franz Tamayo, Iturralde y Bautista Saavedra del noroeste de La Paz?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-1-001",
+      "justificacion": "\"I'm fine, thank you\" is the correct answer to the greeting \"How are you?\"",
+      "nivel": 1,
+      "opciones": [
+        "I'm fine, thank you.",
+        "I am ten years old.",
+        "My name is Ana.",
+        "I live in Ixiamas."
+      ],
+      "pregunta": "Choose the correct answer: — How are you? — ___",
+      "respuesta_correcta": 0
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-1-002",
+      "justificacion": "With the subject \"she\" (third person singular), the verb to be is \"is\".",
+      "nivel": 1,
+      "opciones": [
+        "am",
+        "are",
+        "is",
+        "be"
+      ],
+      "pregunta": "Complete with the verb to be: She ___ a teacher.",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-1-003",
+      "justificacion": "Ten plus five equals fifteen (10 + 5 = 15).",
+      "nivel": 1,
+      "opciones": [
+        "Twelve",
+        "Fourteen",
+        "Fifteen",
+        "Sixteen"
+      ],
+      "pregunta": "What is ten plus five?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-2-001",
+      "justificacion": "\"There are\" is used with plural nouns; \"three books\" is plural.",
+      "nivel": 2,
+      "opciones": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "pregunta": "Complete: There ___ three books on the table.",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-2-002",
+      "justificacion": "In the present simple, third person singular (he) takes \"goes\"; \"every day\" marks a routine.",
+      "nivel": 2,
+      "opciones": [
+        "go",
+        "goes",
+        "going",
+        "went"
+      ],
+      "pregunta": "Complete with the present simple: He ___ to school every day.",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-2-003",
+      "justificacion": "Your father's brother is your uncle.",
+      "nivel": 2,
+      "opciones": [
+        "cousin",
+        "uncle",
+        "nephew",
+        "grandfather"
+      ],
+      "pregunta": "My father's brother is my ___.",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-2-004",
+      "justificacion": "The present continuous uses \"to be + verb-ing\"; with the plural subject \"the children\" the verb is \"are\".",
+      "nivel": 2,
+      "opciones": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "pregunta": "Complete with the present continuous: Look! The children ___ playing in the park.",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-3-001",
+      "justificacion": "\"Went\" is the past simple of \"go\"; \"yesterday\" marks a finished past action.",
+      "nivel": 3,
+      "opciones": [
+        "go",
+        "goes",
+        "went",
+        "going"
+      ],
+      "pregunta": "Complete with the past simple: Yesterday, Maria ___ to school.",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-3-002",
+      "justificacion": "The structure is \"to be + going to\"; with the subject \"I\" the verb is \"am\".",
+      "nivel": 3,
+      "opciones": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "pregunta": "Complete with \"going to\": I ___ going to visit Madidi National Park next week.",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Inglés",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia (R.M. 1040/2022) — Lengua Extranjera, Inglés",
+      "id": "ING-3-003",
+      "justificacion": "The present perfect uses \"has/have + past participle\"; the past participle of \"study\" is \"studied\".",
+      "nivel": 3,
+      "opciones": [
+        "study",
+        "studies",
+        "studied",
+        "studying"
+      ],
+      "pregunta": "Complete with the present perfect: She has ___ English for three years.",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-1-001",
+      "justificacion": "La filosofía busca comprender la verdad, el ser y el sentido de las cosas, no datos sueltos.",
+      "nivel": 1,
+      "opciones": [
+        "¿Cuánto cuesta algo?",
+        "¿Qué es la verdad y por qué existen las cosas?",
+        "¿Qué hora es?",
+        "¿Cuál es la capital de Bolivia?"
+      ],
+      "pregunta": "¿Qué pregunta se hace la filosofía?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-1-002",
+      "justificacion": "Sócrates decía que reconocer la propia ignorancia es el primer paso para aprender.",
+      "nivel": 1,
+      "opciones": [
+        "Aristóteles",
+        "Sócrates",
+        "Platón",
+        "Descartes"
+      ],
+      "pregunta": "¿Quién dijo «Solo sé que no sé nada»?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-1-003",
+      "justificacion": "La ética reflexiona sobre lo que está bien y lo que está mal en lo que hacemos.",
+      "nivel": 1,
+      "opciones": [
+        "El clima",
+        "El bien y el mal en las acciones humanas",
+        "Los números",
+        "Las estrellas"
+      ],
+      "pregunta": "¿Qué estudia la ética?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-2-001",
+      "justificacion": "Platón usa la caverna para mostrar que muchas veces confundimos las apariencias con la realidad; salir de la caverna es buscar la verdad.",
+      "nivel": 2,
+      "opciones": [
+        "Las cosas reales",
+        "Las apariencias que tomamos por realidad",
+        "Los sueños",
+        "Los dioses"
+      ],
+      "pregunta": "En la alegoría de la caverna de Platón, ¿qué representan las sombras en la pared?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-2-002",
+      "justificacion": "Descartes parte de la duda: aunque dude de todo, no puede dudar de que está pensando, y eso prueba su existencia.",
+      "nivel": 2,
+      "opciones": [
+        "Que pensar es un lujo",
+        "Que el hecho de dudar y pensar prueba que existimos",
+        "Que solo existen las cosas que se ven",
+        "Que el cuerpo no existe"
+      ],
+      "pregunta": "¿Qué quiso decir Descartes con «Pienso, luego existo»?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-2-003",
+      "justificacion": "El silogismo, estudiado por Aristóteles, une dos premisas para llegar a una conclusión lógica.",
+      "nivel": 2,
+      "opciones": [
+        "Un tipo de poema",
+        "Un razonamiento con dos premisas y una conclusión",
+        "Una figura geométrica",
+        "Un experimento científico"
+      ],
+      "pregunta": "¿Qué es un silogismo?",
+      "respuesta_correcta": 1,
+      "habilidad": "logica"
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-2-004",
+      "justificacion": "La lógica estudia cómo razonar bien, para distinguir argumentos correctos de los incorrectos.",
+      "nivel": 2,
+      "opciones": [
+        "Las emociones",
+        "Las reglas del razonamiento correcto",
+        "La historia de los reyes",
+        "Los astros"
+      ],
+      "pregunta": "¿Qué estudia la lógica?",
+      "respuesta_correcta": 1,
+      "habilidad": "logica"
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-3-001",
+      "justificacion": "Kant propone actuar según reglas que podrían valer para todos, sin excepciones: «obra solo según la máxima que puedas querer que se convierta en ley universal».",
+      "nivel": 3,
+      "opciones": [
+        "Obedecer siempre al más fuerte",
+        "Actuar solo como querrías que todos actuaran",
+        "Buscar el placer ante todo",
+        "Seguir la costumbre del lugar"
+      ],
+      "pregunta": "Según Kant, ¿qué es el imperativo categórico?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-3-002",
+      "justificacion": "Heráclito enseñaba que todo fluye y cambia: el río de hoy ya no es el mismo de ayer.",
+      "nivel": 3,
+      "opciones": [
+        "Que el agua está sucia",
+        "Que todo cambia constantemente",
+        "Que los ríos son peligrosos",
+        "Que no hay que bañarse"
+      ],
+      "pregunta": "¿Qué afirmaba Heráclito con «nadie se baña dos veces en el mismo río»?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Filosofía",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "FIL-3-003",
+      "justificacion": "La moral es el conjunto de costumbres y normas de una comunidad; la ética es la reflexión filosófica sobre si esas normas son buenas y por qué.",
+      "nivel": 3,
+      "opciones": [
+        "No hay ninguna diferencia",
+        "La moral son las costumbres de un grupo; la ética reflexiona sobre ellas",
+        "La ética es religión y la moral es ley",
+        "La moral es individual y la ética es secreta"
+      ],
+      "pregunta": "¿Cuál es la diferencia entre ética y moral?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
+      "id": "MAT-1-004",
+      "justificacion": "96 ÷ 8 = 12, porque 12 × 8 = 96.",
+      "nivel": 1,
+      "opciones": [
+        "11",
+        "12",
+        "14",
+        "16"
+      ],
+      "pregunta": "¿Cuál es el resultado de 96 ÷ 8?",
+      "respuesta_correcta": 1,
+      "tema": "Aritmética"
+    },
+    {
+      "area": "Matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
+      "id": "MAT-1-005",
+      "justificacion": "120 ÷ 6 = 20 bolivianos para cada estudiante.",
+      "nivel": 1,
+      "opciones": [
+        "15 bolivianos",
+        "18 bolivianos",
+        "20 bolivianos",
+        "24 bolivianos"
+      ],
+      "pregunta": "Se reparten 120 bolivianos en partes iguales entre 6 estudiantes. ¿Cuánto le toca a cada uno?",
+      "respuesta_correcta": 2,
+      "tema": "Aritmética"
+    },
+    {
+      "area": "Lógica matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
+      "id": "LOG-1-001",
+      "justificacion": "La serie suma 2 cada vez: 2, 4, 6, 8, 10.",
+      "nivel": 1,
+      "opciones": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "pregunta": "En la serie 2, 4, 6, 8, ¿qué número sigue?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Lógica matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Cosmovisiones, Filosofía y Psicología (Filosofía), Educación Secundaria Comunitaria Productiva.",
+      "id": "LOG-1-002",
+      "justificacion": "Si todos los gatos son animales y Tom es un gato, entonces Tom tiene que ser un animal. Es un razonamiento con dos premisas y una conclusión.",
+      "nivel": 1,
+      "opciones": [
+        "Tom es un animal",
+        "Tom es un perro",
+        "No se puede saber",
+        "Tom no es un animal"
+      ],
+      "pregunta": "Si todos los gatos son animales y Tom es un gato, ¿qué se puede afirmar de Tom?",
+      "respuesta_correcta": 0
+    },
+    {
+      "area": "Lógica matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
+      "id": "LOG-2-001",
+      "justificacion": "En el peor de los casos sacás primero las 2 azules; la tercera bola ya tiene que ser roja. Por eso hay que sacar 3 para estar seguro.",
+      "nivel": 2,
+      "opciones": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "pregunta": "Una caja tiene 3 bolas rojas y 2 azules. Sin mirar, ¿cuántas bolas hay que sacar para estar seguro de tener al menos una roja?",
+      "respuesta_correcta": 2
+    },
+    {
+      "area": "Lógica matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
+      "id": "LOG-2-002",
+      "justificacion": "Dentro de 6 años María tendrá 18, así que hoy tiene 12. Su hermano tiene la mitad: 6 años.",
+      "nivel": 2,
+      "opciones": [
+        "4 años",
+        "6 años",
+        "8 años",
+        "9 años"
+      ],
+      "pregunta": "María tiene el doble de la edad de su hermano. Dentro de 6 años, María tendrá 18 años. ¿Cuántos años tiene su hermano ahora?",
+      "respuesta_correcta": 1
+    },
+    {
+      "area": "Lógica matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
+      "id": "LOG-3-001",
+      "justificacion": "Si Ana está delante de Bruno y detrás de Carla, el orden es Carla, Ana, Bruno: Ana está en el medio.",
+      "nivel": 3,
+      "opciones": [
+        "Ana",
+        "Bruno",
+        "Carla",
+        "No se puede saber"
+      ],
+      "pregunta": "En una fila, Ana está delante de Bruno y detrás de Carla. ¿Quién está en el medio?",
+      "respuesta_correcta": 0
+    },
+    {
+      "area": "Lógica matemática",
+      "fuente": "Currículo Base del Ministerio de Educación de Bolivia — Matemática, Educación Secundaria Comunitaria Productiva.",
+      "id": "LOG-3-002",
+      "justificacion": "Primera venta: 100 − 80 = 20 de ganancia. Segunda venta: 130 − 110 = 20 de ganancia. En total ganó 40 bolivianos.",
+      "nivel": 3,
+      "opciones": [
+        "20 bolivianos",
+        "30 bolivianos",
+        "40 bolivianos",
+        "50 bolivianos"
+      ],
+      "pregunta": "Un comerciante compra un producto en Bs 80 y lo vende en Bs 100. Después lo vuelve a comprar en Bs 110 y lo vende en Bs 130. ¿Cuánto ganó en total?",
+      "respuesta_correcta": 2
+    }
+  ]
 }

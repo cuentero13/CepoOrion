@@ -3,7 +3,18 @@ import Link from "next/link";
 import GraficoRadar, { type ValorRadar } from "@/components/GraficoRadar";
 import Reveal from "@/components/Reveal";
 import SeccionJuegosProgreso from "@/components/SeccionJuegosProgreso";
-import { AREAS } from "@/lib/diagnostico";
+import {
+  AREA_LOGICA,
+  AREAS,
+  nivelGeneral,
+  type Nivel,
+} from "@/lib/diagnostico";
+import {
+  AVISO_VOCACIONAL,
+  DIMENSIONES_RIASEC,
+  mapearFamilias,
+  type PerfilVocacional,
+} from "@/lib/vocacional";
 import { INSIGNIAS } from "@/lib/juegos";
 import { supabaseConfigurado } from "@/lib/supabase/config";
 import {
@@ -41,6 +52,13 @@ type ProgresoJuego = {
   insignias: unknown;
   nivel: number;
   updated_at: string;
+};
+
+type Orientacion = {
+  id: string;
+  dimensiones: Record<string, unknown>;
+  perfil_top2: unknown;
+  created_at: string;
 };
 
 function fechaCorta(iso: string): string {
@@ -137,6 +155,7 @@ export default async function PaginaProgreso() {
   let diagnosticos: Diagnostico[] = [];
   let actitudes: Actitud[] = [];
   let juegos: ProgresoJuego[] = [];
+  let orientacion: Orientacion | null = null;
   let errorCarga = "";
 
   if (supabase) {
@@ -166,6 +185,18 @@ export default async function PaginaProgreso() {
       actitudes = (rAct.data ?? []) as Actitud[];
       juegos = (rJuegos.data ?? []) as ProgresoJuego[];
     }
+    // Fase h: el perfil vocacional se lee aparte. Si la migración 0002
+    // aún no se corrió, la tabla no existe: esto simplemente no muestra
+    // nada y no rompe el resto del panel.
+    const rOri = await supabase
+      .from("orientacion_vocacional")
+      .select("id, dimensiones, perfil_top2, created_at")
+      .eq("user_id", usuario.id)
+      .order("created_at", { ascending: false })
+      .limit(1);
+    if (!rOri.error && rOri.data && rOri.data.length > 0) {
+      orientacion = rOri.data[0] as Orientacion;
+    }
   }
 
   // Último diagnóstico por área (para la evolución).
@@ -173,6 +204,51 @@ export default async function PaginaProgreso() {
   for (const d of diagnosticos) {
     if (!porArea.has(d.area)) porArea.set(d.area, d);
   }
+
+  // Fase h: nivel general (solo las 6 áreas), lógica y perfil vocacional.
+  const diagnosticoLogica = porArea.get(AREA_LOGICA) ?? null;
+  const puntajesPorArea: Partial<Record<(typeof AREAS)[number], number>> = {};
+  const nivelesPorArea: Partial<Record<(typeof AREAS)[number], Nivel>> = {};
+  for (const a of AREAS) {
+    const d = porArea.get(a);
+    if (d) {
+      if (d.puntaje !== null) puntajesPorArea[a] = d.puntaje;
+      nivelesPorArea[a] = d.nivel as Nivel;
+    }
+  }
+  const puntajesHechos = Object.values(puntajesPorArea);
+  const nivelGeneralTexto =
+    puntajesHechos.length > 0 ? nivelGeneral(puntajesHechos) : null;
+  const perfilVocacional: PerfilVocacional | null =
+    orientacion && orientacion.dimensiones
+      ? {
+          dimensiones: Object.fromEntries(
+            Object.entries(orientacion.dimensiones).map(([k, v]) => [
+              k,
+              typeof v === "number" ? v : 0,
+            ])
+          ),
+          top2: (
+            Array.isArray(orientacion.perfil_top2)
+              ? orientacion.perfil_top2.filter(
+                  (v): v is string =>
+                    typeof v === "string" &&
+                    DIMENSIONES_RIASEC.some((dim) => dim.id === v)
+                )
+              : []
+          ).slice(0, 2) as PerfilVocacional["top2"],
+        }
+      : null;
+  const diagnosticoCompleto = AREAS.every((a) => porArea.get(a));
+  const familiasProgreso =
+    perfilVocacional && diagnosticoCompleto && diagnosticoLogica
+      ? mapearFamilias(
+          perfilVocacional,
+          puntajesPorArea,
+          nivelesPorArea,
+          diagnosticoLogica.nivel as Nivel
+        )
+      : [];
 
   // Insignias ganadas en los juegos (sin duplicados, en orden de juego).
   const insignias: string[] = [];
@@ -289,8 +365,53 @@ export default async function PaginaProgreso() {
                     }
                     titulo="Tu último nivel en cada área"
                   />
+                  {/* Fase h: nivel general + lógica (barra aparte, no es un 7.º eje del radar). */}
+                  {nivelGeneralTexto && (
+                    <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                      Nivel general:{" "}
+                      <strong className="text-selva dark:text-sol">
+                        {nivelGeneralTexto}
+                      </strong>
+                      . Este diagnóstico mide lo que sabés hoy: no es un
+                      examen de admisión ni una prueba oficial.
+                    </p>
+                  )}
+                  {diagnosticoLogica && (
+                    <div>
+                      <p className="flex flex-wrap justify-between gap-2 text-sm">
+                        <span className="font-bold text-noche dark:text-white">
+                          Lógica matemática
+                        </span>
+                        <span className="text-neutral-600 dark:text-white/75">
+                          Nivel {diagnosticoLogica.nivel}
+                          {diagnosticoLogica.puntaje !== null
+                            ? ` · ${diagnosticoLogica.puntaje} puntos`
+                            : ""}
+                        </span>
+                      </p>
+                      {diagnosticoLogica.puntaje !== null && (
+                        <div
+                          className="mt-2 h-3 overflow-hidden rounded-full bg-rio/20"
+                          role="progressbar"
+                          aria-valuenow={diagnosticoLogica.puntaje}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                          aria-label={`Lógica matemática: ${diagnosticoLogica.puntaje} de 100`}
+                        >
+                          <div
+                            className="h-full rounded-full bg-rio"
+                            style={{
+                              width: `${diagnosticoLogica.puntaje}%`,
+                            }}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )}
                   <ul className="flex flex-col gap-3">
-                    {[...porArea.values()].map((d) => (
+                    {[...porArea.values()]
+                      .filter((d) => d.area !== AREA_LOGICA)
+                      .map((d) => (
                       <li
                         key={d.area}
                         className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-rio/20 px-4 py-3"
@@ -329,6 +450,89 @@ export default async function PaginaProgreso() {
                   </ul>
                 </div>
               )}
+            </div>
+          )}
+        </Tarjeta>
+
+        {/* Fase h: perfil vocacional + posibles carreras */}
+        <Tarjeta titulo="Tu perfil vocacional">
+          {!perfilVocacional ? (
+            <EstadoVacio>
+              Aún no hiciste el{" "}
+              <Link
+                href="/vocacional"
+                className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
+              >
+                cuestionario vocacional
+              </Link>
+              . Son 18 frases sobre lo que te gusta hacer, unos 5 minutos.
+            </EstadoVacio>
+          ) : (
+            <div className="flex flex-col gap-3">
+              <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                Tus intereses más fuertes:{" "}
+                <strong className="text-selva dark:text-sol">
+                  {perfilVocacional.top2
+                    .map(
+                      (id) =>
+                        DIMENSIONES_RIASEC.find((d) => d.id === id)?.nombre ??
+                        id
+                    )
+                    .join(" y ")}
+                </strong>
+                .
+              </p>
+              {familiasProgreso.length > 0 ? (
+                <>
+                  <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                    Según lo que sabés hoy y lo que te interesa hoy, estas
+                    familias de carreras combinan con vos. No es una
+                    decisión: es un punto de partida para averiguar más.
+                  </p>
+                  <ul className="flex flex-col gap-3">
+                    {familiasProgreso.map((f) => (
+                      <li
+                        key={f.id}
+                        className="rounded-xl border border-rio/20 px-4 py-3"
+                      >
+                        <p className="font-bold text-noche dark:text-white">
+                          {f.nombre}
+                        </p>
+                        <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                          {f.carreras.join(", ")}.
+                        </p>
+                        <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                          {f.vias.join(" · ")}.
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                  Para ver qué carreras combinan con vos, completá el
+                  diagnóstico de las 6 áreas y el reto de lógica. Mientras
+                  tanto, explorá las opciones en{" "}
+                  <Link
+                    href="/futuro"
+                    className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
+                  >
+                    Tu futuro
+                  </Link>
+                  .
+                </p>
+              )}
+              <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                {AVISO_VOCACIONAL}
+              </p>
+              <p>
+                <Link
+                  href="/futuro"
+                  className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
+                >
+                  Ver Tu futuro: dónde estudiar, becas y carreras →
+                </Link>
+              </p>
             </div>
           )}
         </Tarjeta>

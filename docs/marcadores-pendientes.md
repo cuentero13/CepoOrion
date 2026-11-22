@@ -256,5 +256,41 @@ documentación, reportes históricos o código.
 
 ---
 
+## Fase (h) — marcadores nuevos (22-nov-2026)
+
+Estos marcadores NO están en los totales del 20-nov-2026 de arriba:
+se suman a esa lista.
+
+### `config/institucion.json` → `despues_del_cole` (10 marcadores)
+
+| Clave | Tipo | Qué falta |
+|---|---|---|
+| `convocatoria_minedu_2027` | `[VERIFICAR]` | Convocatoria 2027 del Programa de Becas para Jóvenes del MinEdu (sociales y tecnológicas) — revisar minedu.gob.bo en diciembre de 2026 |
+| `convocatoria_esfm_2027` | `[VERIFICAR]` | Convocatoria 2027 de las ESFM — revisar minedu.gob.bo en diciembre de 2026 |
+| `elegibilidad_gamlp_upb_ixiamas` | `[VERIFICAR]` | Elegibilidad de un bachiller de Ixiamas en el convenio GAMLP–UPB (9 becas completas) |
+| `becas_internas_upea_detalle` | `[VERIFICAR]` | Detalle de las becas internas de la UPEA (comedor, ayudantía, trabajo, tesis) y de cada universidad pública |
+| `costos_psa_2027_por_facultad` | `[VERIFICAR]` | Costos exactos de todas las PSA 2027 por facultad (varían cada gestión) |
+| `montos_turkiye_burslari` | `[VERIFICAR]` | Montos exactos del estipendio de Türkiye Bursları (las fuentes consultadas discrepan) |
+| `plazos_2027_mext_stipendium` | `[VERIFICAR]` | Plazos 2027 de MEXT (Japón) y Stipendium Hungaricum (Hungría) en sus webs oficiales |
+| `distancias_transporte` | `[VERIFICAR]` | Distancias y transporte Ixiamas–Riberalta, Ixiamas–Cobija e Ixiamas–La Paz |
+| `demanda_laboral_post_2019` | `[VERIFICAR]` | Demanda laboral actualizada posterior a 2019 (el INE no publica demanda por carrera) |
+| `testimonios_egresados` | `[COMPLETAR]` | Testimonios reales de egresados — recoger por el Buzón, con nombre real y consentimiento |
+
+### `data/despues-del-cole.json` — entradas con `estado: "por confirmar"`
+
+Las entradas con estado «por confirmar» en este archivo son los mismos
+pendientes de arriba, más: UABJB, UAGRM, UMSS, UTO y USFX (convocatorias
+2027 por confirmar en cada web oficial), becas UCB, GAMLP–UPB, UPEA
+internas e internacionales, y varios cursos de trabajos modernos
+(enlaces sin verificar). Al verificar uno, cambiar su `estado` a
+`vigente` y su `verificado`, y quitar el marcador correspondiente de
+`config/institucion.json`.
+
+**Total fase (h):** 9 `[VERIFICAR]` + 1 `[COMPLETAR]` en
+`config/institucion.json` (los estados «por confirmar» del JSON son el
+detalle de los mismos pendientes).
+
+---
+
 *Lista generada el 20-nov-2026 (fase g). Para saber cómo completar cada
 dato, ver `docs/manual-docente.md`.*

@@ -24,6 +24,19 @@ export const NIVELES = ["Inicial", "Básico", "Intermedio", "Avanzado"] as const
 
 export type Nivel = (typeof NIVELES)[number];
 
+/** Módulo aparte de lógica matemática (fase h): 6 preguntas fijas, no adaptativas. */
+export const AREA_LOGICA = "Lógica matemática" as const;
+export type AreaLogica = typeof AREA_LOGICA;
+
+/** Preguntas del módulo de lógica en cada intento (las 6, en orden fijo). */
+export const PREGUNTAS_LOGICA = 6;
+
+/** Tema dentro de un área (fase h: desglose por tema en el resultado). */
+export type Tema = string;
+
+/** Habilidad transversal que exige una pregunta (fase h: `logica`). */
+export type Habilidad = "logica";
+
 /** Orden numérico del nivel (para comparar evolución en /progreso). */
 export const NIVEL_ORDEN: Record<Nivel, number> = {
   Inicial: 1,
@@ -34,7 +47,7 @@ export const NIVEL_ORDEN: Record<Nivel, number> = {
 
 export type Pregunta = {
   id: string;
-  area: Area;
+  area: Area | AreaLogica;
   /** 1 = fácil, 2 = medio, 3 = difícil */
   nivel: 1 | 2 | 3;
   pregunta: string;
@@ -43,6 +56,10 @@ export type Pregunta = {
   respuesta_correcta: number;
   justificacion: string;
   fuente: string;
+  /** Tema dentro del área (fase h; en Matemática: Aritmética, Álgebra, Geometría, Estadística). */
+  tema?: Tema;
+  /** Habilidad transversal que exige la pregunta (fase h: `logica`). */
+  habilidad?: Habilidad;
 };
 
 export type RespuestaRegistrada = {
@@ -55,7 +72,7 @@ export type RespuestaRegistrada = {
 };
 
 export type ResultadoArea = {
-  area: Area;
+  area: Area | AreaLogica;
   correctas: number;
   total: number;
   /** 0–100: puntaje ponderado por dificultad. Se guarda en `puntaje`. */
@@ -86,14 +103,28 @@ export function siguienteDificultad(actual: number, correcta: boolean): number {
 /**
  * Elige la siguiente pregunta sin repetir: primero busca en la
  * dificultad pedida; si no quedan, busca en la más cercana.
+ * Con `opciones.tema` y/o `opciones.niveles` se restringe a ese tema
+ * y a esos niveles (fase h: cuota de Aritmética en Matemática); si no
+ * queda ninguna, se cae al comportamiento normal.
  */
 export function elegirSiguientePregunta(
   banco: Pregunta[],
   usadas: ReadonlySet<string>,
-  dificultad: number
+  dificultad: number,
+  opciones?: { tema?: string; niveles?: number[] }
 ): Pregunta | null {
   const disponibles = banco.filter((p) => !usadas.has(p.id));
   if (disponibles.length === 0) return null;
+  if (opciones?.tema || opciones?.niveles) {
+    const filtradas = disponibles.filter(
+      (p) =>
+        (!opciones.tema || p.tema === opciones.tema) &&
+        (!opciones.niveles || opciones.niveles.includes(p.nivel))
+    );
+    if (filtradas.length > 0) {
+      return filtradas[Math.floor(Math.random() * filtradas.length)];
+    }
+  }
   const orden = [dificultad, dificultad - 1, dificultad + 1, 1, 2, 3];
   for (const d of orden) {
     const enNivel = disponibles.filter((p) => p.nivel === d);
@@ -106,7 +137,7 @@ export function elegirSiguientePregunta(
 
 /** Calcula el resultado de un área a partir de sus respuestas. */
 export function calcularResultadoArea(
-  area: Area,
+  area: Area | AreaLogica,
   respuestas: RespuestaRegistrada[]
 ): ResultadoArea {
   const total = respuestas.length;
@@ -131,6 +162,67 @@ export function nivelGeneral(puntajes: number[]): Nivel {
   if (puntajes.length === 0) return "Inicial";
   const media = puntajes.reduce((s, p) => s + p, 0) / puntajes.length / 100;
   return nivelDesdePorcentaje(media);
+}
+
+/**
+ * Nivel de lógica matemática (fase h) a partir de las respuestas del
+ * módulo de 6 preguntas fijas. Reusa los mismos cortes (40 / 60 / 80).
+ */
+export function calcularNivelLogica(
+  respuestas: RespuestaRegistrada[]
+): ResultadoArea {
+  return calcularResultadoArea(AREA_LOGICA, respuestas);
+}
+
+/**
+ * Perfil de fortalezas (fase h): las 2 áreas con mayor puntaje y las 2
+ * con menor puntaje, para la tarjeta «Tu perfil» del resumen general.
+ */
+export function perfilFortalezas(
+  resultados: Partial<Record<Area, ResultadoArea>>
+): { fuertes: Area[]; aReforzar: Area[] } {
+  const hechas = AREAS.filter((a) => resultados[a]) as Area[];
+  const ordenadas = [...hechas].sort(
+    (a, b) => resultados[b]!.puntaje - resultados[a]!.puntaje
+  );
+  return {
+    fuertes: ordenadas.slice(0, 2),
+    aReforzar: ordenadas.slice(-2).reverse(),
+  };
+}
+
+/**
+ * Temas a reforzar (fase h): temas con 0 aciertos entre las preguntas
+ * servidas de un área. En Matemática, si una pregunta de división
+ * (MAT-1-004 o MAT-1-005) fue servida y falló, se añade «División».
+ */
+export function temasAReforzar(
+  banco: Pregunta[],
+  respuestas: RespuestaRegistrada[]
+): string[] {
+  const porId = new Map(banco.map((p) => [p.id, p]));
+  const porTema = new Map<string, { total: number; aciertos: number }>();
+  for (const r of respuestas) {
+    const p = porId.get(r.preguntaId);
+    if (!p?.tema) continue;
+    const agg = porTema.get(p.tema) ?? { total: 0, aciertos: 0 };
+    agg.total += 1;
+    if (r.correcta) agg.aciertos += 1;
+    porTema.set(p.tema, agg);
+  }
+  const temas: string[] = [];
+  for (const [tema, agg] of porTema) {
+    if (agg.aciertos === 0) temas.push(tema);
+  }
+  const divisionFallida = respuestas.some(
+    (r) =>
+      (r.preguntaId === "MAT-1-004" || r.preguntaId === "MAT-1-005") &&
+      !r.correcta
+  );
+  if (divisionFallida && !temas.includes("División")) {
+    temas.push("División");
+  }
+  return temas;
 }
 
 /** Recomendación de estudio según el nivel alcanzado en un área. */
@@ -204,4 +296,18 @@ export const RECOMENDACIONES_AREA: Record<
       "Llevá un cuaderno de preguntas: anotá lo que te intriga y volvé a leerlo cada semana.",
     ],
   },
+};
+
+/** Recomendación del módulo de lógica matemática (fase h). */
+export const RECOMENDACION_LOGICA: {
+  descripcion: string;
+  consejos: string[];
+} = {
+  descripcion:
+    "La lógica es razonar paso a paso: series, orden, edades, bolas en una caja. Se entrena con juegos de ingenio y problemas cortos.",
+  consejos: [
+    "Practicá con las preguntas de este módulo: repetí el reto y fijate en la justificación de cada respuesta.",
+    "Jugá al Detective de noticias y a Mi primer presupuesto en /juegos: también entrenan el razonamiento.",
+    "Estas preguntas son parecidas a las de razonamiento lógico-matemático del examen de las Escuelas de Maestros (ESFM): 30 de 100 preguntas de esa prueba son de este tipo.",
+  ],
 };
