@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import GraficoRadar, { type ValorRadar } from "@/components/GraficoRadar";
 import {
@@ -63,6 +63,9 @@ export default function ExamenDiagnostico({
 }) {
   const [etapa, setEtapa] = useState<Etapa>("inicio");
   const [areaActual, setAreaActual] = useState<Area | AreaLogica | null>(null);
+  // Fase i: cuándo empezó el área actual (para medir el tiempo del
+  // intento en la tabla `actividad`). Se reinicia con cada área.
+  const inicioAreaRef = useRef<number | null>(null);
   // Fase h: el módulo de lógica es un flujo aparte (6 preguntas fijas).
   const [modoLogica, setModoLogica] = useState(false);
   const [resultadoLogica, setResultadoLogica] =
@@ -145,6 +148,7 @@ export default function ExamenDiagnostico({
     if (!primera) return;
     setAreaActual(area);
     setModoLogica(false);
+    inicioAreaRef.current = Date.now();
     setPregunta(primera);
     setUsadas(new Set([primera.id]));
     setDificultad(DIFICULTAD_INICIAL);
@@ -161,6 +165,7 @@ export default function ExamenDiagnostico({
     if (!primera) return;
     setAreaActual(AREA_LOGICA);
     setModoLogica(true);
+    inicioAreaRef.current = Date.now();
     setPregunta(primera);
     setUsadas(new Set([primera.id]));
     setDificultad(DIFICULTAD_INICIAL);
@@ -185,6 +190,10 @@ export default function ExamenDiagnostico({
           nivel: resultado.nivel,
           puntaje: resultado.puntaje,
           respuestas: resultado.respuestas,
+          // Fase i: inicio del área, para el tiempo del intento.
+          inicio: inicioAreaRef.current
+            ? new Date(inicioAreaRef.current).toISOString()
+            : undefined,
         }),
       });
       const datos = (await respuesta.json()) as {

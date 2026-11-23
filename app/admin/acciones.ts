@@ -39,6 +39,9 @@ export async function actualizarEstadoBuzon(
     return { ok: false, error: "No se pudo actualizar el estado." };
   }
 
+  // La página del buzón se mudó a /admin/buzon (fase i): se revalidan
+  // ambas rutas (la portada muestra el conteo de mensajes nuevos).
   revalidatePath("/admin");
+  revalidatePath("/admin/buzon");
   return { ok: true };
 }

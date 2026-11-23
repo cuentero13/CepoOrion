@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { supabaseConfigurado } from "@/lib/supabase/config";
 import { crearClienteServidor, obtenerUsuario } from "@/lib/supabase/server";
+import { registrarActividad } from "@/lib/actividad";
 import { DIMENSIONES_RIASEC } from "@/lib/vocacional";
 
 function error(mensaje: string, estado: number) {
@@ -10,6 +11,8 @@ function error(mensaje: string, estado: number) {
 type CuerpoVocacional = {
   dimensiones?: unknown;
   perfil_top2?: unknown;
+  /** ISO del momento en que el estudiante abrió el cuestionario (lo mide el cliente). */
+  inicio?: unknown;
 };
 
 /**
@@ -98,6 +101,9 @@ export async function POST(request: NextRequest) {
   if (errorInsert) {
     return error("No se pudo guardar el resultado. Intentá de nuevo.", 500);
   }
+
+  // Fase i: tiempo del intento (no falla si la tabla aún no existe).
+  await registrarActividad(supabase, usuario.id, "vocacional", cuerpo.inicio);
 
   return NextResponse.json({ ok: true, guardado: true });
 }
