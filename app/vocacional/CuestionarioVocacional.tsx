@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   AVISO_VOCACIONAL,
@@ -8,6 +8,7 @@ import {
   calcularPerfilVocacional,
   type PerfilVocacional,
 } from "@/lib/vocacional";
+import { subirAlInicio } from "@/lib/scroll";
 
 export type ItemVocacional = {
   id: string;
@@ -79,6 +80,12 @@ export default function CuestionarioVocacional({
   // Fase i: cuándo se abrió el cuestionario (para medir el tiempo del
   // intento en la tabla `actividad`).
   const inicioRef = useRef(Date.now());
+
+  // Fase k: al aparecer el resultado (o al volver al cuestionario), la
+  // pantalla vuelve arriba sola.
+  useEffect(() => {
+    subirAlInicio();
+  }, [enviado]);
 
   const todosLosItems = useMemo(
     () => datos.dimensiones.flatMap((d) => d.items),

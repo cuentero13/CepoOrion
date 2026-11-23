@@ -327,14 +327,34 @@ export function mapearFamilias(
     .map((c) => c.familia);
 }
 
+/**
+ * Familias de carreras solo por diagnóstico, sin vocacional (fase k).
+ * Usa la misma tabla de cruce de `mapearFamilias`, con un perfil
+ * neutro (intereses en 0): una familia se muestra cuando su área del
+ * diagnóstico está en Intermedio o Avanzado (o puntaje ≥ 60). El nivel
+ * de lógica cuenta para «Ingenierías y tecnología». Si ninguna familia
+ * cumple, devuelve lista vacía: no se inventa un perfil.
+ */
+export function mapearFamiliasPorDiagnostico(
+  puntajes: Partial<Record<Area, number>>,
+  niveles: Partial<Record<Area, Nivel>>,
+  nivelLogica: Nivel | null
+): FamiliaCarreras[] {
+  return mapearFamilias(
+    { dimensiones: {}, top2: [] },
+    puntajes,
+    niveles,
+    nivelLogica
+  );
+}
+
 /** Extrae puntajes y niveles de los resultados del diagnóstico. */
 export function puntajesYNiveles(
   resultados: Partial<Record<Area, ResultadoArea>>
 ): {
   puntajes: Partial<Record<Area, number>>;
   niveles: Partial<Record<Area, Nivel>>;
-} {
-  const puntajes: Partial<Record<Area, number>> = {};
+} {  const puntajes: Partial<Record<Area, number>> = {};
   const niveles: Partial<Record<Area, Nivel>> = {};
   for (const [area, r] of Object.entries(resultados)) {
     if (!r) continue;

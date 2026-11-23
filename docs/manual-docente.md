@@ -814,6 +814,53 @@ Horarios, Progreso, Contacto, Juegos). La corrección: umbral `0`
 suave y el comportamiento con `prefers-reduced-motion` (contenido
 visible de inmediato) no cambiaron.
 
+## Fase (k) — Carreras y trabajos al terminar el diagnóstico + scroll arriba solo (22-nov-2026)
+
+### Qué se ve al terminar el diagnóstico, sin hacer el vocacional
+
+Antes, el bloque «Tus posibles carreras» del resumen del diagnóstico
+solo aparecía cuando estaban completos las 6 áreas + el reto de
+lógica + el cuestionario vocacional. Ahora, al terminar el
+diagnóstico, siempre se ven opciones:
+
+- **Familias de carreras según el diagnóstico solo**: función
+  `mapearFamiliasPorDiagnostico` en `lib/vocacional.ts`. Usa la misma
+  tabla de cruce de la fase (h), con un perfil neutro (intereses en
+  0): una familia se muestra cuando su área del diagnóstico está en
+  Intermedio o Avanzado (o puntaje ≥ 60). El nivel de lógica cuenta
+  para «Ingenierías y tecnología». Si ninguna familia cumple, no se
+  inventa un perfil: sale el texto «Todavía no hay un área en
+  Intermedio o Avanzado».
+- **Trabajos para empezar ya**: 2–3 trabajos modernos de
+  `data/despues-del-cole.json`, elegidos por las áreas más fuertes del
+  estudiante con la tabla de correspondencia de `lib/trabajos.ts`
+  (qué habilidad del colegio se parece a cada trabajo). Si no hay
+  correspondencia clara, salen los 3 más aptos para principiantes
+  (editor de video, diseñador con Canva, fotografía con el celular).
+  Cada trabajo trae su curso gratis recomendado (tal cual del
+  informe) y la nota de que las plataformas piden ser mayor de 18
+  años.
+- **La nota del vocacional**: «Completá el cuestionario vocacional
+  para afinarlo con tus intereses» (con enlace). Cuando el vocacional
+  sí está hecho y el diagnóstico está completo, el bloque cruzado
+  diagnóstico + RIASEC sigue igual que en la fase (h): no cambió.
+- **En Mi progreso**: si solo está hecho el diagnóstico, la tarjeta
+  «Tu perfil vocacional» muestra las familias según diagnóstico con
+  la misma nota del vocacional. Sin diagnóstico ni vocacional, sigue
+  el texto de siempre.
+
+### Scroll arriba solo
+
+Al dar «Siguiente pregunta» en el examen diagnóstico, y al aparecer
+una pantalla de resultado o de resumen (diagnóstico, vocacional y
+actitudes), la pantalla sube sola al inicio. Implementación:
+`lib/scroll.ts` (`subirAlInicio`), un `useEffect` sobre el índice de
+pregunta / etapa en `ExamenDiagnostico.tsx` y sobre `enviado` en
+`CuestionarioVocacional.tsx` y `CuestionarioActitudes.tsx`. Respeta
+`prefers-reduced-motion`: con movimiento reducido el salto es
+inmediato en vez de animado. La lógica adaptativa del examen y el
+guardado de resultados no se tocaron.
+
 ---
 
 *Manual creado el 19-nov-2026 (fase f). Fuentes de contenido:
