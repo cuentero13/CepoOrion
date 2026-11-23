@@ -307,6 +307,24 @@ la migración 0003 (`supabase/migrations/0003_fase_i.sql`, tabla
 procedimiento de `docs/manual-docente.md` (fase i). Sin eso, el panel
 funciona salvo la sección Actividad, que queda vacía.
 
+## Fase (j) — mapa «¿Dónde quieres estudiar?» (22-nov-2026)
+
+Nuevos marcadores en `data/mapa-estudios.json` (no están en los
+totales de arriba):
+
+| Marcador | Tipo | Qué falta |
+|---|---|---|
+| Rurrenabaque | `[VERIFICAR]` | Convocatorias 2027: verificar qué programas de UMSA extensión, UABJB extensión, UNIR e institutos técnicos están abiertos (fuentes: Diagnóstico Integral UABJB dic-2025, CECASEM jun-2025). Cambiar `estado` a `vigente` al verificar |
+| Yucumo | `[VERIFICAR]` | Verificar si el Instituto Tecnológico Agroindustrial 'Mcal. José Ballivián' funciona hoy y qué carreras están abiertas (fuente: ANB/ABI 2018, obra en fase final entonces). Cambiar `estado` a `vigente` al verificar |
+| USFX (Sucre) | `[VERIFICAR]` | Enlace oficial de la convocatoria USFX 2027 (el dato actual viene de prensa local, Correo del Sur) |
+
+Verificar en diciembre de 2026 junto con las convocatorias MinEdu y
+ESFM (procedimiento en `docs/manual-docente.md`, fase h). Al
+verificar uno, cambiar su `estado` a `vigente` en
+`data/mapa-estudios.json` y completar el `enlace` si lo hay.
+
+**Total fase (j):** 3 `[VERIFICAR]`.
+
 ---
 
 *Lista generada el 20-nov-2026 (fase g). Para saber cómo completar cada

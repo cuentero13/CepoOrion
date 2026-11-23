@@ -36,7 +36,11 @@ export default function Reveal({
           observador.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+      // Umbral 0: basta con que entre un píxel en pantalla. Con un umbral
+      // en porcentaje (p. ej. 0.12) una sección muy larga en un celular
+      // nunca llega a mostrar el 12% dentro del viewport y queda oculta
+      // para siempre (pasó con la sección 1 de /futuro, nov-2026).
+      { threshold: 0, rootMargin: "0px 0px -8% 0px" },
     );
     observador.observe(el);
     return () => observador.disconnect();
