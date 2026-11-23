@@ -30,9 +30,12 @@ import {
   CLAVE_PERFIL_LOCAL,
   DIMENSIONES_RIASEC,
   mapearFamilias,
+  mapearFamiliasPorDiagnostico,
   puntajesYNiveles,
   type PerfilVocacional,
 } from "@/lib/vocacional";
+import { subirAlInicio } from "@/lib/scroll";
+import { sugerirTrabajos } from "@/lib/trabajos";
 
 type Etapa = "inicio" | "preguntas" | "resultado" | "resumen";
 
@@ -111,6 +114,12 @@ export default function ExamenDiagnostico({
   const [respuestas, setRespuestas] = useState<RespuestaRegistrada[]>([]);
   const [elegida, setElegida] = useState<number | null>(null);
   const [guardado, setGuardado] = useState<EstadoGuardado>("pendiente");
+
+  // Fase k: al cambiar de pregunta (o de etapa: resultado, resumen,
+  // inicio) la pantalla vuelve arriba sola.
+  useEffect(() => {
+    subirAlInicio();
+  }, [etapa, pregunta]);
 
   const bancoPorArea = useMemo(() => {
     const mapa = new Map<Area, Pregunta[]>();
@@ -337,13 +346,18 @@ export default function ExamenDiagnostico({
           resultadoLogica!.nivel
         )
       : [];
-    const faltaParaCarreras: string[] = [];
-    if (faltanAreas > 0)
-      faltaParaCarreras.push(
-        `${faltanAreas} área${faltanAreas === 1 ? "" : "s"} del diagnóstico`
-      );
-    if (!resultadoLogica) faltaParaCarreras.push("el reto de lógica");
-    if (!perfilVocacional) faltaParaCarreras.push("el cuestionario vocacional");
+    // Fase k: familias solo por diagnóstico (sin vocacional) + trabajos.
+    const familiasDiagnostico = mapearFamiliasPorDiagnostico(
+      puntajes,
+      niveles,
+      resultadoLogica?.nivel ?? null
+    );
+    const puntajesConLogica: Partial<Record<Area | AreaLogica, number>> = {
+      ...puntajes,
+    };
+    if (resultadoLogica)
+      puntajesConLogica[AREA_LOGICA] = resultadoLogica.puntaje;
+    const trabajosSugeridos = sugerirTrabajos(puntajesConLogica, 3);
     return (
       <div className="mx-auto max-w-3xl px-4 py-12">
         <p className="text-sm font-bold uppercase tracking-widest text-selva dark:text-rio-claro">
@@ -459,13 +473,19 @@ export default function ExamenDiagnostico({
           )}
         </section>
 
-        {/* Fase h: Tus posibles carreras */}
+        {/* Fase h: Tus posibles carreras. Fase k: también se ven sin vocacional. */}
         <section
-          aria-label="Tus posibles carreras"
+          aria-label={
+            carrerasCompletas
+              ? "Tus posibles carreras"
+              : "Según tu diagnóstico, estas son algunas opciones para explorar"
+          }
           className="mt-8 rounded-2xl border-2 border-rio/20 bg-white p-5 dark:border-white/10 dark:bg-noche-claro"
         >
           <h2 className="font-display text-xl font-bold text-noche dark:text-white">
-            Tus posibles carreras
+            {carrerasCompletas
+              ? "Tus posibles carreras"
+              : "Según tu diagnóstico, estas son algunas opciones para explorar"}
           </h2>
           {carrerasCompletas ? (
             familias.length > 0 ? (
@@ -533,18 +553,117 @@ export default function ExamenDiagnostico({
               </p>
             )
           ) : (
-            <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
-              Para ver qué carreras combinan con vos te falta:{" "}
-              {faltaParaCarreras.join(", ")}.{" "}
-              {faltaParaCarreras.includes("el cuestionario vocacional") && (
+            <>
+              <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                Estas son las familias que combinan con tus áreas más
+                fuertes. No es una decisión: es un punto de partida para
+                averiguar más.
+              </p>
+              {familiasDiagnostico.length > 0 ? (
+                <ul className="mt-4 flex flex-col gap-4">
+                  {familiasDiagnostico.map((f) => (
+                    <li
+                      key={f.id}
+                      className="rounded-xl border border-rio/20 p-4"
+                    >
+                      <p className="font-display text-lg font-bold text-noche dark:text-white">
+                        {f.nombre}
+                      </p>
+                      <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                        {f.descripcion}
+                      </p>
+                      <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                        <strong className="text-selva dark:text-sol">
+                          Carreras:
+                        </strong>{" "}
+                        {f.carreras.join(", ")}.
+                      </p>
+                      <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                        <strong className="text-selva dark:text-sol">
+                          Dónde:
+                        </strong>{" "}
+                        {f.vias.join(" · ")}.
+                      </p>
+                      {f.advertencia && (
+                        <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                          {f.advertencia}
+                        </p>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                  Todavía no hay un área en Intermedio o Avanzado: reforzá
+                  tus áreas y repetí el diagnóstico para ver carreras.
+                </p>
+              )}
+
+              <h3 className="mt-6 font-display text-lg font-bold text-noche dark:text-white">
+                Trabajos para empezar ya
+              </h3>
+              <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                Con lo que ya sabés, estos trabajos se pueden aprender con
+                cursos gratis, sin esperar a terminar el bachillerato.
+              </p>
+              <ul className="mt-3 flex flex-col gap-3">
+                {trabajosSugeridos.map((t) => (
+                  <li
+                    key={t.id}
+                    className="rounded-xl border border-rio/20 p-4"
+                  >
+                    <p className="font-bold text-noche dark:text-white">
+                      {t.nombre}
+                    </p>
+                    <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                      {t.descripcion}
+                    </p>
+                    {t.curso && (
+                      <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                        Curso gratis:{" "}
+                        <a
+                          href={t.curso.enlace}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
+                        >
+                          {t.curso.nombre}
+                        </a>{" "}
+                        ({t.curso.plataforma}).
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                Las plataformas para trabajar por internet piden ser mayor
+                de 18 años: aprendé ahora y practicá con negocios de
+                Ixiamas. La lista completa de trabajos con sus cursos
+                gratis está en{" "}
                 <Link
-                  href="/vocacional"
+                  href="/futuro"
                   className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
                 >
-                  Hacer el cuestionario vocacional →
+                  Tu futuro →
                 </Link>
+              </p>
+              {perfilVocacional ? (
+                <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                  Cuando completes las 6 áreas y el reto de lógica, acá vas
+                  a ver las carreras cruzadas con tus intereses.
+                </p>
+              ) : (
+                <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                  <Link
+                    href="/vocacional"
+                    className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
+                  >
+                    Completá el cuestionario vocacional para afinarlo con
+                    tus intereses →
+                  </Link>
+                </p>
               )}
-            </p>
+            </>
           )}
           <p className="mt-3 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
             {AVISO_VOCACIONAL}

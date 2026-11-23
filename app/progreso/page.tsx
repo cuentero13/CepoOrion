@@ -13,6 +13,7 @@ import {
   AVISO_VOCACIONAL,
   DIMENSIONES_RIASEC,
   mapearFamilias,
+  mapearFamiliasPorDiagnostico,
   type PerfilVocacional,
 } from "@/lib/vocacional";
 import { INSIGNIAS } from "@/lib/juegos";
@@ -249,6 +250,15 @@ export default async function PaginaProgreso() {
           diagnosticoLogica.nivel as Nivel
         )
       : [];
+  // Fase k: familias solo por diagnóstico (sin vocacional).
+  const hayDiagnostico = porArea.size > 0;
+  const familiasPorDiagnostico = hayDiagnostico
+    ? mapearFamiliasPorDiagnostico(
+        puntajesPorArea,
+        nivelesPorArea,
+        diagnosticoLogica ? (diagnosticoLogica.nivel as Nivel) : null
+      )
+    : [];
 
   // Insignias ganadas en los juegos (sin duplicados, en orden de juego).
   const insignias: string[] = [];
@@ -457,16 +467,73 @@ export default async function PaginaProgreso() {
         {/* Fase h: perfil vocacional + posibles carreras */}
         <Tarjeta titulo="Tu perfil vocacional">
           {!perfilVocacional ? (
-            <EstadoVacio>
-              Aún no hiciste el{" "}
-              <Link
-                href="/vocacional"
-                className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
-              >
-                cuestionario vocacional
-              </Link>
-              . Son 18 frases sobre lo que te gusta hacer, unos 5 minutos.
-            </EstadoVacio>
+            hayDiagnostico ? (
+              <div className="flex flex-col gap-3">
+                {familiasPorDiagnostico.length > 0 ? (
+                  <>
+                    <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                      Según tu diagnóstico, estas son algunas opciones para
+                      explorar. No es una decisión: es un punto de partida
+                      para averiguar más.
+                    </p>
+                    <ul className="flex flex-col gap-3">
+                      {familiasPorDiagnostico.map((f) => (
+                        <li
+                          key={f.id}
+                          className="rounded-xl border border-rio/20 px-4 py-3"
+                        >
+                          <p className="font-bold text-noche dark:text-white">
+                            {f.nombre}
+                          </p>
+                          <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                            {f.carreras.join(", ")}.
+                          </p>
+                          <p className="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                            {f.vias.join(" · ")}.
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                    Todavía no hay un área en Intermedio o Avanzado: reforzá
+                    tus áreas y repetí el diagnóstico para ver carreras.
+                  </p>
+                )}
+                <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                  <Link
+                    href="/vocacional"
+                    className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
+                  >
+                    Completá el cuestionario vocacional para afinarlo con
+                    tus intereses →
+                  </Link>
+                </p>
+                <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+                  {AVISO_VOCACIONAL}
+                </p>
+                <p>
+                  <Link
+                    href="/futuro"
+                    className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
+                  >
+                    Ver Tu futuro: dónde estudiar, becas y carreras →
+                  </Link>
+                </p>
+              </div>
+            ) : (
+              <EstadoVacio>
+                Aún no hiciste el{" "}
+                <Link
+                  href="/vocacional"
+                  className="font-bold text-rio-oscuro underline-offset-2 hover:underline dark:text-rio-claro"
+                >
+                  cuestionario vocacional
+                </Link>
+                . Son 18 frases sobre lo que te gusta hacer, unos 5 minutos.
+              </EstadoVacio>
+            )
           ) : (
             <div className="flex flex-col gap-3">
               <p className="text-sm leading-relaxed text-neutral-700 dark:text-white/85">
