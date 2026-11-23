@@ -18,6 +18,7 @@ que falte se marca `[COMPLETAR]` y lo dudoso `[VERIFICAR]`.
 | `actitudes.json` | Cuestionario de actitudes y hábitos | Fase (d) |
 | `vocacional.json` | Cuestionario vocacional RIASEC (18 ítems) | Fase (h) |
 | `despues-del-cole.json` | Contenido de «Tu futuro»: universidades, becas, plazos, demanda, trabajos y cursos | Fase (h) — última revisión 22-nov-2026 |
+| `mapa-estudios.json` | Mapa «¿Dónde quieres estudiar?» (sección 1 de «Tu futuro»): 15 marcadores con coordenadas verificadas, instituciones y carreras | Fase (j) — Rurrenabaque y Yucumo «por confirmar» (verificar convocatorias 2027 en diciembre) |
 | `juegos/` | (fase e) Bancos de datos de los 6 juegos, un archivo por juego | Fase (e) — contenido real verificado, 19-nov-2026 |
 | `juegos/madidi.json` | Trivia fauna/flora de Madidi | 12 preguntas (MAD-001–012), fuente SERNAP |
 | `juegos/presupuesto.json` | Simulador de educación financiera en bolivianos | 10 escenarios (PRE-001–010), fuente BCB; montos de ejemplo, no precios oficiales |

@@ -771,6 +771,49 @@ terminar, la duración queda sin registrar.
 - Los promedios con menos de 3 estudiantes no son representativos: el
   panel lo avisa en cada cifra.
 
+## Fase (j) — Mapa «¿Dónde quieres estudiar?» + corrección de Reveal (22-nov-2026)
+
+### El mapa (sección 1 de «Tu futuro»)
+
+Al inicio de «Dónde estudiar» hay un mapa interactivo (Leaflet,
+tiles de OpenStreetMap, gratis y sin API key): 15 puntos — Ixiamas
+(«Estás aquí», rojo), lo más cercano (Rurrenabaque, Yucumo,
+Riberalta, Guayaramerín; verde), lo virtual (Cobija/UAP; turquesa)
+y las ciudades con universidad pública (naranja). Al tocar un punto
+se ve qué instituciones hay, qué carreras ofrecen y el enlace oficial
+(solo si está verificado). Debajo del mapa, la leyenda explica cada
+color y avisa que los programas abren o pausan según el año.
+
+Datos en `data/mapa-estudios.json` (un marcador por ciudad, con
+`lat`, `lng`, `tipo`, `estado`, `fuente` e `instituciones`). Reglas:
+
+- Solo carreras e instituciones del informe oficial
+  (`educacion-superior-becas-bolivia.md`) y de
+  `data/despues-del-cole.json`. Enlace solo si ya está verificado ahí.
+- Rurrenabaque y Yucumo están en estado «por confirmar»: sus datos
+  vienen del Diagnóstico Integral UABJB (dic-2025) y CECASEM
+  (jun-2025) para Rurrenabaque, y de ANB/ABI 2018 para Yucumo. Al
+  verificar las convocatorias 2027 (diciembre), cambiar su `estado`
+  a `vigente` y completar el enlace si lo hay.
+- Cero sueldos. Lo no verificado siempre va con estado
+  «por confirmar», nunca se inventa.
+- Coordenadas verificadas por geocodificación: no moverlas sin
+  verificar de nuevo.
+
+### Corrección de Reveal (el bug de la sección 1 en celulares)
+
+La sección 1 de «Tu futuro» no se veía en celulares: el componente
+`components/Reveal.tsx` usaba `threshold: 0.12`, o sea que el
+contenido solo aparecía cuando el 12% del elemento estaba en
+pantalla. La sección 1 es tan larga en un celular que el 12% nunca
+cabía en el viewport y quedaba oculta para siempre; las secciones
+más cortas (2 en adelante) sí aparecían. El mismo bug latente
+afectaba a todas las páginas que usan Reveal (Inicio, Nosotros,
+Horarios, Progreso, Contacto, Juegos). La corrección: umbral `0`
+(basta con que entre un píxel en pantalla). El efecto de aparición
+suave y el comportamiento con `prefers-reduced-motion` (contenido
+visible de inmediato) no cambiaron.
+
 ---
 
 *Manual creado el 19-nov-2026 (fase f). Fuentes de contenido:

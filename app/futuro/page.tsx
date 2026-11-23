@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import datos from "@/data/despues-del-cole.json";
 import Reveal from "@/components/Reveal";
+import MapaEstudios from "@/components/MapaEstudios";
 
 export const metadata: Metadata = {
   title: "Tu futuro | CEPO",
@@ -237,6 +238,19 @@ export default function Futuro() {
         titulo="Dónde estudiar"
         intro="Estas son las universidades públicas y las rutas técnicas que un bachiller de Ixiamas puede mirar. La más cercana por distancia es la UABJB en Riberalta; la más práctica sin mudarse es la UAP virtual."
       >
+        <div>
+          <h3 className="font-display text-xl font-bold text-noche dark:text-white">
+            ¿Dónde quieres estudiar?
+          </h3>
+          <p className="mt-2 text-sm leading-relaxed text-neutral-700 dark:text-white/85">
+            Los lugares más viables para un bachiller de Ixiamas: lo más
+            cercano primero, y las universidades públicas grandes. Tocá un
+            punto para ver qué se puede estudiar ahí.
+          </p>
+          <div className="mt-4">
+            <MapaEstudios />
+          </div>
+        </div>
         <Tarjeta titulo={d.como_entrar.titulo}>
           <p>{d.como_entrar.texto}</p>
           <ul className="flex flex-col gap-2">
