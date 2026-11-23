@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   AVISO_VOCACIONAL,
@@ -76,6 +76,9 @@ export default function CuestionarioVocacional({
   const [enviado, setEnviado] = useState(false);
   const [guardado, setGuardado] = useState<EstadoGuardado>("pendiente");
   const [error, setError] = useState("");
+  // Fase i: cuándo se abrió el cuestionario (para medir el tiempo del
+  // intento en la tabla `actividad`).
+  const inicioRef = useRef(Date.now());
 
   const todosLosItems = useMemo(
     () => datos.dimensiones.flatMap((d) => d.items),
@@ -124,6 +127,8 @@ export default function CuestionarioVocacional({
         body: JSON.stringify({
           dimensiones: perfilVocacional.dimensiones,
           perfil_top2: perfilVocacional.top2,
+          // Fase i: inicio del cuestionario, para el tiempo del intento.
+          inicio: new Date(inicioRef.current).toISOString(),
         }),
       });
       const datosResp = (await respuesta.json()) as {

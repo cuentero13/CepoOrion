@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
 
 export type ItemActitud = {
@@ -70,6 +70,9 @@ export default function CuestionarioActitudes({
   const [enviado, setEnviado] = useState(false);
   const [guardado, setGuardado] = useState<EstadoGuardado>("pendiente");
   const [error, setError] = useState("");
+  // Fase i: cuándo se abrió el cuestionario (para medir el tiempo del
+  // intento en la tabla `actividad`).
+  const inicioRef = useRef(Date.now());
 
   const todosLosItems = useMemo(
     () => datos.dimensiones.flatMap((d) => d.items),
@@ -104,7 +107,11 @@ export default function CuestionarioActitudes({
       const respuesta = await fetch("/api/actitudes", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ dimensiones }),
+        body: JSON.stringify({
+          dimensiones,
+          // Fase i: inicio del cuestionario, para el tiempo del intento.
+          inicio: new Date(inicioRef.current).toISOString(),
+        }),
       });
       const datosResp = (await respuesta.json()) as {
         ok?: boolean;

@@ -13,5 +13,7 @@ cree.
   - `buzon` (cualquiera puede enviar, incluso sin cuenta; solo admin y
     docentes leen; solo admin cambia el estado)
   - `horarios`, `preguntas` (lectura pública, escritura solo admin)
-  - Función `public.mi_rol()` (SECURITY DEFINER) y trigger
-    `trg_evitar_cambio_rol` (nadie se auto-asigna un rol mayor)
+  - Función `public.mi_rol()` (SECURITY DEFINER) y triggers
+    `trg_evitar_cambio_rol` (UPDATE: solo un admin cambia roles) y
+    `trg_forzar_rol_estudiante` (INSERT: toda cuenta nueva nace
+    `'estudiante'`; migración 0004, corrección crítica 22-nov-2026)

@@ -643,6 +643,134 @@ ella, el cuestionario vocacional muestra el resultado en pantalla pero
 su perfil vocacional. La migración ya incluye los GRANTs a
 `anon`/`authenticated` (sin ellos, PostgREST da error 42501).
 
+> **Actualización 22-nov-2026:** Mike ya corrió la 0002 (19:27,
+> «Success. No rows returned.»). El vocacional ya guarda.
+
+---
+
+## Fase (i) — Panel super admin: estudiantes, evaluación, mejoras, buzón y actividad (22-nov-2026)
+
+### Qué es el panel
+
+El **panel super admin** (`/admin`) es una sección solo para la
+dirección del colegio. No aparece en el menú público y no se indexa en
+buscadores. Tiene 6 secciones:
+
+| Sección | Qué muestra |
+|---|---|
+| Portada | Resumen: estudiantes, resultados de diagnóstico, mensajes nuevos del buzón, mejoras pendientes y actividad |
+| Estudiantes | Lista de alias con su último diagnóstico, vocacional y actividad; al entrar a uno se ven sus resultados por área, sus juegos y su perfil vocacional |
+| Evaluación | Promedios por área con la cantidad de estudiantes (N) en cada uno; con menos de 3 casos avisa que no es representativo |
+| Mejoras | Los datos que faltan o faltan confirmar, tal como están en la configuración (solo lectura) |
+| Buzón | Los mensajes privados (antes estaban en `/admin`; ahora en `/admin/buzon`) |
+| Actividad | Cuánto tiempo pasa cada estudiante en cada intento |
+
+**Nada se descarga desde el panel** (decisión de Mike, 22-nov-2026):
+no hay botón de exportar ni de CSV. **Los docentes NO ven el panel**:
+solo la dirección.
+
+### Quiénes son super admins
+
+Mike, Irguen Rosas y Clarivel Loayza (decisión de Mike, 22-nov-2026).
+Ser super admin es tener `rol = 'admin'` en la tabla `profiles` de
+Supabase. El resto de los usuarios son `estudiante` o `docente`.
+
+### Procedimiento del primer admin (¡importante!)
+
+Hoy **nadie** tiene rol `'admin'`: las cuentas existentes son
+`estudiante` (Mike con alias `el-cuentero`, Exon Gonzales) y no hay
+docentes cargados. Y hay un bloqueo: el trigger
+`trg_evitar_cambio_rol` impide cambiar el rol de un perfil,
+**incluso desde el SQL Editor** (ahí no hay sesión, así que
+`auth.uid()` es nulo y el trigger lo rechaza). Por eso el primer admin
+se crea así, una sola vez, en el SQL Editor de Supabase:
+
+```sql
+-- 1) Apagar el freno (solo por un momento).
+--    OJO: el trigger se llama trg_evitar_cambio_rol (con trg_).
+ALTER TABLE public.profiles DISABLE TRIGGER trg_evitar_cambio_rol;
+
+-- 2) Dar rol admin a la cuenta de Mike (su alias es el-cuentero).
+--    Para Irguen y Clarivel, repetir con su alias cuando tengan cuenta.
+UPDATE public.profiles SET rol = 'admin' WHERE alias = 'el-cuentero';
+
+-- 3) Volver a prender el freno (no olvidar este paso).
+ALTER TABLE public.profiles ENABLE TRIGGER trg_evitar_cambio_rol;
+
+-- 4) Comprobar que quedó (debe salir una fila con rol = admin).
+SELECT alias, rol FROM public.profiles WHERE rol = 'admin';
+```
+
+Después de esto, Mike entra a `/admin` con su cuenta y ve el panel.
+Para hacer admin a Irguen o a Clarivel, primero tienen que
+**registrarse en el sitio** (con su correo) y después se corre el paso
+2 con su alias. Sin cuenta registrada no hay perfil al que darle el
+rol.
+
+> Si el paso 2 dice «0 rows affected», el alias está mal escrito: revise
+> en `SELECT alias, rol FROM public.profiles;` cuál es el alias exacto.
+
+### Migración 0003 (importante)
+
+La fase (i) trae una migración nueva,
+`supabase/migrations/0003_fase_i.sql` (tabla `actividad`, donde queda
+el tiempo de cada intento). Hay que correrla en el SQL Editor igual que
+la 0002. Sin ella, el panel funciona igual **salvo la sección
+Actividad, que queda vacía** con un aviso que lo explica. Los intentos
+hechos antes de correrla no quedan con tiempo registrado (no se pueden
+recuperar después).
+
+### Migración 0004 — corrección de seguridad: nadie puede auto-asignarse admin (22-nov-2026)
+
+La revisión de seguridad encontró un hueco **crítico**: la política de
+registro solo exigía ser el dueño de la fila, sin limitar el rol, y el
+trigger `trg_evitar_cambio_rol` solo cubre UPDATE, no INSERT. O sea:
+cualquiera podía registrarse y ponerse rol `'admin'` directo por la
+API. La migración `supabase/migrations/0004_seguridad_roles.sql` lo
+cierra en dos capas: la política de INSERT ahora exige
+`rol = 'estudiante'`, y un trigger BEFORE INSERT fuerza
+`rol = 'estudiante'` en toda fila nueva. El registro normal no cambia
+(ya creaba `'estudiante'`) y el procedimiento del primer admin de
+arriba sigue igual (es un UPDATE, no un INSERT).
+
+**Después de correr la 0004, auditoría obligatoria** (en el SQL Editor,
+antes de dar la fase por terminada):
+
+```sql
+SELECT rol, count(*) FROM profiles GROUP BY rol;
+SELECT alias, rol, created_at FROM profiles
+  WHERE rol <> 'estudiante' ORDER BY created_at;
+```
+
+Lo esperado hoy: solo `'estudiante'` (Mike con alias `el-cuentero` y
+Exon Gonzales). Si aparece un `'admin'` o `'docente'` que nadie
+reconoce, no seguir: avisar a Mike y devolver ese perfil a
+`'estudiante'` con el mismo procedimiento del primer admin
+(deshabilitar `trg_evitar_cambio_rol`, UPDATE, rehabilitar).
+
+Las políticas de lectura del buzón **no** se tocaron: siguen siendo
+admin + docentes (solo el cambio de estado es admin, decisión de
+Mike).
+
+### Qué ve el panel de cada estudiante (y qué NO ve)
+
+El panel muestra **solo el alias**. Nunca muestra nombres reales,
+fotos, teléfonos ni correos: el registro no guarda esos datos y el
+panel no los pide. El buzón anónimo se muestra sin remitente («Anónimo»).
+El tiempo por intento se mide desde que el estudiante empieza el área
+o el cuestionario hasta que lo termina; si cierra la ventana sin
+terminar, la duración queda sin registrar.
+
+### Qué NO es el panel
+
+- No es una lista para descargar: nada se descarga, por decisión de
+  Mike.
+- No muestra presencia en vivo (quién está conectado ahora): solo lo ya
+  registrado. Con internet intermitente y estudiantes menores, la
+  presencia en vivo no se hace en esta versión.
+- Los promedios con menos de 3 estudiantes no son representativos: el
+  panel lo avisa en cada cifra.
+
 ---
 
 *Manual creado el 19-nov-2026 (fase f). Fuentes de contenido:

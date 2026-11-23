@@ -292,5 +292,22 @@ detalle de los mismos pendientes).
 
 ---
 
+## Fase (i) — panel super admin (22-nov-2026)
+
+La fase (i) **no añade marcadores nuevos**: el panel lee los que ya
+existen. La sección Mejoras del panel (`/admin/mejoras`) muestra los
+de `config/institucion.json` (los de la sección A1 y los 10 de la
+fase h de arriba) y la frescura de `data/despues-del-cole.json`
+(última revisión y plazos por confirmar). Resolver uno es lo mismo de
+siempre: poner el dato real en el archivo y volver a desplegar.
+
+**Pendiente de la dirección (no es un marcador, es un paso):** correr
+la migración 0003 (`supabase/migrations/0003_fase_i.sql`, tabla
+`actividad`) en el SQL Editor y crear el primer admin con el
+procedimiento de `docs/manual-docente.md` (fase i). Sin eso, el panel
+funciona salvo la sección Actividad, que queda vacía.
+
+---
+
 *Lista generada el 20-nov-2026 (fase g). Para saber cómo completar cada
 dato, ver `docs/manual-docente.md`.*
