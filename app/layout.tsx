@@ -22,6 +22,7 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cepo-orion.vercel.app"),
   title: "CEPO — Centro Educativo Privado Orion | Ixiamas, Bolivia",
   description:
     "Centro Educativo Privado Orion (CEPO) en Ixiamas, Iturralde, La Paz, Bolivia. Educación secundaria con orgullo amazónico: diagnóstico académico, juegos de conocimiento y progreso personal.",
@@ -30,12 +31,32 @@ export const metadata: Metadata = {
     icon: "/icons/icon-192.svg",
     apple: "/icons/icon-192.svg",
   },
+  keywords: [
+    "CEPO",
+    "Centro Educativo Privado Orion",
+    "educación secundaria",
+    "Ixiamas",
+    "Bolivia",
+    "diagnóstico académico",
+    "apoyo escolar",
+  ],
+  authors: [{ name: "CEPO — Centro Educativo Privado Orion" }],
   openGraph: {
     title: "CEPO — Centro Educativo Privado Orion",
     description:
       "Aprendamos en la selva. Educación secundaria en Ixiamas, puerta del norte amazónico paceño.",
+    url: "/",
+    siteName: "CEPO — Centro Educativo Privado Orion",
+    images: ["/icons/icon-192.svg"],
     type: "website",
     locale: "es_BO",
+  },
+  twitter: {
+    card: "summary",
+    title: "CEPO — Centro Educativo Privado Orion",
+    description:
+      "Aprendamos en la selva. Educación secundaria en Ixiamas, Bolivia.",
+    images: ["/icons/icon-192.svg"],
   },
 };
 
